@@ -1,0 +1,9 @@
+.widget-menu li ul {
+	border-right: 1px solid #627490;
+	border-bottom: 1px solid #627490;
+	border-left: 1px solid #627490;
+}
+
+td.ciField .ciValueDisplay{
+	display: inline!important; /* Zet deelnemer resultaten met minnetje naast elkaar ipv onder elkaar */
+}

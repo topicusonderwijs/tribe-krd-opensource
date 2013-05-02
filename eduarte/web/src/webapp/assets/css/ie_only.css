@@ -1,0 +1,49 @@
+.imgPasfoto{
+	padding:0px 0px 12px 0px;
+}
+
+.groteSelect{
+    width:400px!important;
+}
+
+.kleineSelect{
+    width:120px!important;
+}
+
+.widget-menu a span {
+	position: relative;
+	top: 6px;
+	line-height:12px!important;
+	margin-right:2px;
+}
+
+.widget-menu li {
+	margin-right:-10px;
+}
+
+.widget-menu a {
+	padding-right:13px!important;
+}
+
+table.tblResultaat th.ciColumn {
+	width: 50px!important;
+}
+
+/* Voor IE7 moet er geen padding zijn omdat dit meetelt in de height. margin cascade IE ook door op alle tags in zich wat we niet willen. */
+.tblData {
+	margin: 0px;
+}
+
+/* Wel op alleen de table */
+.tblData table {
+	margin-right: 10px;
+}
+
+.tblData td {
+	padding:0px;
+}
+
+/* En de linker td moet iets in springen, want de padding telt in IE niet meer voor de width. */
+.tblData td.tblTag {
+	padding-left:20px;
+}

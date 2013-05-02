@@ -1,0 +1,42 @@
+.ui-dropdownchecklist
+{
+	height: 20px;
+	border: 1px solid #ddd;
+	border-right: 0;
+	background: #fff url(../img/icons/dropdown.png) no-repeat center right;
+	padding-right: 17px; /* background dropdown.png image */
+}
+.ui-dropdownchecklist-hover, .ui-dropdownchecklist-active
+{
+	background-image: url(../img/icons/dropdown_hover.png); 
+	border-color: #5794bf;
+}
+
+.ui-dropdownchecklist-text
+{
+	font-size: 14px;
+	line-height: 20px;    
+}
+
+.ui-dropdownchecklist-dropcontainer
+{
+	background-color: #fff;
+	border: 1px solid #999;
+}
+
+.ui-dropdownchecklist-dropcontainer-wrapper
+{
+	z-index: 20001;
+}
+
+.ui-dropdownchecklist-item
+{
+	font-size:0.8em;
+	text-align:left;
+}
+
+.ui-dropdownchecklist-item-hover
+{
+	background-color: #39f;
+	color: #fff;
+}

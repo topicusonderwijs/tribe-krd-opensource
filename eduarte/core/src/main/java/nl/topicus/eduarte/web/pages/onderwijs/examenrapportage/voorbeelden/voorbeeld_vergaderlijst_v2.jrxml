@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vergaderlijst examenuitslag" pageWidth="842" pageHeight="595" orientation="Landscape" whenNoDataType="AllSectionsNoDetail" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<subDataset name="cijfers">
+		<field name="keuze" class="nl.topicus.eduarte.entities.onderwijsproduct.OnderwijsproductAfnameContext"/>
+		<field name="seResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="ceResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="eindresultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="cseResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="cpeResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+	</subDataset>
+	<subDataset name="datasetResultaten">
+		<field name="toets" class="java.lang.String"/>
+		<field name="onderwijsproduct" class="java.lang.String"/>
+		<field name="cijfer" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="DATE" class="java.util.Date"/>
+	<parameter name="datum" class="java.util.Date"/>
+	<parameter name="AUTHOR" class="java.lang.String"/>
+	<parameter name="huidigemedewerker" class="nl.topicus.eduarte.entities.personen.Medewerker"/>
+	<parameter name="huidigeorganisatie" class="nl.topicus.eduarte.entities.organisatie.Instelling"/>
+	<parameter name="huidigaccount" class="nl.topicus.eduarte.entities.security.authentication.Account"/>
+	<field name="examendeelname" class="nl.topicus.eduarte.entities.examen.Examendeelname"/>
+	<group name="deelnemers">
+		<groupExpression><![CDATA[$F{examendeelname}]]></groupExpression>
+		<groupHeader>
+			<band height="43">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="28" y="0" width="215" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{examendeelname}.getVerbintenis().getDeelnemer().getPersoon().getVolledigeNaam()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="28" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Naam:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="47" y="12" width="215" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new Integer($F{examendeelname}.getVerbintenis().getDeelnemer().getDeelnemernummer()).toString()]]></textFieldExpression>
+				</textField>
+				<crosstab ignoreWidth="true">
+					<reportElement stretchType="RelativeToTallestObject" x="118" y="0" width="684" height="39"/>
+					<crosstabDataset isDataPreSorted="true">
+						<dataset>
+							<datasetRun subDataset="datasetResultaten">
+								<dataSourceExpression><![CDATA[$F{examendeelname}.getVerbintenis().getRapportage().getCijfersVergaderlijst()]]></dataSourceExpression>
+							</datasetRun>
+						</dataset>
+					</crosstabDataset>
+					<rowGroup name="toets" width="42">
+						<bucket>
+							<bucketExpression class="java.lang.String"><![CDATA[$F{toets}]]></bucketExpression>
+						</bucket>
+						<crosstabRowHeader>
+							<cellContents mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="Crosstab Data Text" stretchType="RelativeToTallestObject" x="3" y="0" width="37" height="13"/>
+									<textElement textAlignment="Left" verticalAlignment="Middle">
+										<font fontName="Arial" isBold="true"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{toets}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabRowHeader>
+						<crosstabTotalRowHeader>
+							<cellContents/>
+						</crosstabTotalRowHeader>
+					</rowGroup>
+					<columnGroup name="onderwijsproduct" height="17">
+						<bucket>
+							<bucketExpression class="java.lang.String"><![CDATA[$F{onderwijsproduct}]]></bucketExpression>
+						</bucket>
+						<crosstabColumnHeader>
+							<cellContents mode="Opaque" style="Crosstab Data Text">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="Crosstab Data Text" stretchType="RelativeToTallestObject" x="3" y="0" width="35" height="17"/>
+									<textElement textAlignment="Left" verticalAlignment="Middle" rotation="None">
+										<font fontName="Arial" size="9" isBold="true"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{onderwijsproduct}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabColumnHeader>
+						<crosstabTotalColumnHeader>
+							<cellContents/>
+						</crosstabTotalColumnHeader>
+					</columnGroup>
+					<measure name="cijfer" class="java.lang.String">
+						<measureExpression><![CDATA[$F{cijfer}]]></measureExpression>
+					</measure>
+					<crosstabCell width="38" height="13">
+						<cellContents>
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Crosstab Data Text" x="3" y="0" width="35" height="13"/>
+								<textElement textAlignment="Left" verticalAlignment="Middle">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijfer}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="50" height="26" rowTotalGroup="toets">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="50" y="-212" width="50" height="25"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijfer}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="33" height="16" columnTotalGroup="onderwijsproduct">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="54" height="15" rowTotalGroup="toets" columnTotalGroup="onderwijsproduct">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijfer}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+				</crosstab>
+				<staticText>
+					<reportElement x="0" y="12" width="47" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Nummer:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="24" width="47" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Opleiding:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="47" y="24" width="215" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{examendeelname}.getVerbintenis().getOpleiding().getCode()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="802" height="22"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="16"/>
+				</textElement>
+				<text><![CDATA[Vergaderlijst]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="665" y="0" width="95" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pagina "+$V{PAGE_NUMBER}+"  van "]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="760" y="0" width="40" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="0" width="144" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AUTHOR}+" ("+$P{huidigeorganisatie}.getNaam()+")"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-yyyy HH.mm">
+				<reportElement x="0" y="0" width="136" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{datum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

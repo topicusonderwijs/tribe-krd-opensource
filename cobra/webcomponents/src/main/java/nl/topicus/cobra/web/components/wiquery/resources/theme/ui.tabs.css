@@ -1,0 +1,30 @@
+/* Tabs
+----------------------------------*/
+.ui-tabs .ui-tabs-nav { 
+	padding-left:8px;
+	margin-bottom: -1px;
+	position: relative; 
+	}
+.ui-tabs .ui-tabs-nav li { 
+	float: left; 
+	border-bottom: 1 px solid #999999;
+	padding: 0; 
+	list-style: none; 
+	font-size: 0.8em;
+	}
+.ui-tabs .ui-tabs-nav li a { 
+	display:block; 
+	text-decoration: none; 
+	padding: 2px 5px;
+	margin-bottom:1px;
+	}
+.ui-tabs .ui-tabs-nav li.ui-tabs-selected {  
+	border-bottom: 1px solid #ffffff;
+	}
+.ui-tabs .ui-tabs-panel { 
+	padding:3px;
+	border: 1px solid #CCCCCC; 
+	background: none; 
+	display: block; 
+	}
+.ui-tabs .ui-tabs-hide { display: none !important; }

@@ -1,0 +1,49 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body> 
+<wicket:panel>
+	<form wicket:id="form">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Parent</td>
+					<td>
+						<span wicket:id="parent.naam"></span>
+						<select wicket:id="parent" class="unit_324">
+							<option></option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Soort</td>
+					<td>
+						<span wicket:id="soort"></span>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Code</td>
+					<td><input type="text" class="unit_80" wicket:id="afkorting" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Naam</td>
+					<td><input type="text" class="unit_320" wicket:id="naam" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Inschrijfbaar</td>
+					<td><input type="checkbox" wicket:id="inschrijfbaar" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Diplomeerbaar</td>
+					<td><input type="checkbox" wicket:id="diplomeerbaar" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Volgnummer</td>
+					<td><input type="text" class="unit_40" wicket:id="volgnummer" /></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</wicket:panel>
+</body>
+</html>

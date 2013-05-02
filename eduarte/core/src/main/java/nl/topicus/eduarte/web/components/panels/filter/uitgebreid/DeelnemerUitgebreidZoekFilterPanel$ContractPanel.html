@@ -1,0 +1,122 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+        	<div>
+	            <table class="tblData nopadding">
+	            	<tbody>
+		                <tr>
+			                <td>
+			                    Soort contract
+			                </td>
+			                <td>
+		                        <select wicket:id="soortContractList" class="unit_240" size="5">
+		                        	<option></option>
+		                        </select>
+			                </td>
+		                    <td>
+		                        Type financiering
+		                    </td>
+		                    <td>
+		                        <select wicket:id="typeFinanciering" class="unit_240">
+		                        	<option></option>
+		                        </select>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Contract
+			                </td>
+			                <td>
+		                        <div wicket:id="contract" class="unit_227"></div>
+			                </td>
+		                    <td>
+		                        Contractonderdeel
+		                    </td>
+		                    <td>
+		                        <div wicket:id="contractOnderdeelList" class="unit_240"></div>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Externe organisatie
+			                </td>
+			                <td>
+		                        <div wicket:id="contractExterneOrganisatie" class="unit_227"></div>
+			                </td>
+		                    <td>
+		                        Contactpersoon
+		                    </td>
+		                    <td>
+		                        <div wicket:id="contractContactpersoon" class="unit_227"></div>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Beheerder
+			                </td>
+			                <td>
+		                        <div wicket:id="contractBeheerder" class="unit_227"></div>
+			                </td>
+		                    <td>
+		                    </td>
+		                    <td>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Kostprijs vanaf
+			                </td>
+			                <td>
+		                        <input wicket:id="contractKostprijsVanaf" type="text" class="unit_240"/>
+			                </td>
+		                    <td>
+		                        Kostprijs t/m
+		                    </td>
+		                    <td>
+		                        <input wicket:id="contractKostprijsTotEnMet" type="text" class="unit_240"/>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Inburgering
+			                </td>
+			                <td>
+		                        <select wicket:id="contractInburgering" class="unit_240">
+		                        	<option></option>
+		                        </select>
+			                </td>
+		                    <td>
+		                        Onderaanneming
+		                    </td>
+		                    <td>
+		                        <select wicket:id="contractOnderaanneming" class="unit_240">
+		                        	<option></option>
+		                        </select>
+		                    </td>
+			            </tr>
+		                <tr>
+		                    <td>
+		                         Contract (lijst)
+		                    </td>
+		                    <td colspan="3">
+		                        <div wicket:id="contractList" class="unit_480"></div>
+		                    </td>
+		                </tr>
+		                <!-- 
+		                <tr>
+		                    <td>
+		                         Externe organisatie (lijst)
+		                    </td>
+		                    <td colspan="3">
+		                        <select wicket:id="contractExterneOrganisatieList" class="unit_480" size="5"></select>
+		                    </td>
+		                </tr>
+		                 -->
+		            </tbody>
+	            </table>
+			</div>
+        </wicket:extend>
+    </body>
+</html>

@@ -1,0 +1,64 @@
+<html xmlns:wicket>
+<wicket:head>
+	<link href="assets/css/resultaten.css" rel="stylesheet" type="text/css"/>
+</wicket:head>
+<body>
+<wicket:panel>
+	<div wicket:id="filter"></div>
+	<form wicket:id="form">
+		<div wicket:id="contentBox">
+			<div wicket:id="editor" class="ciEditor hide"></div>
+			<div wicket:id="resultaten"></div>
+		</div>
+		<div class="movedown_10" wicket:id="inputfields">
+		</div>
+	</form>
+	<div class="clear resultatenspacer">
+		<div class="legenda">
+			<h3 class="caption">Legenda</h3>
+				<table class="resultaten_legenda">
+					<tr>
+						<td class="wit"></td>
+						<td class="omschrijving">Invulbaar</td>
+					</tr>
+					<tr class="tablespacer">
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="lichtgrijs"></td>
+						<td class="omschrijving">Resultaat niet aanpasbaar</td>
+					</tr>
+					<tr class="tablespacer">
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="donkergrijs"></td>
+						<td class="omschrijving">Resultaat niet beschikbaar / niet aanpasbaar</td>
+					</tr>
+					<tr class="tablespacer">
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="rood">5.0</td>
+						<td class="omschrijving">Resultaat niet behaald</td>
+					</tr>
+					<tr class="tablespacer">
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="grijs">5.0</td>
+						<td class="omschrijving">Voorlopig cijfer</td>
+					</tr>
+					<tr class="tablespacer">
+						<td colspan="2"></td>
+					</tr>
+					<tr>
+						<td class="groen">8.0</td>
+						<td class="omschrijving">Resultaat behaald</td>
+					</tr>
+				</table>
+		</div>
+	</div>
+</wicket:panel>
+</body>
+</html>

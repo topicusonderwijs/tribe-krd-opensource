@@ -1,0 +1,42 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<table class="tblData tblInputs" wicket:id="gegevens">
+	<thead>
+		<tr>
+			<th colspan="4">Contactgegevens</th>
+		</tr>
+		<tr wicket:id="headerGegevens" >
+			<th />
+			<th />
+			<th class="tblHeaderTag txtcenter">Geheim</th>
+			<th />
+		</tr>
+	</thead>
+	<tbody>
+		<tr wicket:id="geenContactGegevens">
+			<td colspan="4" class="tblTag">Geen contactgegevens beschikbaar</td>
+		</tr>
+		<tr wicket:id="contactgegevenList">
+			<td class="tblTag" wicket:id="contactgegevenSoort" /> 
+			<td>
+				<input type="text" class="inpText unit_220" wicket:id="contactgegevenWaarde" />
+			</td>
+			<td class="txtcenter">
+				<input type="checkbox" wicket:id="contactgegevenGeheim" />
+			</td>
+			<td class="txtcenter">
+				<a href="#" wicket:id="verwijder"></a>
+			</td>			
+		</tr>
+	</tbody>
+	</table>
+
+	<div class="widget-button right"><a href=# wicket:id="contactgegevenToevoegenButton"><span>Contactgegevens toevoegen</span></a></div>
+	<div wicket:id="modalWindow"></div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

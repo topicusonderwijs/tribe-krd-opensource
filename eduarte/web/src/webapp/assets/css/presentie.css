@@ -1,0 +1,87 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+presentie.css is part of the stylesheet for EduArte. 
+
+
+this css file contains styles specific for the presentiemodule of EduArte.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. presentie.css exists since revision 0.2 
+*/
+
+/** Table specifiek voor de presentiemodule **/
+	
+	.tblAanwezigheid{
+		table-layout:fixed;
+	}
+	
+	.tblAanwezigheid tbody td, .tblAanwezigheid tbody th, .tblAanwezigheid thead th{
+		padding:0px;
+	}
+	.tblAanwezigheid tbody td{
+		border:0px;
+	}
+	
+	.tblAanwezigheid tbody th{
+		border-left:1px solid #c5c5c5;
+		font-size:0.9em;
+	}
+	
+	.tblAanwezigheid thead th{
+		/*font-family:Trebuchet MS;*/
+		font-family: Arial, Helvetica, sans-serif;
+		color:#989898!important;
+		background:none;
+		font-weight:bold;
+		font-style:italic;
+	}
+	
+		 .tblWeeknr{
+			text-indent:20px;
+		 }
+		
+	.blue-cell{
+		background: blue url('../img/icons/cell_blue.gif') repeat-x;
+	}
+	.green-cell{
+		background: green url('../img/icons/cell_green.gif') repeat-x;;
+	}
+	.light_green_cell {
+		background: green url('../img/icons/cell_light_green.gif') repeat-x;
+	}
+	.yellow-cell{
+		background: yellow url('../img/icons/cell_yellow.gif') repeat-x;;
+	}
+	.red-cell{
+		background: red url('../img/icons/cell_red.gif') repeat-x;;
+	}
+	.orange-cell{
+            background: red url('../img/icons/cell_orange.gif') repeat-x;;
+    }
+    .purple-cell{
+            background: red url('../img/icons/cell_purple.gif') repeat-x;;
+    }
+    .light_blue-cell{
+            background: red url('../img/icons/cell_light_blue.gif') repeat-x;;
+    }
+
+/** Einde table specifiek voor de presentiemodule **/

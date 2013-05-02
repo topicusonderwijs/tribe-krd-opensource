@@ -1,0 +1,49 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<table class="tblDatagrid tblAanwezigheid">
+		<thead>
+			<tr>
+				<th></th>
+				<th wicket:id="title">Maandag 5 november</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th></th>
+				<div wicket:id="headers">
+					<th wicket:id="uur">07:00</th>
+				</div>
+			</tr>
+			<tr wicket:id="afsprakenContainer">
+				<td><abbr title="Afspraken">A</abbr></td>
+				<div wicket:id="afspraken">
+					<div wicket:id="lessen">
+						<td wicket:id="les"></td>
+					</div>
+				</div>
+			</tr>
+			<tr>
+				<td><abbr title="Waarnemingen">W</abbr></td>
+				<div wicket:id="waarnemingen">
+					<div wicket:id="lessen">
+						<td wicket:id="les"></td>
+					</div>
+				</div>
+			</tr>
+			<tr>
+				<td><abbr title="Meldingen">M</abbr></td>
+				<div wicket:id="absenties">
+					<div wicket:id="lessen">
+						<td wicket:id="les"></td>
+					</div>
+				</div>
+			</tr>
+		</tbody>
+	</table>
+	<div class="clear laySeparator10"></div>
+</wicket:panel>
+</body>
+</html>

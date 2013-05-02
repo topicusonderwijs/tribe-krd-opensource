@@ -1,0 +1,123 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption" wicket:id="caption">Opleiding</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData">
+				<tbody>
+					<tr wicket:id="parentContainer">
+						<td class="tblTag">Variant van opleiding</td>
+						<td><div class="unit_max" wicket:id="parent"></div></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Verbintenisgebied</td>
+						<td><div class="unit_max" wicket:id="verbintenisgebied"></div></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Code</td>
+						<td><input type="text" class="unit_max" wicket:id="code" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Naam</td>
+						<td><input type="text" class="unit_max" wicket:id="naam" /></td>
+					</tr>
+					<tr wicket:id="wervingsnaamContainer">
+						<td class="tblTag">Wervingsnaam</td>
+						<td><input type="text" class="unit_max" wicket:id="wervingsnaam" /></td>
+					</tr>
+					<tr wicket:id="leerweg">
+						<td class="tblTag">Leerweg</td>
+						<td><select class="unit_120" wicket:id="leerweg"></select></td>
+					</tr>
+					<tr wicket:id="defaultIntensiteit">
+						<td class="tblTag">Default intensiteit</td>
+						<td><select class="unit_max" wicket:id="defaultIntensiteit"></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Duur in maanden</td>
+						<td><input type="text" class="unit_80" wicket:id="duurInMaanden" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Leerjaar van</td>
+						<td><input type="text" class="unit_80" wicket:id="beginLeerjaar" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Leerjaar tot</td>
+						<td><input type="text" class="unit_80" wicket:id="eindLeerjaar" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Begindatum</td>
+						<td><input type="text" class="unit_80" wicket:id="begindatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Einddatum</td>
+						<td><input type="text" class="unit_80" wicket:id="einddatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Laatste Inschrijving</td>
+						<td><input type="text" class="unit_80" wicket:id="datumLaatsteInschrijving" /></td>
+					</tr>
+					<tr wicket:id="instroomvariantContainer">
+						<td class="tblTag">Instroomvariant</td>
+						<td><input type="checkbox" wicket:id="instroomvariant" /></td>
+					</tr>
+					<tr wicket:id="uitstroomvariantContainer">
+						<td class="tblTag">Uitstroomvariant</td>
+						<td><input type="checkbox" wicket:id="uitstroomvariant" /></td>
+					</tr>
+					
+					
+				</tbody>
+			</table>
+			<div wicket:id="aanbod"></div>
+			<div wicket:id="fases"></div>
+		</div>
+		<div class="contHalf right">
+			<table class="tblData">
+				<tbody>
+					<tr>
+						<td class="tblTag">Met BRON communiceren (indien mogelijk)</td>
+						<td><select class="unit_120" wicket:id="communicerenMetBRON"></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Landelijke productregels negeren</td>
+						<td><select class="unit_120" wicket:id="negeerLandelijkeProductregels"></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Landelijke criteria negeren</td>
+						<td><select class="unit_120" wicket:id="negeerLandelijkeCriteria"></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Kies kenniscentrum</td>
+						<td><select class="unit_120" wicket:id="kiesKenniscentrum"></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Diplomatekst 1</td>
+						<td>
+							<textarea class="unit_max" rows="3" cols="100" wicket:id="diplomatekst1"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Diplomatekst 2</td>
+						<td>
+							<textarea class="unit_max" rows="3" cols="100" wicket:id="diplomatekst2"></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Diplomatekst 3</td>
+						<td>
+							<textarea class="unit_max" rows="3" cols="100" wicket:id="diplomatekst3"></textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div wicket:id="vrijvelden"></div>
+		</div>	
+	</form>
+</wicket:extend>
+</body>
+</html>

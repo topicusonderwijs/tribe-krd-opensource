@@ -1,0 +1,5 @@
+Geachte heer/mevrouw $!account.eigenaar.achternaam,
+
+Er is voor u een account aangemaakt in Tribe KRD. De gegevens hiervan zijn:
+Gebruikersnaam: $!account.gebruikersnaam
+Wachtwoord: $!wachtwoord

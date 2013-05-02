@@ -1,0 +1,51 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Criterium</h3>
+	<div class="contHalf left">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Volgnummer</td>
+					<td><span wicket:id="volgnummer">1</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Naam</td>
+					<td><span wicket:id="naam">Alle cijfers hoger dan een 4</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Cohort</td>
+					<td><span wicket:id="cohort.naam">2008/2009</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="contHalf right">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Melding bij niet geslaagd volgens deze beslisregel</td>
+					<td><span wicket:id="melding">De deelnemer heeft een cijfer lager dan 4</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="clear"></div>
+	<h3 class="caption">Formule</h3>
+	<table class="tblData">
+		<tbody>
+			<tr>
+				<td>
+					<pre>
+						<span wicket:id="formule"></span>
+					</pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</wicket:extend>
+</body>
+</html>

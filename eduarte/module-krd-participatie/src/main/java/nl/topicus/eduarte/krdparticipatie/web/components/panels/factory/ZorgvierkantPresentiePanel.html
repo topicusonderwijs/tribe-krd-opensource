@@ -1,0 +1,19 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="body zorgHead">
+		<div class="icon"><img src="assets/img/icons/calendar.png" alt="" /></div>
+		<div class="content">Presentie</div>
+		<div class="right"><a wicket:id="presentieLink" class="actionItem" title="Naar maandoverzicht aanwezigheid"></a></div>
+	</div>
+	<div class="body indent" wicket:id="aanwezigheid">
+		<div class="icon"><span class="white" wicket:id="indicator"></span></div>
+		<div class="content"><span wicket:id="header">Presentie</span> <span wicket:id="maand.langeNaam"></span></div>
+		<div class="content"><span wicket:id="absentiePresentie">91%</span></div>
+	</div>
+
+</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Nieuwe favoriet toevoegen</h3>
+	<form wicket:id="form">
+		<table class="tblData tblInput">
+			<tr>
+				<td class="tblTag unit_220">
+					Omschrijving
+				</td>
+				<td>
+					<input wicket:id="omschrijving" type="text" class="inpText unit_320" />
+				</td>
+				
+			</tr>
+			<tr><td class="tblTag unit_220">
+					Map
+				</td><td>
+					<select wicket:id="bookmarkFolder" class="inpSelect unit_200"></select>
+				</td>
+				</tr>
+			<tr wicket:id="vastzetten">
+				<td class="tblTag unit_220">
+					<span class="inpDescription ui-icon ui-icon-help" title="Type - Wanneer 'Huidige gegevens' geselecteerd wordt verwijst deze bookmark naar de huidige pagina met de huidige contextgegevens. Wanneer 'Huidige pagina' geselecteerd wordt zal de bookmark verwijzen naar deze pagina met de op dat moment geselecteerde context."></span>
+					<span wicket:id="contextLabel">Contextgegevens vastzetten</span>
+				</td>
+				<td>
+					<select wicket:id="contextgegevensVastzetten" class="inpSelect unit_200">
+						<option>Ja</option>
+						<option>Nee</option>
+					</select>
+				</td>
+			</tr>
+		</table>
+	</form>
+	<div class="clear" wicket:id="contextgegevens">
+		<h3 class="caption">Contextgegevens</h3>
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th>Contextgegeven</th>
+					<th>Waarde</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="contextInfo">
+					<td><span wicket:id="naam">Deelnemer</span></td>
+					<td><span wicket:id="waarde">Chantal Aafjes</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</wicket:extend>
+</body>
+</html>

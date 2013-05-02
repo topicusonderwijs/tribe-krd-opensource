@@ -1,0 +1,29 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Logo instellen</h3>
+	<div class="contHalf left">
+		<form wicket:id="form">
+			<table class="tblData">
+				<tbody>
+					<tr>
+			  			<td class="tblTag">Huidige logo</td>
+			  			<td><span class="imgPasfoto"><img wicket:id="logo" src="assets/img/foto.jpg"/ alt=""></img></span></td>
+			  		</tr>
+			  		<tr>
+			  			<td class="tblTag">Bestand</td>
+			  			<td><input type="file" class="inpFile unit_280" wicket:id="bestand" /></td>
+			  		</tr>
+			  		<tr>
+			  			<td class="tblTag">Ondersteunde bestandstypen</td>
+			  			<td><span>.jpg, .png, .bmp</span></td>
+			  		</tr>	
+			  	</tbody>
+			</table>
+		</form>
+	</div>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,31 @@
+html, body{height:100%};
+
+.layHeader{
+	width:expression((document.body.offsetWidth<=980)? 980 + "px" : (document.body.offsetWidth>=1280)? 1280 + "px" : document.body.offsetWidth);	
+}
+
+.layLeft{
+	width:expression((document.body.offsetWidth<=980)? 980 + "px" : (document.body.offsetWidth>=1280)? 1280 + "px" : document.body.offsetWidth);
+	height: expression(document.body.offsetHeight - 151 + "px");
+}
+
+.layFooter{
+	width:expression((document.body.offsetWidth<=960)? 960 + "px" : (document.body.offsetWidth>=1260)? 1260 + "px" : document.body.offsetWidth - 20 + "px");
+}
+
+#loginBox{
+	background: url('../img/login/loginscreen_ie6.gif') no-repeat!important;
+}
+
+/*** Negeer in IE6 extra rules voor combined classes ***/
+.widget-menu-dropdown, .widget-menu-dropdown-small{
+	background:url('../img/icons/dropdown.gif') no-repeat 100px 6px!important;
+}
+.widget-menu a:hover, .wmActive{
+	background:#e7e7e7 url('../img/widgets/widget-menu.gif') repeat-x!important;
+}
+
+.layApptitle{
+	padding:2px 10px;
+	background-image:none;
+}

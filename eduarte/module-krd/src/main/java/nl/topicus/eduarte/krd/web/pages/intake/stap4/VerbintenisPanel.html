@@ -1,0 +1,272 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>	
+            <table class="tblData tblInputs">
+				<tr>
+					<td class="tblTag">Status</td>
+					<td>
+						<select wicket:id="status" class="unit_max required">
+							<option>Voorlopig</option>
+							<option>Volledig</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Opleiding</td>
+					<td>
+						<div wicket:id="opleiding" class="inpText unit_max"></div>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Onderwijsproductafnames maken</td>
+					<td>
+						<select wicket:id="onderwijsproductAfnamesMaken"></select>
+					</td>
+				</tr>
+				<tr wicket:id="kenniscentrumRow">
+					<td class="tblTag">Kenniscentrum</td>
+					<td>
+						<select wicket:id="brin" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerweg</td>
+					<td>
+						<input wicket:id="opleiding.leerweg" class="inpText unit_80" readonly="readonly" type="text"/>
+					</td>
+				</tr>
+				<tr wicket:id="intensiteitRow">
+					<td class="tblTag">Intensiteit</td>
+					<td>
+						<select wicket:id="intensiteit" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr wicket:id="contacturenRow">
+					<td class="tblTag">Contacturen per week</td>
+					<td>
+						<input wicket:id="contacturenPerWeek" type="text" class="unit_80" />
+					</td>
+				</tr>
+				<tr wicket:id="leerprofielRow">
+					<td class="tblTag">Leerprofiel</td>
+					<td>
+						<select class="unit_80" wicket:id="leerprofiel">
+							<option>1a</option>
+						</select>
+					</td>
+				</tr>
+				
+				<tr wicket:id="organisatieEenheidLocatie">
+					<td class="tblTag">Organisatie-eenheid</td>
+					<td><input class="inpText unit_max required" type="text"/>
+					</td>
+				</tr>
+				<wicket:remove>
+				<tr>
+					<td class="tblTag">Locatie</td>
+					<td><input class="inpText unit_max" type="text"/>
+					</td>
+				</tr>
+				</wicket:remove>
+				<tr>
+					<td class="tblTag">Team</td>
+					<td wicket:id="team">
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Begindatum</td>
+					<td>
+						<input wicket:id="begindatum" value="" class="inpText left unit_80 required" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Verwachte einddatum</td>
+					<td>
+						<input wicket:id="geplandeEinddatum" value="" class="inpText left unit_80" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Cohort</td>
+					<td>
+						<select wicket:id="cohort" class="unit_max"></select>
+					</td>
+				</tr>
+	          	<tr>
+	          		<td class="tblTag">Leerjaar</td>
+	          		<td>
+					<select wicket:id="leerjaar" class="unit_80">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+	          		</td>
+				</tr>
+	          	<tr wicket:id="jarenPraktijkonderwijsRow">
+	          		<td class="tblTag">Praktijkjaar</td>
+	          		<td>
+					<select wicket:id="jarenPraktijkonderwijs" class="unit_80">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+	          		</td>
+				</tr>				
+	          	<tr>
+	          		<td class="tblTag">Plaatsingsgroep</td>
+	          		<td>
+	          			<div wicket:id="plaatsingsgroep" class="unit_max"></div>
+	          		</td>
+				</tr>
+				<tr wicket:id="relevanteVooropleidingRow">
+					<td class="tblTag">Relevante vooropleiding</td>
+					<td>
+						<select wicket:id="relevanteVooropleiding" class="unit_max">
+							<option></option>
+							<option>Autospuiter (1)</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="categorieVooropleidingRow">
+					<td class="tblTag">Categorie vooropleiding</td>
+					<td wicket:id="categorieVooropleiding"></td>
+				</tr>		
+				<tr>
+					<td class="tblTag">Contract</td>
+					<td>
+						<div wicket:id="contract" class="inpText unit_max"></div>
+					</td>
+				</tr>
+				<tr wicket:id="contractonderdeelRow">
+					<td class="tblTag">Contractonderdeel</td>
+					<td>
+						<select wicket:id="contractOnderdeel" class="unit_max">
+							<option></option>
+							<option>Onderdeel A</option>
+							<option>Onderdeel B</option>
+							<option>Onderdeel C</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="contractBeginEindDatumRow">
+					<td class="tblTag">Contract geldig van/tot</td>
+					<td>
+						<span>
+							<input class="inpText unit_80" type="text" wicket:id="contractBegindatum" />
+						</span>
+						<span>
+							<input class="inpText unit_80" type="text" wicket:id="contractEinddatum" />
+						</span>
+					</td>
+				</tr>
+ 				<tr>
+					<td class="tblTag">Indicatie gehandicapt</td>
+					<td>
+						<input wicket:id="indicatieGehandicapt" type="checkbox" />
+					</td>
+				</tr>
+            </table>
+			<table class="tblData" wicket:id="veldenInburgering">
+				<tr wicket:id="datumAanmeldenRow">
+					<td class="tblTag">Datum aanmelden/beschikking</td>
+					<td>
+						<input type="text" wicket:id="datumAanmelden"/>
+					</td>
+				</tr>
+				<tr wicket:id="datumAkkoordRow">
+					<td class="tblTag">Datum akkoord</td>
+					<td>
+						<input type="text" wicket:id="datumAkkoord"/>
+					</td>
+				</tr>
+				<tr wicket:id="datumEersteActiviteitRow">
+					<td class="tblTag">Datum eerste activiteit</td>
+					<td>
+						<input type="text" wicket:id="datumEersteActiviteit"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Reden inburgering</td>
+					<td>
+						<select class="unit_max" wicket:id="redenInburgering">
+							<option>Inburgeringsplichtig</option>
+							<option>Inburgeringsbehoeftig</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Profiel inburgering</td>
+					<td>
+						<select class="unit_max" wicket:id="profielInburgering">
+							<option>OGO</option>
+							<option>Werk</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerprofiel</td>
+					<td>
+						<select class="unit_80" wicket:id="leerprofiel">
+							<option>1a</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Deelcursus</td>
+					<td>
+						<select class="unit_80" wicket:id="deelcursus">
+							<option>Ja</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="praktijkexamenRow">
+					<td class="tblTag">Soort praktijkexamen</td>
+					<td>
+						<select class="unit_max" wicket:id="soortPraktijkexamen">
+							<option>Portfolio</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Examen datum</td>
+					<td>
+						<input type="text" wicket:id="examenDatum"/>
+					</td>
+				</tr>
+				<tr wicket:id="staatsExamenTypeRow">
+					<td class="tblTag">Type staatsexamen</td>
+					<td>
+						<select class="unit_max" wicket:id="staatsExamenType">
+						
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Beginniveau schriftelijke vaardigheden</td>
+					<td>
+						<select class="unit_80" wicket:id="beginNiveauSchriftelijkeVaardigheden">
+							<option>0</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Eindniveau schriftelijke vaardigheden</td>
+					<td>
+						<select class="unit_80" wicket:id="eindNiveauSchriftelijkeVaardigheden">
+							<option>0</option>
+						</select>
+					</td>
+				</tr>
+			</table>	
+</wicket:panel>
+</body>
+</html>

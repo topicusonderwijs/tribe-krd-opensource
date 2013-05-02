@@ -1,0 +1,52 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<h3 class="caption">Participanten</h3>
+	<table class="tblData tblInputs">
+		<thead>
+			<tr>
+				<td class="unit_20"></td>
+				<td class="unit_220"></td>
+				<td class="unit_100">Contract</td>
+				<td class="unit_25"></td>
+				<td class="unit_25">
+					<img class="margin2" src="assets/img/agenda/icon_invite_required.gif" title="Participant is direct geplaatst" alt=""/>
+				</td>
+				<td class="unit_25">
+					<img class="margin2" src="assets/img/agenda/icon_invite.gif" title="Participant is uitgenodigd" alt=""/>
+				</td>
+				<td></td>
+			</tr>
+		</thead>
+		<tbody wicket:id="participanten">
+			<tr wicket:id="uitnodigingStatus">
+				<td class="txtright tblInput">
+					<img wicket:id="image" alt=""></img>
+				</td>
+				<td class="tblInput">
+					<div wicket:id="participant" class="inpText unit_190"></div>
+				</td>
+				<td class="tblInput">
+					<div wicket:id="contract" class="unit_70"></div>
+				</td>
+				<td class="tblInput">
+					<a class="resendItem" wicket:id="resendUitnodiging" title="Uitnodiging (opnieuw) sturen"></a>
+				</td>
+				<td class="tblInput">
+					<input class="inpRadio" type="radio" wicket:id="statusPlaatsing" />
+				</td>
+				<td class="tblInput">
+					<input class="inpRadio" type="radio" wicket:id="statusUitnodiging" />
+				</td>
+				<td class="txtleft tblInput">
+					<a class="deleteItem" wicket:id="removeLink"></a>
+					<a class="deleteItem" wicket:id="removeAuthorLink"></a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</wicket:panel>
+</body>
+</html>

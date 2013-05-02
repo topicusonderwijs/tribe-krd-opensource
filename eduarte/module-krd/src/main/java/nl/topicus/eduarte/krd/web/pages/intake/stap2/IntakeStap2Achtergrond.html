@@ -1,0 +1,163 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+<div wicket:id="deelnemerRelaties"></div>
+<div class="clear"></div>
+<div wicket:id="nieuweRelatiesRow"></div>
+<div class="clear"></div>
+<div wicket:id="deelnemerVooropleidingen"></div>
+<div class="clear"></div>
+<div wicket:id="nieuweVooropleidingenRow"></div>
+<wicket:remove>
+<div class="layDash">
+    <h3 class="caption"><span id="id546">Gekoppelde
+            relaties voor deze deelnemer</span><a title="Afdrukken" class="right" href="?wicket:interface=:31:datapanel:print:1:ILinkListener::"><img src="../../assets/img/icons/printPDF.png" /></a><a title="Exporteren naar Excel" class="right" href="?wicket:interface=:31:datapanel:export:1:ILinkListener::"><img src="../../assets/img/icons/excel.gif" /></a><a title="Kolommen kiezen" class="right" href="?wicket:interface=:31:datapanel:settings:1:ILinkListener::"><img src="../../assets/img/icons/customize.gif" /></a><a id="id547" title="Groeperen" onclick="var wcall=wicketAjaxGet('?wicket:interface=:31:datapanel:groeperen:1:IBehaviorListener:0:',null,null, function() {return Wicket.$('id547') != null;}.bind(this));return !wcall;" class="right" href="#"><img src="../../assets/img/icons/groepeer.gif" /></a></h3>
+    <table id="id548" class="tblDatagrid">
+        <thead>
+            <tr>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Naam</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Relatie</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Geslacht</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Adres</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Plaats</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Wettelijk</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Betalingsplichtige</span></a>
+                </th>
+                <th class="wicket_orderNone">
+                    <a class="" href="#"><span>Ontkoppel</span></a>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    Janssen, P.
+                </td>
+                <td>
+                    <select class="required">
+                        <option value="0" selected="selected">Vader</option>
+                        <option value="2">Opa</option>
+                        <option value="4">Pleegvader</option>
+                        <option value="6">Voogd</option>
+                        <option value="8">Stiefvader</option>
+                        <option value="10">Verzorger</option>
+                        <option value="12">Oom</option>
+                        <option value="14">Contactpersoon</option>
+                        <option value="16">Broer</option>
+                        <option value="18">Vriend</option>
+                    </select>
+                </td>
+                <td>
+                    Man
+                </td>
+                <td>
+                    Voorstraat 19bis
+                </td>
+                <td>
+                    2011 XJ&nbsp;&nbsp;Maasland
+                </td>
+                <td>
+                    <input type="checkbox" checked="checked"/>
+                </td>
+                <td>
+                    <input type="radio"/>
+                </td>
+                <td>
+                    <a href="#"><img src="../../assets/img/icons/unlink.gif"/></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Janssen, M.
+                </td>
+                <td>
+                    <select class="required">
+                        <option value="1" selected="selected">Moeder</option>
+                        <option value="3">Oma</option>
+                        <option value="5">Pleegmoeder</option>
+                        <option value="7">Voogdes</option>
+                        <option value="9">Stiefmoeder</option>
+                        <option value="11">Verzorger</option>
+                        <option value="13">Tante</option>
+                        <option value="15">Contactpersoon</option>
+                        <option value="17">Zus</option>
+                        <option value="19">Vriendin</option>
+                    </select>
+                </td>
+                <td>
+                    Vrouw
+                </td>
+                <td>
+                    Voorstraat 19bis
+                </td>
+                <td>
+                    2011 XJ&nbsp;&nbsp;Maasland
+                </td>
+                <td>
+                    <input type="checkbox" checked="checked"/>
+                </td>
+                <td>
+                    <input type="radio"/>
+                </td>
+                <td>
+                    <a href="#"><img src="../../assets/img/icons/unlink.gif"/></a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    Gemeente Midden-Delfland
+                </td>
+                <td>
+                    <select class="required">
+                        <option value="0" selected="selected">Externe bekostiger</option>
+                        <option value="2">Tehuis</option>
+                    </select>
+                </td>
+                <td>
+                </td>
+                <td>
+                    Keenenburgweg 55
+                </td>
+                <td>
+                    2636 GL&nbsp;&nbsp;Schipluiden
+                </td>
+                <td>
+                    <input type="checkbox"/>
+                </td>
+                <td>
+                    <input type="radio" checked="checked"/>
+                </td>
+                <td>
+                    <a href="#"><img src="../../assets/img/icons/unlink.gif"/></a>
+                </td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+            </tr>
+        </tfoot>
+    </table>
+    <div class="widget-button right movedown_5 below_20">
+        <a href="intakewizard_relaties_nieuw_organisatie.html"><span>Nieuwe relatie - organisatie</span></a>
+        <a href="intakewizard_relaties_nieuw.html"><span>Nieuwe relaties - personen</span></a>
+    </div>
+</div>
+</wicket:remove>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<div wicket:id="filter"></div>
+	<h3 class="caption">Aanwezigheid - Maand <span wicket:id="vanafMaand">10/2007</span> - <span wicket:id="totMaand">12/2007</span></h3>
+	
+	<table class="tblDatagrid">
+		<tbody>
+			<tr>
+				<th colspan="2">Maand</th>
+				<th colspan="5">Afspraken</th>
+				<th colspan="2">Aanwezig</th>
+				<th colspan="2">Afwezig</th>
+				<th colspan="2">% Aanwezig</th>
+				<th colspan="5">Absentiemeldingen</th>
+			</tr>
+			<tr>
+				<th colspan="2"></th>
+				<th colspan="2">Totaal</th>
+				<th colspan="1">Aanw. registratie</th>
+				<th colspan="1">Open</th>
+				<th colspan="2"></th>
+				<th colspan="2"></th>
+				<th colspan="2"></th>
+				<th colspan="5"></th>
+			</tr>
+			<tr wicket:id="overzicht">
+				<td><span wicket:id="maand.langeNaam">Okt 2007</span></td>
+				<td class="whiteRightBorder"></td>
+				<td title="Aantal afspraken"><span wicket:id="aantalAfspraken">59</span></td>
+				<td title="Aantal uren van afspraken"><span wicket:id="totaalUrenAfspraken">44,25</span> uur</td>
+				<td title="Aanwezigheids registratie verplicht"><span wicket:id="aanwezigheidVereistAfspraken">44,25</span> uur</td>
+				<td title="Aanwezigheids registratie verplicht, maar nog niet ingevuld"><span wicket:id="openAfspraken">44,25</span> uur</td>
+				<td class="whiteRightBorder"></td>
+				<td title="Aantal uren present waargenomen"><span wicket:id="urenPresentieWaarnemingen">41,25</span> uur</td>
+				<td class="whiteRightBorder"></td>
+				<td title="Aantal uren absent waargenomen"><span wicket:id="urenAbsentieWaarnemingen">44,25</span> uur</td>
+				<td class="whiteRightBorder"></td>
+				<td><span wicket:id="percentagePresent">93%</span></td>
+				<td class="whiteRightBorder"></td>
+				<td title="Aantal absentiemeldingen"><span wicket:id="aantalAbsentiemeldingen">0</span></td>
+				<td title="Aantal dagen absent gemeld"><span wicket:id="dagenAbsentGemeld">3</span></td>
+				<td title="Aantal uren absent gemeld"><span wicket:id="urenAbsentGemeld">2</span> </td>
+				<td class="whiteRightBorder"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,52 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+modal_additions.css is part of the stylesheet for EduArte.
+
+modal_additions.css contains extra styles for modal windows. Since modal windows are part of
+the wicket framework, these styles can't be included in modal.css directly.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. modal_additions.css exists since revision 0.2 
+*/
+	/**a layout unit similar to layLeft on a 'normal' page, tailored to a modal window.**/
+
+.modalLayLeft {
+	position: absolute;
+	left: 11px;
+	right: 11px;
+	top: 30px;
+	bottom: 51px;
+	padding: 5px;
+	overflow: auto;
+}
+
+.modalLayFooter {
+	background: transparent!important;
+	bottom: 15px;
+	height: 22px;
+	left: 11px;
+	overflow-x: auto !important;
+	overflow-y: hidden !important;
+	padding: 7px 10px;
+	position: absolute;
+	right: 11px;
+}

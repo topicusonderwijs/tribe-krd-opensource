@@ -1,0 +1,346 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+layout.css is part of the stylesheet for EduArte.
+
+layout.css contains classes that define the overall layout of the EduArte pages.
+These classes define the blocks in which the smaller content (tables, headers etc)
+is arranged. 
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. layout.css exists since revision 0.2 
+*/ /*
+Layout uses concept from: http://www.alistapart.com/articles/conflictingabsolutepositions
+*/
+body,html {
+	overflow-y: hidden;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	color: #000000;
+	background: #fff;
+}
+
+.container {
+	position: absolute; /* Omdat de container aan de bodem moet 'plakken' */
+	top: 10px;
+	bottom: 10px;
+	width:1024px;
+	background: #f1f1f1;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.content {
+	float: left;
+}
+
+/**layLeft is the containing class for the main content part of a screen**/
+.layLeft {
+	float: left;
+	width: 1014px;
+}
+
+/**
+ * laySearchbar is a containing class for searchbars above lists.
+ * these searchbars contain some horizontally arranged input fields
+ * which are used to build a search query.
+ **/
+.laySearchbar {
+	float: left;
+	margin-top: 10px;
+	margin-top: 10px;
+	font-size: 0.9em;
+	color: #454545;
+	white-space: normal;
+}
+
+.laySearchbar .inpText,.laySearchbar input[type='text'] {
+	width: 70px;
+}
+
+.laySearchbar select {
+	width: 120px;
+}
+
+.ajaxIndicator {
+	float: right;
+	padding: 10px 10px 10px 0px;
+	width: 32px;
+	height: 32px;
+}
+
+.ajaxIndicator .image {
+	display: none;
+	width: 32px;
+	height: 32px;
+	background-image: url(../../assets/img/widgets/ajax-loader.gif);
+	margin-top: -68px;
+	margin-left: -200px;
+}
+
+/**
+ * laySide is the containing class for the sidebar.
+ */
+.laySide {
+	position: relative;
+	background-color: #f9f9f9;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px 5px #999;
+	-webkit-box-shadow: 3px 3px 5px #999;
+	box-shadow: 3px 3px 5px #999;
+	float: right;
+	width: 190px;
+	margin-left: 10px;
+	margin-top: 10px; 
+	z-index: 11;
+	padding: 5px;
+	text-align: left;
+	max-width: 236px;
+}
+
+.laySide a {
+	text-decoration: underline;
+}
+
+/**
+ * layFooter is used to define a region at the bottom of layLeft, usually
+ * to place certain buttons.
+ */
+.layFooter {
+	background: none;
+	border-top: none;
+	float: left;
+	text-align: left;
+	padding: 12px 10px 12px 10px;
+	width: 1020px;
+}
+
+/** contBox contains the main content of a layLeft class unit.**/
+#contBox {
+	background-color: #F9F9F9;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	-moz-box-shadow: 3px 3px 5px #999999;
+	-webkit-box-shadow: 3px 3px 5px #999999;
+	box-shadow: 3px 3px 5px #999999;
+	float: left;
+	width: 990px; 
+	margin-left : 10px;
+	margin-top: 10px;
+	padding: 10px;
+	overflow: auto;
+	text-align: left;
+}
+
+.contBox-inner {
+	position: relative;
+}
+
+/**
+ * Deelt de pagina op in 3 kolommen (130px, 380px, 380px)
+ */
+.contThird {
+	padding: 0px 10px 0px 0px;
+	border-right: 1px dashed #afdde9;
+	margin-bottom: 20px;
+	overflow: hidden;
+	padding-left: 1px;
+}
+
+.contThird.left {
+	width: 130px;
+}
+
+.contThird.middleLeft {
+	width: 380px;
+	float: left;
+}
+
+.contThird.middleRight {
+	width: 370px;
+	border-right: none;
+}
+
+.contHalf {
+	width: 450px;
+	padding: 0px 10px 0px 0px;
+	border-right: 1px dashed #B6BFD0;
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+
+.contHalf.right {
+	padding-left: 1px;
+	border-right: none;
+}
+
+.contHalf.left {
+	padding-left: 1px;
+	clear: left;
+}
+
+.contDetail {
+	margin-top: 20px;
+	padding-left: 20px;
+	background: url(../../assets/img/layout/cbdetail2.png) repeat-y -15px 0px;
+	overflow: auto;
+	border: 1px solid #B6BFD0;
+}
+
+.contDetail .contHalf {
+	width: 430px;
+}
+
+/**
+ * A bar that overlays the bottom of a screen, to display information based
+ * on a selection made in the rest of the screen. Example: when a user hovers over
+ * a certain student in the top half of the screen, the details of that student can be
+ * shown in a layDetails class div at the bottom of the screen. The .layLeft class on this
+ * kind of page should also have the 'forDetails' class, to make space for the layDetails div
+ * at the bottom.
+**/
+.layDetails {
+	position: relative;
+	height: 150px;
+	right: 0px;
+	bottom: 0px;
+	left: 5px;
+	min-width: 960px;
+	max-width: 1280px;
+	background: #f8f8ff;
+	border-top: 1px solid #d5d5d5;
+	text-align: left;
+	padding: 0px;
+	margin: 0px;
+	overflow-y: auto;
+}
+
+/** De onderstaande styles horen bij het layDetails panel **/
+.deelnemerpanel_foto {
+	height: 120px;
+}
+
+.deelnemerpanel_tekst {
+	float: none;
+	padding: 0px;
+	margin: 0px;
+	width: auto;
+	margin-top: 10px;
+}
+
+.deelnemerpanel_tekst.waarnemingen {
+	margin-left: 20px;
+}
+
+/** voorheen .layLeft.waarnemingenInvoer**/
+.layLeft.forDetails {
+	bottom: 156px;
+}
+
+/**
+ * Layout elements adjusted for use in a wizard.
+ * The layLeft element gets a fixed minimum height
+ * and layFooter is stuck to the bottom of layLeft.
+**/
+.layLeft.wizard {
+	min-height: 600px;
+}
+
+.layFooter.wizard {
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+
+#infoButton {
+	background: url("../img/icons/infotab.png") no-repeat;
+	position: absolute;
+	bottom: 0px;
+	height: 15px;
+	width: 40px;
+	margin-left: 10px;
+}
+
+#infoButton:hover{
+	background: url("../img/icons/infotab_ovr.png") no-repeat;
+}
+
+/**** Tabjes op pagina's ****/
+
+.beheer .ui-tabs .ui-tabs-nav{
+	padding-left: 0px;
+}
+
+.beheer .ui-tabs .ui-tabs-nav li.ui-tabs-selected{
+	border-bottom: none !important;	
+}
+
+.ui-state-active a, .beheer .ui-state-active a{
+	color: #FFF!important;	
+}
+
+.ui-state-default a, .beheer .ui-state-default a{
+	color: 	#627490;
+}
+
+.beheer .ui-tabs-nav li a{
+	padding: 2px !important;
+	text-transform: capitalize;	
+}
+
+.beheer li.ui-state-default, .beheer li.ui-widget-content .ui-state-default{
+	background-color: #FFF !important;
+}
+
+li.ui-state-active, li.ui-widget-content .ui-state-active, .beheer li.ui-state-active, .beheer li.ui-widget-content .ui-state-active{
+	background-color: #CECECE !important;
+	-moz-border-radius-topleft: 5px!important;
+	-moz-border-radius-topright: 5px!important;
+	-webkit-border-radius-topleft: 5px!important;
+	-webkit-border-radius-topright: 5px!important;
+	border-radius-topleft: 5px!important;
+	border-radius-topright: 5px!important;
+}
+
+.beheer .ui-tabs .ui-tabs-panel{
+	border-top: none!important;
+}
+
+.deelnemer .ui-accordion-content h3.caption span{
+	color: #B3B3B3;
+}
+
+/** voor ui-dropdownchecklist **/
+
+.ui-dropdownchecklist{
+	height: 18px!important;	
+}
+
+.ui-dropdownchecklist-text{
+	margin-top: -7px;
+}

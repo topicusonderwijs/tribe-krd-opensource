@@ -1,0 +1,50 @@
+<html xmlns:wicket>
+<head>
+<wicket:head>
+	<script type="text/javascript">
+		function wikiLogin(username, password, page)
+		{
+			var form = document.getElementById('helpForm');
+			form.lgname.value=username;
+			form.lgpassword.value=password;
+			form.target='Wiki';
+			form.submit();
+			setTimeout("openWiki('"+page+"')", 1000);
+		}
+
+		function openWiki(page)
+		{
+			var url = 'http://krdwiki.stoas.nl/wiki/index.php/' + page;
+			window.open(url, 'Wiki');
+			win.focus();
+		}
+		
+		function sleep(naptime)
+		{
+	        var sleeping = true;
+	        var now = new Date();
+	        var alarm;
+	        var startingMSeconds = now.getTime();
+	        while(sleeping)
+	        {
+	            alarm = new Date();
+	            alarmMSeconds = alarm.getTime();
+	            if(alarmMSeconds - startingMSeconds > naptime){ sleeping = false; }
+	        }
+	    }        
+	</script>
+</wicket:head>
+</head>
+<body>
+<wicket:extend>
+	<div wicket:id="eduArteUserBox" class="layTopbarUserbox"></div>
+	<form id="helpForm" action="http://krdwiki.stoas.nl/wiki/api.php" method="post">
+		<fieldset>
+			<input type="hidden" name="action" value="login" />
+			<input type="hidden" name="lgname" value="" />
+			<input type="hidden" name="lgpassword" value="" />
+		</fieldset>
+	</form>
+</wicket:extend>
+</body>
+</html>

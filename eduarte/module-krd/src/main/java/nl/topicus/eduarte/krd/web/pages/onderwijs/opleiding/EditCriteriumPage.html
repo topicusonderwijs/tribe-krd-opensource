@@ -1,0 +1,131 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<form wicket:id="form">
+		<div class="contHalf left" wicket:id="fieldSetLeft"></div>
+		
+		<div class="contHalf right">
+			<h3 class="caption"></h3>
+			<table class="tblData">
+				<tbody>
+					<tr>
+						<td class="tblTag">Melding bij niet geslaagd volgens deze beslisregel</td>
+						<td>
+							<textarea rows="5" cols="100" class="unit_320" wicket:id="melding">
+							</textarea>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="clear"></div>
+		<h3 class="caption">Formule</h3>
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td>
+						<textarea rows="15" cols="100" class="unit_940" wicket:id="formule">
+						</textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	
+	<div wicket:id="variabelenWindow" title="Beschikbare variabelen">
+		<div wicket:id="variabelen"></div>
+	</div>
+	
+	<div wicket:id="functiesWindow" title="Beschikbare functies en operatoren">
+		<table class="tblDatagrid">
+			<tbody>
+				<tr>
+					<td>(</td>
+					<td>Haakje openen</td>
+				</tr>
+				<tr>
+					<td>)</td>
+					<td>Haakje sluiten</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>Optellen (voor getallen) of teksten aan elkaar plakken</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>Aftrekken</td>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>Vermenigvuldigen</td>
+				</tr>
+				<tr>
+					<td>/</td>
+					<td>Delen</td>
+				</tr>
+				<tr>
+					<td>%</td>
+					<td>Rest bij delen</td>
+				</tr>
+				<tr>
+					<td>+</td>
+					<td>Plusteken (voor positieve getallen)</td>
+				</tr>
+				<tr>
+					<td>-</td>
+					<td>Minteken (voor negatieve getallen)</td>
+				</tr>
+				<tr>
+					<td>==</td>
+					<td>Gelijk (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>!=</td>
+					<td>Ongelijk (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>&lt;</td>
+					<td>Kleiner dan (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>&lt;=</td>
+					<td>Kleiner of gelijk (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>&gt;</td>
+					<td>Groter dan (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>&gt;=</td>
+					<td>Groter of gelijk (voor zowel getallen als teksten)</td>
+				</tr>
+				<tr>
+					<td>&amp;&amp;</td>
+					<td>En</td>
+				</tr>
+				<tr>
+					<td>||</td>
+					<td>Of</td>
+				</tr>
+				<tr>
+					<td>!</td>
+					<td>Niet</td>
+				</tr>
+				<tr>
+					<td>'</td>
+					<td>Begin/eind van tekst</td>
+				</tr>
+				<tr>
+					<td colspan="2">aantalKleinerDan(GRENS_WAARDE, WAARDE1, WAARDE2, ...)</td>
+				</tr>
+				<tr>
+					<td colspan="2">gemiddeld(WAARDE1, WAARDE2, ...)</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</wicket:extend>
+</body>
+</html>

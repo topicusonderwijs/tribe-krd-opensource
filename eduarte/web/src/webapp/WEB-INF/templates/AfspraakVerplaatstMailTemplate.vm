@@ -1,0 +1,10 @@
+De afspraak "${afspraak.titel}" is verschoven naar ${datum} om ${tijd}.
+
+$!afspraak.omschrijving
+
+#if( $locatie )
+Locatie: $afspraak.locatie
+#end
+#if( $afspraak.activiteit )
+Activiteit: $afspraak.activiteit
+#end

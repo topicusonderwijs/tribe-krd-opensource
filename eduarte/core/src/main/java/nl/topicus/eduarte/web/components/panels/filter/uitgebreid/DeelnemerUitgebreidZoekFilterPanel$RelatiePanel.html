@@ -1,0 +1,136 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+            <table class="tblData nopadding">
+            	<tbody>
+            	<tr>
+	                    <td>
+	                        BSN
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieBsn" type="text" class="unit_240"/>
+	                    </td>
+	                    <td>
+	                        Debiteurennummer
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieDebiteurenNummer" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Geslacht
+	                    </td>
+	                    <td>
+	                        <select wicket:id="relatieGeslacht" class="unit_240">
+	                            <option>...</option>
+	                            <option>Man</option>
+	                            <option>Vrouw</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Achternaam
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieAchternaam" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Type adres
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="relatieTypeAdres" class="unit_240">
+	                    	</select>
+	                    </td>
+	                    <td>
+	                        Hetzelfde adres als deelnemer
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="relatieZelfdeAdresAlsDeelnemer" class="unit_240">
+	                    	</select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Postcode
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatiePostcode" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                        Huisnummer
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieHuisnummer" type="text" class="inpText unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Huisnummer toevoeging
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieHuisnummerToevoeging" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                        Straat
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatieStraat" type="text" class="inpText unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Plaats
+	                    </td>
+	                    <td>
+	                        <input wicket:id="relatiePlaats" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                    </td>
+	                    <td>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Relatiesoort
+	                    </td>
+	                   <td>
+	                        <select wicket:id="relatieSoort" class="unit_240"></select>
+	                    </td>
+	                    <td>
+	                        Externe organisatie
+	                    </td>
+	                    <td>
+	                        <div wicket:id="relatieExterneOrganisatie" class="inpText unit_240"></div>
+	                    </td>
+	                </tr>
+	               	<tr>
+	                    <td>
+	                        Geboorteland ongelijk aan NL
+	                    </td>
+	                    <td>
+	                        <select wicket:id="relatieGeboortelandOngelijkAanNL" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Nationaliteit ongelijk aan NL
+	                    </td>
+	                    <td>
+	                        <select wicket:id="relatieNationaliteitOngelijkAanNL" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+                </tbody>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

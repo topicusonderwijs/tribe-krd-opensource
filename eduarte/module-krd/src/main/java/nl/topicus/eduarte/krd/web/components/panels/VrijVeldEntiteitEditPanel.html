@@ -1,0 +1,33 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<table class="tblData tblInputs" wicket:id="gegevens">
+	<thead>
+		<tr>
+			<th colspan="2" wicket:id="header">Vrije velden</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr wicket:id="geenVeldenContainer">
+			<td colspan="2" class="tblTag">Geen vrije velden beschikbaar</td>
+		</tr>
+		<tr wicket:id="vrijVeldenList">
+			<td class="tblTag" wicket:id="naam" ></td> 
+			<td>
+				<input type="checkbox" wicket:id="checkWaarde" />
+				<select class="unit_220" wicket:id="keuze"><option></option></select>
+				<select class="unit_220" wicket:id="keuzes"><option></option></select>
+				<input type="text" class="inpText unit_220" wicket:id="dateWaarde" />
+				<textarea class="inpText unit_220" wicket:id="longTextWaarde"></textarea>			
+				<input type="text" class="inpText unit_220" wicket:id="numberWaarde" />
+				<input type="text" class="inpText unit_220" wicket:id="textWaarde" />
+			</td>
+		</tr>
+	</tbody>
+	</table>
+			
+</wicket:panel>
+</body>
+</html>

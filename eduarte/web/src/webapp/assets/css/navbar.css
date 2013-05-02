@@ -1,0 +1,57 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+navbar.css is part of the stylesheet for EduArte.
+
+navbar.css contains layout for the navigation bar component. This is a bar with page buttons
+which can be used to scroll through a list of search results that contains multiple pages of results.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. navbar.css exists since revision 0.2 
+*/
+
+.nav_bar {
+	padding: 3px 5px;
+	border: 1px solid #627490;
+	color: #7b8aa2;
+	background: #FFF;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+} 
+	
+a.nav_first:hover, a.nav_prev:hover, a .nav_bar:hover, a.nav_next:hover, a.nav_last:hover {
+	background: #7888A0;
+	cursor: pointer;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}
+
+a.nav_first, a.nav_prev, a .nav_bar, a.nav_next, a.nav_last {
+	border: 1px solid #627490;
+	background: #7888A0;
+	color: #FFF;
+	padding: 3px 7px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+}

@@ -1,0 +1,313 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+tables.css is part of the stylesheet for EduArte.
+
+tables.css contains layouting for every kind of table that is used in EduArte
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. tables.css exists since revision 0.2 
+*/
+
+tr.tblAddRow {
+	background-color: #E9F1F2;
+	border: 1px solid #999;
+}
+
+.tblButtons {
+	float: right;
+	margin-right:10px;
+}
+.tblButtons * {
+	float: left;
+}
+
+/**
+ * tblDatagrid is used for representing lists
+ * tblData is used in forms, to align labels and inputs.
+ * tblInputs puts the rows in a table closer together than only tblData would.
+ * it is used in combination with tblData, never on its own.
+ * tblGridview is used to show the individual photos of students in a group.
+ **/
+.tblData, .tblDatagrid {
+	margin-top:0px;
+	width:99%;
+	border-collapse:separate;
+	/*padding:4px;*/
+	margin-left:1px;
+	margin-right:10px;
+	}
+	
+.tblData.tooltip {
+	margin: 0px;
+	}
+
+.tblData td, .tblDatagrid td {
+	width:auto;
+	padding:2px;
+	color :#333;
+	vertical-align:top;
+	text-align: left;
+	}
+
+.tblInputs td {
+	padding:2px;
+	}
+
+.tblData td.tblTag {
+	width:160px;
+	padding-left:20px;
+	vertical-align:top;
+	height:20px;
+	color: #878787;
+	font-weight:bold;
+	font-size: 0.9em; 
+	}
+
+.tblData td.tblHeaderTag {
+	color:#808080;
+	}
+
+.tblData thead th, span.head {
+	font-weight:bold;
+    border:0;
+    padding:10px;
+	text-decoration:none;
+	text-align:left;
+	color: #B3B3B3!important;
+	}
+
+.tblData td.tblTagLang {
+	width:300px;
+	padding-left:20px;
+	vertical-align:top;
+	padding-top:4px;
+	height:20px;
+	color:#666666;
+	}
+
+.tblData tr.inactive td, .tblDatagrid tr.inactive td {
+	color:#777777;
+	}
+	
+.tblSelected.inactive td {
+	color:#999999!important;
+}
+
+.tblData tr.notClickable td, .tblDatagrid tr.notClickable td {
+	background-color:#f3f3f3;
+	cursor: default;
+	}
+
+.tblData th:hover, .tblDatagrid th:hover {
+	color:#555555;
+	}
+
+.tblClick tbody tr:hover, .tblClick tbody tr.tlhover { 
+	cursor:pointer;
+	}
+	
+.tblClickCell td:hover {
+	cursor:pointer;
+	background:#d7eef4;
+	}
+
+.tblDatagrid, div.wicket-tree-table {
+	border-collapse:collapse;
+	font-size:0.9em; 
+	border: 1px solid #dededb;
+	margin-right:0px;
+	background: #ffffff;
+	margin-bottom:1px;
+}
+
+.tblDatagrid .headers {
+	background:#ececec;
+	border:0px;
+	}
+
+.tblDatagrid tbody th, .tblDatagrid thead th, .tblDatagrid tr.groupHeader td, .tblDatagrid tr.groupCollapseHeader td, .laySide .tblDatagrid th {
+	color: #909eb7!important;
+	font-weight:bold;
+	background: #dededb;
+    font-style:italic;
+    padding:3px 5px;
+	text-decoration:none;
+	text-align:left;
+    border-left: 1px dotted #B6BFD0;
+    white-space: nowrap;
+	}
+.tblDatagrid tr.groupHeader.withColumns td {
+    border-top: 1px dotted #e6e6e6;
+    border-bottom: 1px dotted #e6e6e6;
+    padding-left: 3px;
+    background-color:#fff;
+	}
+
+.tblDatagrid tr.groupHeader.withColumns td:first-child {
+    padding-left: 20px;
+	}
+
+.tblDatagrid th a {
+	text-decoration:none;
+	border:0px;
+	color:#989898;
+	}
+
+.tblDatagrid td {
+    border:0px;
+    padding:3px;
+	padding-left:5px;
+	padding-right:5px;
+    border-left: 1px dotted #909EB7;
+    border-bottom: 1px dotted #e6e6e6;
+	}
+
+.tblSelected td {
+	background:#F1F3F6;
+}
+
+.tblSelected td.first {
+   	background:url("../../assets/img/layout/cbdetail2.png") repeat-y scroll 0 0 #F1F3F6;
+	}
+
+.tblClick tbody tr:hover, .tblClick tbody tr.tlhover {
+    background:#E2E6EC;
+	}
+
+.tblClickCell tbody tr:hover {
+	background:none;
+	}
+
+.tblDatagrid tr:hover th, .tblNoHightlight tr:hover, .tblNoHightlight td:hover {
+   /* background: #d2dfe0;*/ 
+    cursor:default;
+	}
+
+.tblDatagrid tr.groupHeader:hover td {
+    cursor:default;
+   /* background: #d2dfe0;*/ 
+	}
+
+.tblDatagrid tr.groupCollapseHeader td.collapseCell:hover {
+    cursor:pointer;
+	}
+
+.tblDatagrid tr.groupHeader td {
+	padding-top:5px;
+	padding-left:20px;
+	background-color:#e8f0f2;
+	color:#ffffff;
+	}
+
+.tblDatagrid tr.groupCollapseHeader td {
+	padding-top:5px;
+	background-color: #afdde9;
+	color:#ffffff;
+	}
+
+.tblDatagrid tr.groupCollapseHeader td.collapseCell {
+	padding-left:20px;
+	background-image: url('../img/icons/selection_down.png');
+	background-position: left;
+	background-repeat:no-repeat;
+	}
+
+.tblDatagrid tfoot td, .tblData tfoot td {
+	border-bottom:0px;
+	padding-top:7px;
+	padding-bottom:7px;
+	text-align:center;
+	height:21px;
+	}
+	
+.tblGridview {
+	border-collapse:collapse;
+	font-size:0.7em;
+	margin-right:0px;
+	background:#ffffff;
+	border:1px solid #37abc8;
+	background: #ffffff;
+	margin-top:5px;
+	}
+
+.tblGridview td {
+    border:0px;
+    padding:3px;
+	padding-left:5px;
+	padding-right:5px;
+    border-bottom:1px dashed #e4e4e4;
+    border-left:1px dashed #e4e4e4;
+    font-family: Arial, Helvetica, sans-serif;
+	}
+
+.tblGridview tfoot td {
+	border-bottom:0px;
+	padding-top:5px;
+	text-align:center;
+	border-top:3px solid #f1f1f1;
+	}
+	
+.tblGridview tfoot td em {
+	font-weight:bold;
+	font-size:12px;
+	}
+
+.tblCompact, .tblCompact td {
+	padding:1px!important;
+	}
+
+/**
+ * This class is meant to be used on containers of a tblDatagrid table that needs to
+ * line up with a tblData table. Since tblData has some indenting on the left-hand side,
+ * and this can't be fixed inside the tblDatagrid because of its 100% width, the container
+ * of the tblDatagrid needs to be padded on the left side to line up the tables.
+ * This only works if the container of the tblDatagrid is not the same container as the one around
+ * tblData.
+**/
+.matchTblGridToTblData {
+	padding-left:11px;
+	}
+
+/**the following 5 items define layout for sortable columns in a tblDatagrid**/
+/**
+ * note: in old html files a span is used to contain the title of a column.
+ * this is incorrect in (x)html, so put the title text directly into the anchor.
+**/
+.wicket_orderNone a, .wicket_orderUp a, .wicket_orderDown a {
+	color: #627490!important;
+	}
+
+.wicket_orderUp a, .wicket_orderDown a {
+	padding-left:10px;
+	}
+
+.wicket_orderNone a:hover, .wicket_orderUp a:hover, .wicket_orderDown a:hover {
+	color:#4A8EA5!important; 
+	}
+
+th.wicket_orderUp {
+	background: #cdcfce url('../img/icons/selection_up.png') no-repeat center left!important;
+	}
+
+th.wicket_orderDown {
+	background:#cdcfce url('../img/icons/selection_down.png') no-repeat center left!important;
+}

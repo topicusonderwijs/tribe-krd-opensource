@@ -1,0 +1,27 @@
+<html xmlns:wicket>
+<wicket:extend>
+ 	<h3 class="caption">Aan te maken batches</h3>
+	<table class="tblDatagrid">
+		<tr>
+			<th>Batchnummer</th>
+			<th>Aanleverpunt</th>
+			<th>Meldingen totaal</th>
+			<th>Toevoegingen</th>
+			<th>Aanpassingen</th>
+			<th>Uitschrijvingen</th>
+			<th>Verwijderingen</th>
+			<th>Details</th>
+		</tr>
+		<tr wicket:id="listview">
+   			<td><span wicket:id="batchNummerAsString"></span></td>
+   			<td><span wicket:id="aanleverPuntNummer"></span></td>
+   			<td><span wicket:id="aantalMeldingen"></span></td>
+   			<td><span wicket:id="aantalToevoegingen"></span></td>
+   			<td><span wicket:id="aantalAanpassingen"></span></td>
+   			<td><span wicket:id="aantalUitschrijvingen"></span></td>
+   			<td><span wicket:id="aantalVerwijderingen"></span></td>
+   			<td><a href="#" wicket:id="details" class="actionItem" title="Meldingen overzicht"></a></td>
+		</tr>
+	</table>
+</wicket:extend>
+</html>

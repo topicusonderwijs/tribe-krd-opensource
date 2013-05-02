@@ -1,0 +1,79 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<form wicket:id="adresform">
+	<table class="tblData tblInputs wicket-panel">
+		<thead wicket:id="headerContainer">
+			<tr>
+				<th colspan="2" wicket:id="header"></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td class="tblTag">Land</td>
+				<td class="tblInput"><div  wicket:id="adres.land"
+					class="inpText unit_240" ></div></td>
+			</tr>
+			<tr wicket:id="deelstaatContainer">
+				<td class="tblTag">Deelstaat</td>
+				<td class="tblInput">
+					<select class="unit_240" wicket:id="adres.duitseDeelstaat"><option>Overig</option></select>
+				</td>
+			</tr>
+			<tr>
+				<td class="tblTag">Postcode / huisnummer</td>
+				<td class="tblInput"><input wicket:id="adres.postcode"
+					class="inpText unit_60 left" type="text" autocomplete="off"
+					title="Postcode" /> <input wicket:id="adres.huisnummer"
+					class="inpText unit_40 left" type="text" autocomplete="off"
+					title="Huisnummer" /> <span class="label">Toevoeging</span><input
+					wicket:id="adres.huisnummerToevoeging" class="inpText unit_40"
+					type="text" autocomplete="off" title="Huisnummertoevoeging" /></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Straat</td>
+				<td class="tblInput"><input wicket:id="adres.straat"
+					class="inpText unit_240 inpReadOnly" type="text" /></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Plaats</td>
+				<td class="tblInput"><input wicket:id="adres.plaats"
+					class="inpText unit_240 inpReadOnly" type="text" /></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Geheim</td>
+				<td class="tblInput"><input wicket:id="adres.geheim"
+					class="inpText left" type="checkbox" /></td>
+			</tr>
+			<tr wicket:id="datumVelden">
+				<td class="tblTag">Geldig van/tot</td>
+				<td class="tblInput"><input wicket:id="begindatum"
+					class="inpText unit_100" type="text" autocomplete="off" /> - <input
+					wicket:id="einddatum" class="inpText unit_100 inpReadOnly"
+					type="text" autocomplete="off" /></td>
+			</tr>
+			<wicket:container wicket:id="postWoonChecks">
+				<tr>
+					<td class="tblTag">Postadres</td>
+					<td class="tblInput"><input type="checkbox"
+						wicket:id="postadres" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag" wicket:id="fysiekLabel">Woonadres</td>
+					<td class="tblInput"><input type="checkbox"
+						wicket:id="fysiekadres" /></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Factuuradres</td>
+					<td class="tblInput"><input type="checkbox"
+						wicket:id="factuuradres" /></td>
+				</tr>
+			</wicket:container>
+		</tbody>
+	</table>
+	</form>
+</wicket:panel>
+</body>
+</html>

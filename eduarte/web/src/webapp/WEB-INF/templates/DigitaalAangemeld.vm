@@ -1,0 +1,94 @@
+<html>
+	<body>
+		Beste ${verbintenis.deelnemer.persoon.roepnaam}<br><br>
+		Het doet ons plezier je mee te delen dat we jouw aanmelding hebben ontvangen bij ${verbintenis.eerstVolgendeIntakegesprek.organisatieEenheid}.<br><br>
+		<table border="0">
+			<tr><td>De volgende gegevens hebben wij geregistreerd:</td></tr>
+		</table>
+		<table border="0">
+			#if( $verbintenis.deelnemer.persoon.voorvoegselAchternaam)
+			<tr>
+				<td>Achternaam (inclusief voorvoegsel):</td>
+				<td>${verbintenis.deelnemer.persoon.voorvoegselAchternaam}</td>
+			</tr>
+			#end
+			#if( $verbintenis.deelnemer.persoon.voornamen )
+			<tr>
+				<td>Voornamen:</td>
+				<td>${verbintenis.deelnemer.persoon.voornamen}</td>
+			</tr>						
+			#end
+			#if( $verbintenis.deelnemer.persoon.roepnaam )
+			<tr>
+				<td>Roepnaam:</td>
+				<td>${verbintenis.deelnemer.persoon.roepnaam}</td>
+			</tr>						
+			#end
+			#if( $verbintenis.deelnemer.persoon.geslacht )
+			<tr>
+				<td>Geslacht:</td>
+				<td>${verbintenis.deelnemer.persoon.geslacht}</td>
+			</tr>						
+			#end
+			#if( $verbintenis.deelnemer.persoon.geboortedatumOfficieel )
+			<tr>
+				<td>Geboortedatum:</td>
+				<td>${verbintenis.deelnemer.persoon.geboortedatumOfficieel}</td>
+			</tr>						
+			#end
+			#if( $verbintenis.persoon.fysiekAdres.adres.straatHuisnummerFormatted )
+			<tr>
+				<td>Adres:</td>
+				<td>${verbintenis.persoon.fysiekAdres.adres.straatHuisnummerFormatted}</td>
+			</tr>							
+			#end
+			#if( $verbintenis.persoon.fysiekAdres.adres.postcodePlaats )
+			<tr>
+				<td>Postcode en plaats:</td>
+				<td>${verbintenis.persoon.fysiekAdres.adres.postcodePlaats}</td>
+			</tr>					
+			#end
+			#if( $verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteEmailAdres )
+			<tr>
+				<td>E-mail adres:</td>
+				<td>${verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteEmailAdres}</td>
+			</tr>					
+			#end
+			#if( $verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteTelefoon )
+			<tr>
+				<td>Telefoonnummer(s):</td>
+				<td>${verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteTelefoon} </td>
+			</tr>				
+			#end
+			#if( $verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteMobieltelefoon )
+			<tr>
+				<td></td>
+				<td>${verbintenis.deelnemer.wettelijkeVertegenwoordiger.eersteMobieltelefoon}</td>
+			</tr>								
+			#end
+			#if( $verbintenis.intakegesprekkenGewensteOpleiding )
+			<tr>
+				<td>Gewenste opleiding:</td>
+				<td>${verbintenis.intakegesprekkenGewensteOpleiding}</td>
+			</tr>		
+			#end
+			#if( $verbintenis.eerstVolgendeIntakegesprek.gewensteLocatie )
+			<tr>
+				<td>Gewenste locatie:</td>
+				<td>${verbintenis.eerstVolgendeIntakegesprek.gewensteLocatie}</td>
+			</tr>				
+			#end
+			#if( $verbintenis.eerstVolgendeIntakegesprek.gewensteBegindatumNL )
+			<tr>
+				<td>Gewenste begindatum:</td>
+				<td>${verbintenis.eerstVolgendeIntakegesprek.gewensteBegindatumNL}</td>
+			</tr>				
+			#end
+		</table> 
+		<br>
+		Met vriendelijke groet,<br><br>
+		$!naamDirecteur<br>
+		Directeur
+	</html>
+</body>
+

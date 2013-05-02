@@ -1,0 +1,51 @@
+<html xmlns:wicket>
+<wicket:extend>
+	<h3 class="tableCaption">Cfi-terugmelding details</h3>
+	<div class="contHalf left">
+		<table class="tblData tblInputs">
+			<thead>
+				<tr>
+					<th>Algemeen</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">Peildatum</td>
+					<td><span wicket:id="peildatum"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Aanmaakdatum</td>
+					<td><span wicket:id="aanmaakdatum"></span></td>	
+				</tr>
+				<tr>
+					<td class="tblTag">Inleesdatum</td>
+					<td><span wicket:id="inleesdatum"></span></td>	
+				</tr>
+				<tr>
+					<td class="tblTag">Ingelezen door</td>
+					<td><span wicket:id="ingelezenDoor"></span></td>	
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="clear"></div>
+	<div class="contHalf left">
+		<table class="tblDatagrid tblClick">
+			<thead>
+				<tr>
+					<th>Meldingen</th>
+					<th>Aantal</th>
+					<th>Aantal conflicten</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="meldingen">
+					<td class="tblTag"><span wicket:id="omschrijving"></span></td>
+					<td><span wicket:id="aantal"></span></td>
+					<td><span wicket:id="aantalConflicten"></span></td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+</wicket:extend>
+</html>

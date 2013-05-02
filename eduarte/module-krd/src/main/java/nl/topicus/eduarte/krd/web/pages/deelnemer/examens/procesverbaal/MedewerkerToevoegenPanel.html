@@ -1,0 +1,40 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="contHalf right">
+	<h3 class="caption">Surveillanten toevoegen</h3>
+		<form wicket:id="form">
+			<table class="tblData">
+				<tr>
+					<td class="tblTag">Achternaam</td>
+					<td class="tblInput">
+						<input wicket:id="achternaam" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Voorletter(s)</td>
+					<td class="tblInput">
+						<input wicket:id="voorletters" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag"></td>
+					<td class="tblInput">
+						<div class="widget-button right">
+							<a href=# wicket:id="handmatigToevoegen"><span>Surveillant handmatig toevoegen</span></a>
+						</div>
+					</td>
+				</tr>
+			</table>		
+		</form>	
+		<div wicket:id="surveillanten" class="below_5"></div>
+		<div class="widget-button right">
+			<a href=# wicket:id="toevoegen"><span>Medewerker als surveillant toevoegen</span></a>
+		</div>
+	</div>
+	<div wicket:id="modalWindow"></div>
+</wicket:panel>
+</body>
+</html>

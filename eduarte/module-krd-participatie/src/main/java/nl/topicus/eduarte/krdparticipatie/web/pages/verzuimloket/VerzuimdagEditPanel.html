@@ -1,0 +1,82 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>		
+	<div wicket:id="panelContainer"> 
+		<table class="tblData tblInputs" wicket:id="gegevens">
+		<tbody>
+			<tr wicket:id="geenVerzuimdagen">				
+				<td class="tblTag">Geen verzuimdagen opgegeven</td>			
+			</tr>
+			<tr wicket:id="verzuimdagList">
+				<td>
+					<table class="tblData tblInputs">	
+						<tr>
+							<td class="tblTag" colspan="2">Verzuimdag</td>							
+						</tr>					
+						<tr>
+							<td class="tblInput" >
+								<input wicket:id="datum" type="text" class="Date"/>
+							</td>							
+							<td><a href=# wicket:id="verwijder" class="deleteItem" title="Verzuimdag verwijderen"></a></td>		
+						</tr>
+						<tr>	
+							<td class="tblInput" colspan="2">
+								<div wicket:id="urenspecificatie"></div>
+							</td>								
+						</tr>
+					  	<tr>
+							<td class="tblInput" colspan="2">	
+								<div wicket:id="lesurenContainer">	
+									<table class="tblData tblInputs" wicket:id="lesuren">
+										<tbody>
+											<tr>
+												<td class="tblTag">1</td>
+												<td class="tblTag">2</td>
+												<td class="tblTag">3</td>
+												<td class="tblTag">4</td>
+												<td class="tblTag">5</td>
+												<td class="tblTag">6</td>
+												<td class="tblTag">7</td>
+												<td class="tblTag">8</td>
+												<td class="tblTag">9</td>
+												<td class="tblTag">10</td>
+												<td class="tblTag">11</td>
+												<td class="tblTag">12</td>
+											</tr>
+											<tr>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur1"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur2"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur3"/></td>		
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur4"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur5"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur6"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur7"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur8"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur9"/></td>		
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur10"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur11"/></td>
+												<td class="tblTag"><input type="checkbox" wicket:id="lesuur12"/></td>											
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</td>							
+						</tr>
+															
+					</table>
+				</td>							
+			</tr>
+			<tr wicket:id="verzuimdagToevoegen">				
+				<td>
+					<div class="widget-button"> 
+					<a href=# wicket:id="verzuimdagToevoegenButton"><span>Verzuimdag toevoegen</span></a></div>
+				</td>			
+			</tr>
+		</tbody>
+		</table>
+	</div>
+	</wicket:panel>
+</body>
+</html>

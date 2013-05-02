@@ -1,0 +1,378 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:rs="http://eduarte.topicus.nl/resultaatstructuur/1.0" xmlns:eat="http://eduarte.topicus.nl/types/1.0"
+	xmlns:oc="http://eduarte.topicus.nl/onderwijscatalogus/1.0"
+	xmlns:cobra="http://cobra.topicus.nl/jaxb"
+	jxb:extensionBindingPrefixes="xjc cobra" jxb:version="2.1"
+	targetNamespace="http://eduarte.topicus.nl/resultaatstructuur/1.0"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://eduarte.topicus.nl/types/1.0"
+		schemaLocation="basistypes.xsd" />
+	<xs:import namespace="http://eduarte.topicus.nl/onderwijscatalogus/1.0"
+		schemaLocation="onderwijscatalogus.xsd" />
+
+	<xs:annotation>
+		<xs:appinfo>
+			<jxb:schemaBindings>
+				<jxb:package name="nl.topicus.eduarte.xml.resultaatstructuur.v10" />
+				<jxb:nameXmlTransform>
+					<jxb:typeName prefix="X" />
+				</jxb:nameXmlTransform>
+			</jxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<xs:simpleType name="schaalRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Schaal"
+					adapter="nl.topicus.eduarte.xml.adapters.SchaalAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:complexType name="schaalwaardeRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<cobra:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Schaalwaarde"
+					adapter="nl.topicus.eduarte.xml.adapters.SchaalwaardeAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="schaal" type="rs:schaalRef" />
+			<xs:element name="waarde" type="eat:code" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="resultaatstructuurRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<cobra:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Resultaatstructuur"
+					adapter="nl.topicus.eduarte.xml.adapters.ResultaatstructuurAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="onderwijsproduct" type="oc:onderwijsproductRef" />
+			<xs:element name="cohort" type="eat:cohort" />
+			<xs:element name="code" type="eat:code" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="toetsRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<cobra:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Toets"
+					adapter="nl.topicus.eduarte.xml.adapters.ToetsAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="resultaatstructuur" type="rs:resultaatstructuurRef" />
+			<xs:element name="toetscodes">
+				<xs:simpleType>
+					<xs:list itemType="eat:code" />
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:simpleType name="resultaatstructuurType">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Resultaatstructuur.Type"
+					adapter="nl.topicus.eduarte.xml.adapters.ResultaatstructuurTypeAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUMMATIEF" />
+			<xs:enumeration value="FORMATIEF" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="resultaatstructuurStatus">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Resultaatstructuur.Status"
+					adapter="nl.topicus.eduarte.xml.adapters.ResultaatstructuurStatusAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="IN_ONDERHOUD" />
+			<xs:enumeration value="BESCHIKBAAR" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="soortToets">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Toets.SoortToets"
+					adapter="nl.topicus.eduarte.xml.adapters.SoortToetsAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Toets" />
+			<xs:enumeration value="Schoolexamen" />
+			<xs:enumeration value="CentraalExamen" />
+			<xs:enumeration value="Spreken" />
+			<xs:enumeration value="Luisteren" />
+			<xs:enumeration value="Lezen" />
+			<xs:enumeration value="Schrijven" />
+			<xs:enumeration value="Gesprekken" />
+			<xs:enumeration value="Instroomniveau" />
+			<xs:enumeration value="BehaaldNiveau" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="scoreschaal">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Toets.Scoreschaal"
+					adapter="nl.topicus.eduarte.xml.adapters.ScoreschaalAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Geen" />
+			<xs:enumeration value="Lineair" />
+			<xs:enumeration value="Tabel" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="herkansingsscore">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Toets.Herkansingsscore"
+					adapter="nl.topicus.eduarte.xml.adapters.HerkansingsscoreAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Hoogste" />
+			<xs:enumeration value="Laatste" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="rekenregel">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.resultaatstructuur.Toets.Rekenregel"
+					adapter="nl.topicus.eduarte.xml.adapters.RekenregelAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Gemiddelde" />
+			<xs:enumeration value="Prioriteit" />
+			<xs:enumeration value="Formule" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:complexType name="scoreschaalwaarde">
+		<xs:sequence>
+			<xs:element name="waarde" type="rs:schaalwaardeRef" />
+			<xs:element name="vanafScore" type="xs:int" />
+			<xs:element name="totScore" type="xs:int" />
+			<xs:element name="advies" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="toetsverwijzing">
+		<xs:choice>
+			<xs:element name="toetsref" type="rs:toetsRef" />
+			<xs:element name="toets" type="xs:IDREF">
+				<xs:annotation>
+					<xs:appinfo>
+						<jxb:property>
+							<jxb:baseType name="XToets" />
+						</jxb:property>
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="toets">
+		<xs:sequence>
+			<xs:element name="soort" type="rs:soortToets" />
+			<xs:element name="code" type="eat:code" />
+			<xs:element name="naam" type="eat:naam" />
+			<xs:element name="referentieCode" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="referentieVersie" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="schaal" type="rs:schaalRef" />
+			<xs:element name="volgnummer" type="xs:int" />
+			<xs:element name="weging" type="xs:int" minOccurs="0" />
+			<xs:element name="automatischeWeging" type="xs:boolean"
+				minOccurs="0" />
+			<xs:element name="verplicht" type="xs:boolean" />
+			<xs:element name="samengesteld" type="xs:boolean" />
+			<xs:element name="samengesteldMetHerkansing" type="xs:boolean" />
+			<xs:element name="samengesteldMetVarianten" type="xs:boolean" />
+			<xs:element name="variantVoorPoging" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="verwijsbaar" type="xs:boolean" />
+			<xs:element name="handmatigInleveren" type="xs:boolean"
+				minOccurs="0" />
+			<xs:element name="overschrijfbaar" type="xs:boolean" />
+			<xs:element name="maxAantalNietBehaald" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="minAantalIngevuld" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="maxAantalIngevuld" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="minStudiepuntenVoorBehaald" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="compenseerbaarVanaf" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="rekenregel" type="rs:rekenregel" />
+			<xs:element name="formule" type="xs:string" minOccurs="0" />
+			<xs:element name="aantalHerkansingen" type="xs:int" />
+			<xs:element name="scoreBijHerkansing" type="rs:herkansingsscore" />
+			<xs:element name="scoreschaal" type="rs:scoreschaal" />
+			<xs:element name="studiepunten" type="xs:int" minOccurs="0" />
+			<xs:element name="scoreschaalLengteTijdvak1" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="scoreschaalNormeringTijdvak1" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="scoreschaalLengteTijdvak2" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="scoreschaalNormeringTijdvak2" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="scoreschaalLengteTijdvak3" type="xs:int"
+				minOccurs="0" />
+			<xs:element name="scoreschaalNormeringTijdvak3" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="alternatiefResultaatMogelijk" type="xs:boolean" />
+			<xs:element name="alternatiefCombinerenMetHoofd" type="xs:boolean" />
+
+			<xs:element name="scoreschaalwaarden" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<cobra:inlineList />
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="scoreschaalwaarde" minOccurs="0"
+							maxOccurs="unbounded" type="rs:scoreschaalwaarde" />
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="deeltoetsen" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<cobra:inlineList />
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="deeltoets" minOccurs="0" maxOccurs="unbounded"
+							type="rs:toets">
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="verwijzingen" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<cobra:inlineList />
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="verwijzing" minOccurs="0" maxOccurs="unbounded"
+							type="rs:toetsverwijzing">
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="id" type="xs:ID" use="optional" />
+	</xs:complexType>
+
+	<xs:complexType name="resultaatstructuurCategorie">
+		<xs:sequence>
+			<xs:element name="naam" type="eat:naam" />
+			<xs:element name="actief" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="resultaatstructuurDeelnemer">
+		<xs:choice>
+			<xs:element name="deelnemer" type="eat:deelnemerRef" />
+			<xs:element name="groep" type="eat:groepRef" />
+		</xs:choice>
+	</xs:complexType>
+
+	<xs:complexType name="resultaatstructuur">
+		<xs:complexContent>
+			<xs:extension base="eat:codeNaamActief">
+				<xs:sequence>
+					<xs:element name="cohort" type="eat:cohort" />
+					<xs:element name="onderwijsproduct" type="oc:onderwijsproductRef" />
+					<xs:element name="type" type="rs:resultaatstructuurType" />
+					<xs:element name="categorie" type="rs:resultaatstructuurCategorie"
+						minOccurs="0" />
+					<xs:element name="status" type="rs:resultaatstructuurStatus" />
+					<xs:element name="auteur" type="eat:medewerkerRef"
+						minOccurs="0" />
+					<xs:element name="specifiek" type="xs:boolean" />
+					<xs:element name="eindresultaat" type="rs:toets" />
+					<xs:element name="deelnemers" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo>
+								<cobra:inlineList />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="deelnemer" minOccurs="0" maxOccurs="unbounded"
+									type="rs:resultaatstructuurDeelnemer">
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+					<xs:element name="medewerkers" minOccurs="0">
+						<xs:annotation>
+							<xs:appinfo>
+								<cobra:inlineList />
+							</xs:appinfo>
+						</xs:annotation>
+						<xs:complexType>
+							<xs:sequence>
+								<xs:element name="medewerker" minOccurs="0"
+									maxOccurs="unbounded" type="eat:medewerkerRef">
+								</xs:element>
+							</xs:sequence>
+						</xs:complexType>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+
+	<xs:element name="resultaatstructuurExport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="resultaatstructuur" type="rs:resultaatstructuur"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jxb:property name="resultaatstructuren" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

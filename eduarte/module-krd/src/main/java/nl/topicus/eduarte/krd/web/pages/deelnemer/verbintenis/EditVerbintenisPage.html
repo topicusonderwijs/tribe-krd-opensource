@@ -1,0 +1,267 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="clear caption">Verbintenis</h3>
+	<form wicket:id="verbintenisForm">
+		<div class="contHalf left">
+			<table class="tblData" wicket:id="oudeVerbintenis">
+				<tr>
+					<td class="caption" colspan="2">Oude verbintenis</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Einddatum</td>
+					<td class="tblInput">
+						<input wicket:id="einddatum" type="text"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Reden be&euml;indigen</td>
+					<td class="tblInput">
+						<select wicket:id="redenUitschrijving" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="caption" colspan="2">Nieuwe verbintenis</td>
+				</tr>
+			</table>
+			<table class="tblData" wicket:id="veldenLinks">
+				<tr wicket:id="rowIntakeSelect">
+					<td class="tblTag">Intake</td>
+					<td class="tblInput">
+						<select wicket:id="intakeSelect" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Status</td>
+					<td class="tblInput">
+						<select wicket:id="statusSelect"></select>
+					</td>
+				</tr>
+				<tr wicket:id="redenBeeindigenRow">
+					<td class="tblTag">Reden be&euml;indigen</td>
+					<td class="tblInput">
+						<select wicket:id="redenUitschrijving" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Opleiding</td>
+					<td class="tblInput">
+						<div class="unit_max" wicket:id="opleiding"></div>
+					</td>
+				</tr>
+				<tr wicket:id="onderwijsproductAfnamesMakenContainer">
+					<td class="tblTag">Onderwijsproductafnames maken</td>
+					<td class="tblInput">
+						<select wicket:id="onderwijsproductAfnamesMaken"></select>
+					</td>
+				</tr>
+				<tr wicket:id="kenniscentrumRow">
+					<td class="tblTag">Kenniscentrum</td>
+					<td>
+						<select wicket:id="brin" class="unit_max"></select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag" wicket:id="externeCodeLabel">Externe code</td>
+					<td class="tblInput">
+						<input type="text" wicket:id="externeCode" />
+					</td>
+				</tr>
+				<wicket:enclosure>
+				<tr>
+					<td class="tblTag">Leerweg</td>
+					<td class="tblInput">
+						<input type="text" wicket:id="opleiding.leerweg" />
+					</td>
+				</tr>
+				</wicket:enclosure>
+				<tr wicket:id="intensiteitRow">
+					<td class="tblTag">Intensiteit</td>
+					<td class="tblInput">
+						<select wicket:id="intensiteit"></select>
+					</td>
+				</tr>
+				<tr wicket:id="contacturenRow">
+					<td class="tblTag">Contacturen per week (klokuren)</td>
+					<td class="tblInput">
+						<input type="text" wicket:id="contacturenPerWeek" class="unit_40" />
+					</td>
+				</tr>
+				<tr wicket:id="leerprofielRow">
+					<td class="tblTag">Leerprofiel</td>
+					<td>
+						<select class="unit_80" wicket:id="leerprofiel">
+							<option>1a</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="gehandicaptRow">
+					<td class="tblTag">Indicatie gehandicapt</td>
+					<td class="tblInput">
+						<input wicket:id="indicatieGehandicapt" class="inpCheck" type="checkbox"/>
+					</td>
+				</tr>
+	
+				<!--  cohort? -->
+	          	<tr wicket:id="leerjaarRow">
+	          		<td class="tblTag">Leerjaar</td>
+	          		<td>
+					<select wicket:id="leerjaar" class="unit_80">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+	          		</td>
+				</tr>
+	          	<tr wicket:id="jarenPraktijkonderwijsRow">
+	          		<td class="tblTag">Praktijkjaar</td>
+	          		<td>
+					<select wicket:id="jarenPraktijkonderwijs" class="unit_80">
+						<option></option>
+						<option>1</option>
+						<option>2</option>
+						<option>3</option>
+						<option>4</option>
+						<option>5</option>
+						<option>6</option>
+					</select>
+	          		</td>
+				</tr>
+	          	<tr wicket:id="plaatsingsgroepRow">
+	          		<td class="tblTag">Plaatsingsgroep</td>
+	          		<td>
+	          			<div wicket:id="groep" class="unit_max"></div>
+	          		</td>
+				</tr>
+				<div wicket:id="organisatieEenheidLocatie"></div>
+				<tr>
+					<td class="tblTag">
+						Team 
+					</td>
+					<td wicket:id="team">
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">
+						Relevante vooropleiding 
+						<img wicket:id="waarschuwingVooropleidingen" alt="waarschuwing vooropleidingen"/>
+					</td>
+					<td>
+						<select wicket:id="relevanteVooropleiding" class="unit_max">
+							<option></option>
+							<option>Autospuiter (1)</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Categorie vooropleiding</td>
+					<td wicket:id="categorieVooropleiding"></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Toelichting</td>
+					<td class="tblInput">
+						<textarea class="unit_max" rows="3" cols="55" wicket:id="toelichting"></textarea>
+					</td>
+				</tr>
+			</table>
+			<table class="tblData" wicket:id="veldenInburgering">
+				<tr>
+					<td class="tblTag">Reden inburgering</td>
+					<td>
+						<select class="unit_max" wicket:id="redenInburgering">
+							<option>Inburgeringsplichtig</option>
+							<option>Inburgeringsbehoeftig</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Profiel inburgering</td>
+					<td>
+						<select class="unit_max" wicket:id="profielInburgering">
+							<option>OGO</option>
+							<option>Werk</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerprofiel</td>
+					<td>
+						<select class="unit_80" wicket:id="leerprofiel">
+							<option>1a</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Deelcursus</td>
+					<td>
+						<select class="unit_80" wicket:id="deelcursus">
+							<option>Ja</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="praktijkexamenRow">
+					<td class="tblTag">Soort praktijkexamen</td>
+					<td>
+						<select class="unit_max" wicket:id="soortPraktijkexamen">
+							<option>Portfolio</option>
+						</select>
+					</td>
+				</tr>
+				<tr wicket:id="staatsExamenTypeRow">
+					<td class="tblTag">Type staatsexamen</td>
+					<td>
+						<select class="unit_max" wicket:id="staatsExamenType">
+						
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Beginniveau schriftelijke vaardigheden</td>
+					<td>
+						<select class="unit_80" wicket:id="beginNiveauSchriftelijkeVaardigheden">
+							<option>0</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Eindniveau schriftelijke vaardigheden</td>
+					<td>
+						<select class="unit_80" wicket:id="eindNiveauSchriftelijkeVaardigheden">
+							<option>0</option>
+						</select>
+					</td>
+				</tr>
+			</table>	
+		</div>
+		<div class="contHalf right">
+			<table class="tblData tblInputs" wicket:id="creditsContainer">
+				<tr wicket:id="creditsPerHoofdfase">
+					<td class="tblTag" wicket:id="hoofdfase">Credits propedeuse</td>
+					<td><input type="text" class="unit_100" wicket:id="credits"/></td>
+				</tr>
+			</table>
+			<div wicket:id="veldenRechts"></div>
+			<table class="tblData tblInputs">
+				<tr>
+					<td class="tblTag">&nbsp;</td>
+					<td class="tblInput">
+						<div class="moveup_12" wicket:id="bekostigingEditPanel"></div>
+					</td>
+				</tr>
+			</table>
+			
+			<div wicket:id="vrijVelden"></div>
+		</div>
+		<div wicket:id="contracten" class="clear"></div>
+		<span wicket:id="blokkadedatumVerbintenisValidator"></span>
+	</form>
+	<br />
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form">
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th>Naam</th>
+					<th>Maatregel</th>
+					<th>Datum</th>
+					<th>Reden</th>
+					<th>Opmerking</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="listview">
+					<td wicket:id="deelnemer.persoon.volledigeNaam"></td>
+					<td> <select wicket:id="maatregel" class="inpSelect"></select></td>
+					<td><input wicket:id="maatregelDatum"/></td>
+					<td wicket:id="veroorzaaktDoor.absentieReden.omschrijving"></td>
+					<td><input wicket:id="opmerkingen"/></td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</wicket:extend>
+</body>
+</html>

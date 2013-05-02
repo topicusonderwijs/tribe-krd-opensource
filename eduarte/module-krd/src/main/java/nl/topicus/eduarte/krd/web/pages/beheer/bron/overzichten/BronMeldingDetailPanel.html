@@ -1,0 +1,26 @@
+<html xmlns:wicket>
+<wicket:panel>
+<table class="tblData tblInputs">
+	<thead>
+		<tr>
+			<th wicket:id="caption"></th>
+			<th>aanlevering</th>
+			<th>terugkoppeling</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr wicket:id="properties">
+			<td class="tblTag" wicket:id="label">Meldingnummer</td>
+			<td><input class="inpText" readonly="readonly" wicket:id="aanlevering"/></td>
+			<td><input class="inpText" readonly="readonly" wicket:id="terugkoppeling" /></td>
+		</tr>
+		<wicket:enclosure>
+		<tr>
+			<td class="tblTag">&nbsp;</td>
+			<td colspan="2"><div class="widget-button left"><a title="Record verwijderen" wicket:id="verwijder"><span>Record verwijderen</span></a></div></td>
+		</tr>
+		</wicket:enclosure>
+	</tbody>
+</table>
+</wicket:panel>
+</html>

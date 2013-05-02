@@ -1,0 +1,229 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+zorgvierkant.css is part of the stylesheet for EduArte. 
+
+
+this css file contains styles specific for the zorgvierkant functionality of EduArte.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. zorgvierkant.css exists since revision 0.2 
+*/
+
+/**
+*** 	STIJLEN VOOR HET ZORGVIERKANT ***
+*	Alleen de stijlen hieronder kopieeren!
+**/                           
+.contZorg{
+	padding:0px !important; 
+	width:100% !important;
+	height:100% !important;
+}
+
+.tblKwadranten{
+	height:100%;
+	width:980px;
+	border-collapse:collapse;
+	table-layout:fixed;
+	font-size:11px;
+}
+
+	.tblKwadranten td{
+		height:200px;
+		width:50%;
+		overflow:hidden;
+		vertical-align:top;
+		border:1px dashed #c5c5c5;
+	}
+
+.kwartBoxHead{
+	height:15px;
+	width:95%;
+	background:#93117e url('../img/layout/zorgvierkant_header.gif') no-repeat;
+	color:#ffffff;
+	border:1px solid #93117e;
+	margin-left:10px;
+	margin-top:10px;
+	padding-top:1px;
+	line-height:11px;
+	text-align:center;
+	font-weight:bold;
+}
+
+.kwartBoxHead a{
+	color:#ffffff;
+}
+
+.kwartBoxTable{
+	margin-left:10px;
+	margin-top:10px;
+	width:93%;
+	color:#272727;
+	text-align:left;
+	border-collapse:collapse;
+	border:none;
+}
+
+.kwartBoxTable th{
+	padding-bottom:10px;
+	background:#ffffff url('../img/layout/kwartboxhead.gif') repeat-x left 6px;
+	height:auto!important;
+	border:none;
+}
+
+.kwartBoxTable th a{
+	float:right;
+}
+
+.kwartBoxTable tr td{
+	border-bottom:1px dashed #d6d6d6;
+	height:auto!important;
+	width:auto;
+	border:none;
+	text-align:left;
+}
+
+.kwartBoxTable tr:hover{
+	background:#f9fa7d;
+	cursor:pointer;
+}
+
+.kwartBoxTable tr.zorgHead:hover{
+	background:#ffffff;
+	cursor:default;
+}
+
+.kwartBoxTable td{
+	padding:3px 0px 3px 0px;
+}
+
+.zorgStatus{
+	width:30px;
+}
+.zorgDatum{
+	width:70px;
+}
+
+.zorgStatus span, .zorgOverzichtStatus span, .zorgStatus a, .zorgOverzichtStatus a{
+	display:block;
+	width:9px;
+	height:9px;
+
+}
+
+.zorgOverzichtStatus span, .zorgOverzichtStatus a{
+	float:right;
+}
+.zorgOverzichtStatus span.whiteLarge, .zorgOverzichtStatus span.redLarge, .zorgOverzichtStatus span.yellowLarge,
+.zorgOverzichtStatus span.greyLarge, .zorgOverzichtStatus span.greenLarge{
+	display:block;
+	width:14px;
+	height:14px;
+}
+
+.white, .red, .yellow, .grey, .green{
+	display:block;
+	width:12px!important;
+	height:9px;	
+}
+
+.white{background:url('../img/icons/zvk_white.gif') no-repeat;}
+.red{background:url('../img/icons/zvk_red.gif') no-repeat;}
+.yellow{background:url('../img/icons/zvk_yellow.gif') no-repeat;}
+.green{background:url('../img/icons/zvk_green.gif') no-repeat;}
+
+.zvkTag{
+	width:25px!important;
+}
+
+/* Toegevoegd voor tijdelijk gebruik */
+
+.studievoortgang, .gedrag, .capaciteiten, .begeleiding {
+	width: 435px;
+	min-height: 200px;
+	background-color: #FFF;
+	border: 1px solid #808080;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+
+.studievoortgang, .capaciteiten {
+	float: left;
+}
+
+.gedrag, .begeleiding {
+	float: left;
+	margin-left: -1px;
+}
+
+.contBox .head {
+	width: 100%;
+	height: 18px;
+	background-color: #cecece;
+	color: #555555;
+	font-weight: bold;
+	font-style: italic;
+	text-align: center;
+	margin-bottom: 1px;
+	cursor: default;
+	padding-top: 4px;
+}
+
+.contBox .body {
+	clear: both;
+	padding: 0px 5px 10px 5px;
+	height: 8px;
+	cursor: default;
+	font-size: 11px;
+}
+
+.contBox .zorgHead {
+	background-color: #e6e6e6;
+	margin-bottom: 1px;
+	height: 10px;
+}
+
+.contBox .indent {
+	margin-left: 15px;
+}
+
+.contBox .body .icon {
+	width: 25px;
+	float: left;
+}
+
+.contBox .content {
+	float: left;
+	margin-right: 10px;
+	padding-top: 2px;	
+}
+
+.contBox .clickable:hover {
+	background: #f9fa7d;
+	cursor: pointer;
+}
+
+/* Toegevoegd voor nieuwe layout */
+
+.contZorg .contHalf{
+	width: 434px;
+	border-right: none;
+}

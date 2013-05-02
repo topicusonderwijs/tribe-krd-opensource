@@ -1,0 +1,46 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<table class="tblData tblInputs">
+		<tr>
+			<td class="tblTag">Straat / huisnummer</td>
+			<td class="tblInput"><div wicket:id="adres.straatHuisnummer"></div></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Postcode / plaats</td>
+			<td class="tblInput"><div wicket:id="adres.postcodePlaats" class="unit_240"></div></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Land</td>
+			<td class="tblInput"><div wicket:id="adres.land" class="unit_240"></div></td>
+		</tr>
+		<tr wicket:id="deelstaatContainer">
+			<td class="tblTag">Deelstaat</td>
+			<td class="tblInput"><div wicket:id="adres.duitseDeelstaat" class="unit_240"></div></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Geldig van/tot</td>
+			<td class="tblInput">
+				<div wicket:id="begindatum" class="left"></div>
+				<div class="left">&nbsp;-&nbsp;</div>
+				<div wicket:id="einddatum" class="left"></div>
+			</td>
+		</tr>
+		<tr>
+			<td class="tblTag">Geheim adres</td>
+			<td class="tblInput"><div wicket:id="adres.geheim" class="unit_40"></div></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Postadres</td>
+			<td class="tblInput"><div wicket:id="postadres" class="unit_40"></div></td>
+		</tr>
+		<tr>
+			<td class="tblTag" wicket:id="fysiekLabel">Woonadres</td>
+			<td class="tblInput"><div wicket:id="fysiekadres" class="unit_40"></div></td>
+		</tr>
+	</table>
+</wicket:panel>
+</body>
+</html>

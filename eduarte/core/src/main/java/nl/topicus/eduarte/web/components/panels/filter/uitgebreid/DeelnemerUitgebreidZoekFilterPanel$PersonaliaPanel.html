@@ -1,0 +1,479 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+            <table class="tblData nopadding">
+            	<tbody>
+	                <tr>
+	                    <td>
+	                        Deelnemernummer vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="deelnemernummerVanaf" type="text" class="unit_240"/>
+	                    </td>
+	                    <td>
+	                        Deelnemernummer t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="deelnemernummerTotEnMet" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        BSN
+	                    </td>
+	                    <td>
+	                        <input wicket:id="bsn" type="text" class="unit_240"/>
+	                    </td>
+	                    <td>
+	                        BSN is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="bsnIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Onderwijsnummer
+	                    </td>
+	                    <td>
+	                        <input wicket:id="onderwijsnummer" type="text" class="unit_240"/>
+	                    </td>
+	                    <td>
+	                        Onderwijsnummer is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="onderwijsnummerIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+					    <td>
+	                        Debiteurennummer
+	                    </td>
+	                    <td>
+	                        <input wicket:id="debiteurennummer" type="text" class="unit_240"/>
+	                    </td>
+	                    <td>
+	                        Achternaam
+	                    </td>
+	                    <td>
+	                        <input wicket:id="officieelofaanspreek" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                       Geboortenaam
+	                    </td>
+	                    <td>
+	                        <input wicket:id="achternaam" type="text" class="unit_240"/>
+	                    </td>
+	                	<td>
+	                        Aanspreeknaam
+	                    </td>
+	                    <td>
+							<input wicket:id="aanspreeknaam" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                       Voorvoegsel
+	                    </td>
+	                    <td>
+	                        <input wicket:id="voorvoegsel" type="text" class="unit_240"/>
+	                    </td>
+	                	<td>
+	                        Geboortevoorvoegsel
+	                    </td>
+	                    <td>
+							<input wicket:id="officieleVoorvoegsel" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Roepnaam
+	                    </td>
+	                    <td>
+	                        <input wicket:id="roepnaam" type="text" class="unit_240"/>
+	                    </td>
+						<td>
+	                        Roepnaam is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="roepnaamIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Voornamen
+	                    </td>
+	                    <td>
+	                        <input wicket:id="voornamen" type="text" class="unit_240"/>
+	                    </td>
+						<td>
+	                        Voornamen is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="voornamenIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Voorletters
+	                    </td>
+	                    <td>
+	                        <input wicket:id="voorletters" type="text" class="unit_240"/>
+	                    </td>
+						<td>
+	                        Voorletters is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="voorlettersIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Geslacht
+	                    </td>
+	                    <td>
+	                        <select wicket:id="geslacht" class="unit_240">
+	                            <option>...</option>
+	                            <option>Man</option>
+	                            <option>Vrouw</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Geboortegemeente
+	                    </td>
+	                    <td>
+	                        <div wicket:id="geboorteGemeente" class="unit_227"></div>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Geboortedatum
+	                    </td>
+	                    <td>
+	                        <input wicket:id="geboortedatum" type="text" class="unit_240"/>
+	                    </td>
+						<td>
+	                        Geboortedatum is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="geboortedatumIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                        Geboortedatum vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="geboortedatumVanaf" type="text" class="unit_220"/>
+	                    </td>
+	                    <td>
+	                        Geboortedatum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="geboortedatumTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+	                </tr>
+	                <tr>
+						<td>
+	                        Registratiedatum
+	                    </td>
+	                    <td>
+	                        <input wicket:id="registratieDatum" type="text" class="unit_240"/>
+	                    </td>
+						<td>
+	                        Registratiedatum is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="registratieDatumIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                        Registratiedatum vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="registratieDatumVanaf" type="text" class="unit_220"/>
+	                    </td>
+	                    <td>
+	                        Registratiedatum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="registratieDatumTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Geboorteland
+	                    </td>
+	                    <td>
+	                        <div wicket:id="geboorteland" class="unit_227"></div>
+	                    </td>
+	                    <td>
+	                        Geboorteland ongelijk aan NL
+	                    </td>
+	                    <td>
+	                        <select wicket:id="geboortelandOngelijkAanNL" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Geboorteland is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="geboortelandIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Geboorteland (lijst)
+	                    </td>
+	                    <td>
+	                        <select wicket:id="geboortelandList" class="unit_240" size="5">
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Nationaliteit
+	                    </td>
+	                    <td>
+	                        <div wicket:id="nationaliteit"  class="unit_227"></div>
+	                    </td>
+	                    <td>
+	                        Nationaliteit ongelijk aan NL
+	                    </td>
+	                    <td>
+	                        <select wicket:id="nationaliteitOngelijkAanNL" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Nationaliteit is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="nationaliteitIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Dubbele nationaliteit
+	                    </td>
+	                    <td>
+	                        <select wicket:id="dubbeleNationaliteit" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Nationaliteit (lijst)
+	                    </td>
+	                    <td>
+	                        <select wicket:id="nationaliteitList" class="unit_240" size="5">
+	                            <option>...</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                    </td>
+	                    <td>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                        Datum in NL
+	                    </td>
+	                    <td>
+	                        <input wicket:id="datumInNL" type="text" class="unit_220"/>
+	                    </td>
+	                    <td>
+	                        Datum in NL is leeg
+	                    </td>
+                		<td>
+	                        <select wicket:id="datumInNLIsLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                        Datum in NL vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="datumInNLVanaf" type="text" class="unit_220"/>
+	                    </td>
+	                    <td>
+	                        Datum in NL t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="datumInNLTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                         Allochtoon
+	                    </td>
+	                    <td>
+	                        <select wicket:id="allochtoon" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Inburgeraar
+	                    </td>
+	                    <td>
+	                        <select wicket:id="nieuwkomer" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+					<tr>
+	                    <td>
+	                         LGF
+	                    </td>
+	                    <td>
+	                        <select wicket:id="lgf" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                         Meerderjarig
+	                    </td>
+	                    <td>
+	                        <select wicket:id="meerderjarig" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Heeft wettelijke vertegenwoordiger
+	                    </td>
+              			<td>
+              				  <select wicket:id="vertegenwoordiger" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                         Heeft betalingsplichtige relatie
+	                    </td>
+	                    <td>
+	                        <select wicket:id="betalingsplichtige" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	               	<tr>
+	                    <td>
+	                        Startkwalificatieplichtig op
+	                    </td>
+	                    <td>
+	                        <input wicket:id="deelnemerZoekFilter.startkwalificatieplichtigOpDatum" type="text" class="unit_220"/>
+	                    </td>
+	                    <td>
+	                        Overleden
+	                    </td>
+              			<td>
+              				  <select wicket:id="overleden" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	               	<tr>
+	                    <td>
+	                        Type contactgegeven
+	                    </td>
+              			<td>
+              				  <select wicket:id=typeContactgegeven class="unit_240">
+	                            <option>...</option>
+	                            <option>E-mail</option>
+	                            <option>Telefoonnummer</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Contactgegeven
+	                    </td>
+              			<td>
+              				<input wicket:id="contactgegeven" type="text" class="unit_240"/>
+	                    </td>
+	                </tr>
+	             	<tr>
+	                    <td>
+	                        Heeft document van type
+	                    </td>
+	                    <td>
+	                        <div wicket:id="documentTypeList"class="unit_240"></div>
+	                    </td>
+	                    <td>
+	                        Heeft document met categorie
+	                    </td>
+	                    <td>
+	                        <div wicket:id="documentCategorieList"class="unit_240"></div>
+	                    </td>
+	                </tr>
+                </tbody>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

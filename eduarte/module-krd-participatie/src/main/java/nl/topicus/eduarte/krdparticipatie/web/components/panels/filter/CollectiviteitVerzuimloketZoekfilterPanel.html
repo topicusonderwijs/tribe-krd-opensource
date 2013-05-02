@@ -1,0 +1,41 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="laySearchbar">
+		<form wicket:id="form">
+			<div>
+				<span>
+					Meldingsnummer <input class="inpText" value="" wicket:id="meldingsnummer" />
+				</span>
+				<span>
+					Leerlingnummer <input class="inpText" value="" wicket:id="leerlingnummer" />
+				</span>
+				<span>
+					Naam <input class="inpText" value="" wicket:id="naam" />
+				</span>
+				<span>
+					vanaf datum <input class="inpText" value="" wicket:id="vanafDatum" />
+				</span>
+				<span>
+					t/m datum <input class="inpText" value="" wicket:id="tmDatum" />
+				</span>		
+				<span>
+					Status <select wicket:id="status" class="inpSelect unit_100">
+								<option>...</option>
+							</select>
+				</span>				
+				<span>
+					Verzuimsoort <select wicket:id="verzuimsoort" class="inpSelect unit_100">
+								<option>...</option>
+							</select>
+				</span>	
+				<input class="inpImage" type="image" value="Submit" title="Zoeken" src="assets/img/icons/searchicon.gif" />
+			</div>
+		</form>
+	</div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

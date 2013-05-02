@@ -1,0 +1,39 @@
+<html xmlns:wicket>
+<wicket:head>
+</wicket:head>
+<body>
+<wicket:panel>
+	<h3 class="caption">Bijlagen</h3>
+	<form wicket:id="bijlagenForm">
+	<table class="tblDatagrid tblInput">
+		<thead>
+			<tr>
+				<th>Omschrijving</th>
+				<th>Bijlage</th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="bijlagen">
+				<td>
+					<input type="text" wicket:id="omschrijving"	class="inpText unit_160" />
+				</td>
+				<td>
+					<a wicket:id="link" href="#" title="Bestand downloaden"><span wicket:id="label" class="block unit_240 hideoverflow"></span></a>
+				</td>
+				<td><a wicket:id="delete" class="deleteItem"></a></td>
+			</tr>
+			<tr class="tblAddRow">
+				<td colspan="2" class="textRight" wicket:id="refreshContainer">
+					<select class="inpSelect" wicket:id="type"></select>
+					<input wicket:id="bestand" type="file" class="inpFile" title="Bestand" />
+					<input wicket:id="link" type="text" class="inpText unit_240" title="Link" />
+				</td>
+				<td><a wicket:id="upload" class="newItem"></a></td>
+			</tr>
+		</tbody>
+	</table>
+	</form>
+</wicket:panel>
+</body>
+</html>

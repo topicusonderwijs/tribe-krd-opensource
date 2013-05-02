@@ -1,0 +1,478 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="procesverbaal" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<subDataset name="Surveillanten">
+		<field name="achternaam" class="java.lang.String"/>
+		<field name="voorletters" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="Verbintenissen">
+		<field name="laatsteExamendeelname" class="nl.topicus.eduarte.entities.examen.Examendeelname"/>
+		<field name="deelnemer" class="nl.topicus.eduarte.entities.personen.Deelnemer"/>
+		<field name="soortVoOnderwijs" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="DATE" class="java.util.Date"/>
+	<parameter name="datum" class="java.util.Date"/>
+	<parameter name="AUTHOR" class="java.lang.String"/>
+	<parameter name="huidigemedewerker" class="nl.topicus.eduarte.entities.personen.Medewerker"/>
+	<parameter name="huidigeorganisatie" class="nl.topicus.eduarte.entities.organisatie.Instelling"/>
+	<parameter name="huidigaccount" class="nl.topicus.eduarte.entities.security.authentication.Account"/>
+	<field name="procesverbaal" class="nl.topicus.eduarte.krd.web.pages.deelnemer.examens.procesverbaal.Procesverbaal"/>
+	<group name="titel">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="40" splitType="Stretch">
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="555" height="20"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="14"/>
+					</textElement>
+					<text><![CDATA[Proces-verbaal]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="20" width="555" height="20"/>
+					<textElement textAlignment="Center">
+						<font size="12" isItalic="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getOnderwijsproduct().getTitel()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="algemeen">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="50" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="0" width="81" height="14"/>
+					<textElement>
+						<font fontName="sansserif" isItalic="false"/>
+					</textElement>
+					<text><![CDATA[Examen op:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="14" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Aan:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="28" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Te:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="0" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getExamenDatumAlsString()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="81" y="14" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getOrganisatieEenheid().getOfficieleNaam()]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement x="81" y="28" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getPlaats()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="surveillanten">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="40" splitType="Stretch">
+				<componentElement>
+					<reportElement x="0" y="14" width="555" height="14"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Surveillanten">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{procesverbaal}.getSurveillanten())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="14">
+							<textField>
+								<reportElement x="0" y="0" width="555" height="14"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{achternaam}+", "+$F{voorletters}]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<textField>
+					<reportElement x="0" y="0" width="555" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA["Tegenwoordig waren, belast met het toezicht, voor het vak "+$F{procesverbaal}.getOnderwijsproduct().getTitel()+":"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="tijd">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="64" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="14" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Lokaal:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="42" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getEindtijd().toString()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="42" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Eindtijd:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="28" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getBegintijd().toString()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="28" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Begintijd:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="14" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getLokaal()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="81" height="14"/>
+					<textElement/>
+					<text><![CDATA[Opleiding:]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="81" y="0" width="474" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getOpleiding() != null ? $F{procesverbaal}.getOpleiding().getNaam():""]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="verbintenissen">
+		<groupExpression><![CDATA[]]></groupExpression>
+		<groupHeader>
+			<band height="70">
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Verbintenissen">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{procesverbaal}.getVerbintenissen())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="62" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{laatsteExamendeelname}.getExamennummerMetPrefix()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="62" y="0" width="61" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[""+$F{deelnemer}.getDeelnemernummer()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="123" y="0" width="181" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{deelnemer}.getPersoon().getVolledigeNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="304" y="0" width="100" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{soortVoOnderwijs}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="404" y="0" width="23" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[Character.toString($F{deelnemer}.getPersoon().getGeslachtEersteLetter())]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="492" y="0" width="63" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="427" y="1" width="65" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA["____________"]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="62" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Examennr]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="62" y="18" width="61" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Dnnr.]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="123" y="18" width="181" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Volledige naam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="304" y="18" width="100" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Onderwijssoort]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="404" y="16" width="23" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[M/V]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="427" y="16" width="65" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Vertrektijd]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="492" y="16" width="63" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Extra tijd (min.)]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="555" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="opening">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="60" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Opening]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="20" width="545" height="14"/>
+					<textElement/>
+					<text><![CDATA[Opening van het verzegelde pakket, bevattende de opgaven voor het vak]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="34" width="545" height="14"/>
+					<textElement/>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{procesverbaal}.getOnderwijsproduct().getTitel()+" te                uur"]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="nietaanwezig">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="100" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Niet aanwezig waren de kandidaten met de examennummers]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<line>
+					<reportElement x="0" y="35" width="555" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="0" y="50" width="555" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="0" y="65" width="555" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="0" y="80" width="555" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+				<line>
+					<reportElement x="0" y="95" width="555" height="1"/>
+					<graphicElement>
+						<pen lineStyle="Dotted"/>
+					</graphicElement>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="bijzonderheden">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="100" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Bijzonderheden die van belang zijn voor dit examen]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="25" width="113" height="14"/>
+					<textElement/>
+					<text><![CDATA[Grootschrift:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="50" width="113" height="14"/>
+					<textElement/>
+					<text><![CDATA[Extra tijd:]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="0" y="75" width="113" height="14"/>
+					<textElement/>
+					<text><![CDATA[Spraakondersteuning:]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="sluiting">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="60" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Sluiting en ondertekening]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="20" width="545" height="14"/>
+					<textElement/>
+					<text><![CDATA[Sluiting van de zitting te                   uur.]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="handtekeningen">
+		<groupExpression><![CDATA[$F{procesverbaal}]]></groupExpression>
+		<groupHeader>
+			<band height="60" splitType="Stretch">
+				<line>
+					<reportElement x="0" y="0" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="20"/>
+					<textElement>
+						<font size="12"/>
+					</textElement>
+					<text><![CDATA[Handtekeningen van degene die het pakket heeft geopend en van de andere toezichthouder(s):]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<componentElement>
+					<reportElement x="0" y="30" width="555" height="14"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="Surveillanten">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{procesverbaal}.getSurveillanten())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="14">
+							<textField>
+								<reportElement x="0" y="0" width="170" height="14"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{achternaam}+", "+$F{voorletters}]]></textFieldExpression>
+							</textField>
+							<staticText>
+								<reportElement x="159" y="0" width="113" height="14"/>
+								<textElement/>
+								<text><![CDATA[.......................................]]></text>
+							</staticText>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

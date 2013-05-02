@@ -1,0 +1,344 @@
+.tblResultaatNA {
+	background-color: #dcdcdc;
+}
+
+.tblGeenResultaat {
+	
+}
+
+.tblResultaatNote {
+	background-image: url('../img/grades/bg_tblResultaatNote.png');
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.tblResultaatOverschreven {
+	font-weight: bold;
+}
+
+.tblHeeftResultaat.tblResultaatBehaald {
+	color: #44aa00;
+}
+
+.tblHeeftResultaat.tblResultaatNietBehaald {
+	color: #cc0000;
+}
+
+.tblHeeftResultaat.tblResultaatGeblokkeerd,.tblGeenResultaat.tblResultaatGeblokkeerd
+	{
+	background-color: #ececec;
+}
+
+.tblHeeftResultaat.tblResultaatTijdelijk {
+	font-style: italic;
+	color: #999999;
+}
+
+table.tblResultaat.multiToets td.tblAanpasbaarPoging {
+	background-color: #fff;
+}
+
+table.tblResultaat th.ciColumn {
+	overflow: hidden;
+	padding: 3px 0;
+	width: 50px;
+}
+
+table.tblResultaat th.ciColumn .ciHeaderContainer {
+	display: block;
+	overflow: hidden;
+	width: 50px;
+	height: 13px;
+	color: #777777;
+}
+
+table.tblResultaat th.ciColumn a.ciHeaderContainer {
+	cursor: pointer;
+	color: #0088AA;
+}
+
+table.tblResultaat th.ciColumn a.ciHeaderContainer:hover {
+	text-decoration: underline;
+}
+
+table.tblResultaat th.ciColumn .ciPogingHeaderContainer {
+	overflow: hidden;
+	width: 0;
+	height: 13px;
+}
+
+table.tblResultaat th.ciDepth-0 {
+	background-color: #BBCDCD;
+}
+
+table.tblResultaat th.ciDepth-1 {
+	background-color: #C8DBDB;
+}
+
+table.tblResultaat th.ciDepth-2 {
+	background-color: #D4E8E8;
+}
+
+table.tblResultaat th.ciDepth-3 {
+	background-color: #E2F7F7;
+}
+
+table.tblResultaat td.ciColumn {
+	overflow: hidden;
+	padding: 3px 0;
+}
+
+td.ciField .ciValueDisplay {
+	width: 0;
+	overflow: visible;
+	display: block;
+}
+
+td.ciField .ciValueDisplay span {
+	padding: 0 5px;
+	position: relative;
+}
+
+td.panelError {
+	border: solid 1px red;
+}
+
+.cijferInput.ciLeftPart {
+	position: absolute;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.cijferInput.ciRightPart {
+	position: absolute;
+	overflow: hidden;
+	z-index: 10;
+}
+
+.cijferInput.ciEditPart {
+	position: absolute;
+	height: 18px;
+	width: 51px;
+	background-color: #888;
+	padding: 1px 0;
+	z-index: 10;
+}
+
+.cijferInput .ciSlider {
+	height: 36px;
+	padding: 5px;
+	background-image: url('../img/grades/cijferinvoeredit.png');
+}
+
+.readonly .cijferInput .ciSlider {
+	background-image: url('../img/grades/cijferinvoer.png');
+}
+
+.cijferInput.ciLeftPart .ciSlider {
+	background-position: left;
+}
+
+.cijferInput.ciRightPart .ciSlider {
+	background-position: right;
+}
+
+.cijferInput .ciEditLeft {
+	float: left;
+	width: 5px;
+	height: 46px;
+	background-image: url('../img/grades/bg_ciEditLeft.png');
+	margin-top: -22px;
+}
+
+.cijferInput .ciEditRight {
+	float: right;
+	width: 5px;
+	height: 46px;
+	background-image: url('../img/grades/bg_ciEditRight.png');
+	margin-top: -22px;
+}
+
+.cijferInput input {
+	width: 47px;
+	margin: 0 -5px;
+	height: 14px;
+}
+
+.cijferInput.ciLeftPart table {
+	margin-left: 5px;
+}
+
+.cijferInput .ciSlider table {
+	border-collapse: collapse;
+}
+
+.cijferInput .ciSlider table tr {
+	height: 18px;
+}
+
+.cijferInput .ciSlider th .ciLabel {
+	position: absolute;
+	padding-left: 5px;
+	overflow: hidden;
+	white-space: nowrap;
+	color: #ffffff;
+	font-style: italic;
+	font-weight: bold;
+	font-size: 0.9em;
+}
+
+.cijferInput .ciSlider th .ciLabelContainer {
+	height: 18px;
+	width: 60px;
+}
+
+.cijferInput .ciSlider td .ciValueContainer {
+	height: 18px;
+	width: 0;
+}
+
+.cijferInput .ciSlider table th,.cijferInput .ciSlider table td {
+	overflow: hidden;
+	width: 0;
+	padding: 0;
+}
+
+.cijferInput .ciValue {
+	position: absolute;
+	padding: 0px 5px;
+}
+
+.cijferInput .ciMessage {
+	background-color: #ff6600;
+	font-style: italic;
+	color: #ffffff;
+	font-size: 0.8em;
+	bottom: 41px;
+	left: 46px;
+	position: absolute;
+	padding: 2px 5px;
+	white-space: nowrap;
+	display: none;
+}
+
+.cijferInput .ciButtons {
+	position: absolute;
+	width: 64px;
+	height: 16px;
+	top: 25px;
+	left: 46px;
+	padding: 0 5px;
+	background-color: #BBDCE1;
+	border-top: 1px solid #999999;
+	border-left: 2px solid #ff6600;
+	border-bottom: 2px solid #999999;
+	border-right: 2px solid #999999;
+}
+
+.ciButtons .ciSelectedButton {
+	background-color: #E8F0F2;
+}
+
+.cijferInput .ciDetails {
+	position: absolute;
+	width: 252px;
+	height: 140px;
+	top: 42px;
+	left: 46px;
+	padding: 4px;
+	background-color: #E8F0F2;
+	background-image: url('../img/grades/bg_ciDetails.png');
+	background-position: top right;
+	background-repeat: no-repeat;
+	border-left: 2px solid #ff6600;
+	border-bottom: 2px solid #999999;
+	border-right: 2px solid #999999;
+	overflow: auto;
+}
+
+.cijferInput .ciDetails textarea {
+	height: 106px;
+	overflow-x: auto;
+	overflow-y: scroll;
+	width: 246px;
+}
+
+.cijferInput .ciDetails table {
+	width: 100%;
+}
+
+.ciDetails th {
+	font-weight: bold;
+	color: #777777;
+}
+
+.resultatenspacer {
+	min-height: 165px;
+}
+
+.legenda {
+	border: 1px solid #CCC;
+	margin-top: 10px;
+	width: 300px;
+	padding-left: 5px;
+	padding-bottom: 5px;
+}
+
+.legenda .caption {
+	margin-top: 0px;
+}
+
+.resultaten_legenda {
+	border-collapse: separate;
+}
+
+tr.tablespacer {
+	height: 4px;
+	margin-top: 5px;
+	background: #FFF;
+}
+
+td.wit {
+	background: #FFF;
+	border: 1px solid #ccc;
+	height: 15px;
+	width: 25px;
+}
+
+td.lichtgrijs {
+	background: #e9edec;
+	border: 1px solid #ccc;
+	height: 15px;
+	width: 25px;
+}
+
+td.donkergrijs {
+	background: #dcdcdc;
+	border: 1px solid #ccc;
+	height: 15px;
+	width: 25px;
+}
+
+td.rood {
+	height: 15px;
+	width: 25px;
+	color: #CC0000;
+}
+
+td.grijs {
+	height: 15px;
+	width: 25px;
+	color: #989898;
+	padding: 0 auto;
+}
+
+td.groen {
+	height: 15px;
+	width: 25px;
+	color: #44AA00;
+	padding: 0 auto;
+}
+
+td.omschrijving {
+	padding-left: 5px;
+}

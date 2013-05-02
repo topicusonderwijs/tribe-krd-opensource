@@ -1,0 +1,65 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+screensaver.css is part of the stylesheet for EduArte.
+
+screensaver.css contains layouting for the screensaver. This is the screen that appears after
+a certain period of user inactivity; the screen the user was working in is darkened
+and a login box overlays that screen.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. screensaver.css exists since revision 0.2 
+*/
+
+div.wicket-mask-extra-dark {	
+	position: fixed;	
+	top: 0px; 
+	left: 0px; 
+	width: 100%; 
+	height: 100%;
+	opacity: 0.9; 
+	-moz-opacity:0.9;  
+	background-color: black; 
+	filter: alpha(opacity=90); 
+	background-image: url('transparent2.png');
+}
+
+.contScreensaver{
+	width:452px;
+	padding:0px 0px 0px 0px;
+	margin:0px;
+	overflow:hidden;
+	
+}
+.contScreensaver .tblData tbody th{
+	font-size:1em;
+	font-family:Arial, Helvetica, sans-serif;
+	color:#989898!important;
+	background:none;
+	font-weight:bold;
+    font-style:italic;
+    border:0px;
+    padding:3px;
+	padding-left:5px;
+	padding-right:20px;
+	text-decoration:none;
+	text-align:left;
+}

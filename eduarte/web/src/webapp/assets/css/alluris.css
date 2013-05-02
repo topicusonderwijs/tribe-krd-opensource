@@ -1,0 +1,141 @@
+/* classes added for Alluris Inschrijvingsverzoek pages */
+
+div.leftThirdMenuContainer {
+	width: 125px;
+	float: left;
+	border-right: 1px solid #37ABC8;
+	padding-top: 12px;
+}
+
+div.middleThirdContentContainer {
+	float: left;
+	width:430px;
+	border-right: 1px dashed #37ABC8;
+}
+
+div.rightThirdContentContainer {
+	float: left;	
+	margin-left: 10px;
+	width:420px;
+}
+
+div.combinedThirdContentContainer {
+	float: left;	
+	margin-left: 10px;
+	width:800px;
+	padding-left: 20px;
+	padding-top: -20px;
+	margin-bottom: 10px;
+}
+
+div.leftThirdMenuContainer img {
+	width: 13px;
+	position: relative;
+	top:2px;
+	padding-right: 3px;
+}
+
+div.leftThirdMenuContainer a {
+	float: left;
+	clear: both;
+	margin-bottom: 4px;
+	text-decoration: none;
+	background-color: #e6e6e6;
+	display: block;
+	width: 119px;
+	height: 25px;
+	padding-left: 4px;
+	padding-top: 4px;
+}
+
+div.leftThirdMenuContainer span.noVerificationImage {
+	margin-left: 16px;	
+}
+
+div.leftThirdMenuContainer a.activeSubmenuItem {
+	background-color: #E8F0F2;
+}
+
+div.leftThirdMenuContainer a:hover {
+	text-decoration: none;
+	background-color: #E8F0F2;
+	cursor: pointer;
+}
+
+.layBorder {
+	border: 1px solid #AFDDE9;
+	margin-top:13px;
+	margin-bottom: 7px;
+	overflow:hidden;
+	height: auto;
+	min-width: 360px;
+	padding-bottom:2px;
+
+}
+
+.layBorder input {
+	max-width: 170px;
+}
+
+div.layBorder a {
+	margin-top: 5px;
+	margin-bottom: 5px;	
+}
+
+div.modalLayLeft.special {
+	height: 310px;
+}
+
+div.feedback.special {
+	width:390px;
+}
+
+div.modalLayFooter.special {
+	bottom:0px;
+	left:0px;
+	width: 378px;
+}
+
+div.combinedThirdContentContainer div.contHalf.left {
+	max-width: 370px;
+	padding:0px;
+}
+
+div.combinedThirdContentContainer div.contHalf.right {
+	max-width: 370px;
+	padding:0px;
+	float: left;
+	clear: none;
+	position: relative;
+	left: -20px;
+}
+
+div.widget-button.right a.spaceTop {
+	position: relative;
+	top: 5px;
+}
+
+div.carouselContent {
+	float: left;
+	width: 310px;
+}
+
+div.carouselContent.left {
+	clear: both;
+}
+
+
+h2.carouselTitle {
+	color:#B3B3B3 !important;
+	font-weight:bold;
+	font-size: 12px;
+	padding-bottom: 6px;
+	margin-top:-2px;
+	float: right;
+}
+
+h1.bpv {
+	color:red;
+	margin-left: 14px;
+	font-size: 12px;	
+}

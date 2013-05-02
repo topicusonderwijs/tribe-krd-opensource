@@ -1,0 +1,71 @@
+.tblWaarnemingMatrix
+{
+	margin-top:10px;
+	padding:6px;
+	float:left;
+	margin-right:10px;
+	margin-left:10px;
+	font-size:0.8em;
+	text-align:center;
+}
+
+.tdRightBorder {border-right: 1px solid black!important;}
+
+.alignLeft{
+	text-align: left!important;
+	}
+.tdYellow {background-color: #FFFFD0!important;}
+.tdOrange {background-color: #FF6A00!important;}
+.tdRed {background-color: #FF0000!important;}
+.tdGreen {background-color: #4CFF00!important;}
+.tdKlein{width: 20px!important;}
+
+.tblWaarnemingMatrix td, .tblAbsentieMatrix th
+{
+	height:20px;
+	text-align:center;
+	min-width: 20px;
+	width: 20px;
+}
+
+.tblWaarnemingMatrix tbody th
+{
+	width:60px;
+	min-width:60px;
+}
+	
+.tblWaarnemingMatrix td
+{
+	color:#454545;
+	vertical-align:center;
+	border-bottom:1px solid #d9d9d9;
+	border-right:1px solid #d9d9d9;
+	border-top:1px solid #d9d9d9;
+	font-weight:bold;
+}
+
+.tblWaarnemingMatrix tbody th, .tblWaarnemingMatrix thead th
+{
+	font-size:1em;
+	font-family:Trebuchet MS;
+	color:#989898!important;
+	background:none;
+	font-weight:bold;
+    font-style:italic;
+    border:0px;
+	border-right:1px solid #d9d9d9;
+    border-bottom:1px solid #d9d9d9;
+	text-align: center;
+	white-space: nowrap;
+}
+
+.tblWaarnemingMatrix tfoot td
+{
+	width:auto;
+}
+
+.tblWaarnemingMatrixtfoot td a
+{
+	font-size:1.2em;
+	font-weight:bold;
+}

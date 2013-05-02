@@ -1,0 +1,62 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<form wicket:id="form">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Van status</td>
+					<td><span wicket:id="vanStatus.naam">Kandidaat</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Naar status</td>
+					<td>
+						<select wicket:id="naarStatus">
+							<option>Geslaagd</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Datum/tijd</td>
+					<td><span wicket:id="datumTijd">19-06-2009 10:00</span></td>
+				</tr>
+				<wicket:container wicket:id="datumUitslagContainer">
+					<tr>
+						<td class="tblTag">Datum uitslag</td>
+						<td>
+							<input type="text" class="unit_80" title="Datum uitslag" wicket:id="examendeelname.datumUitslag" />
+						</td>
+					</tr>
+				</wicket:container>
+				<wicket:container wicket:id="examennummerContainer">
+					<tr>
+						<td class="tblTag">Examennummer</td>
+						<td>
+							<input type="text" class="unit_40" title="Examennummerprefix" wicket:id="examendeelname.examennummerPrefix" />
+							<input type="text" title="Examennummer" wicket:id="examendeelname.examennummer" />
+						</td>
+					</tr>
+				</wicket:container>
+				<wicket:container wicket:id="tijdvakContainer">
+					<tr>
+						<td class="tblTag">Tijdvak</td>
+						<td>
+							<input type="text" title="Tijdvak" wicket:id="examendeelname.tijdvak" />
+						</td>
+					</tr>
+				</wicket:container>
+				<tr>
+					<td class="tblTag">Opmerkingen</td>
+					<td>
+						<textarea wicket:id="opmerkingen" cols="100" rows="5"></textarea>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		<div wicket:id="onderwijsproductAfnameContexten"></div>
+	</form>
+</wicket:panel>
+</body>
+</html>

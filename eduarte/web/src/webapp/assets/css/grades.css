@@ -1,0 +1,275 @@
+/**
+*** 	STIJLEN VOOR CIJFERS VAN EEN GROEP (READ EN WRITE) ***
+**/
+
+
+.layLeft{
+	overflow-x:auto!important; 
+}
+
+.tblCijfers{
+	margin-top:10px;
+	border-collapse:collapse;
+	float:left;
+	margin-right:10px;
+	font-size:0.8em;
+	margin-left:20px;
+	border-bottom:2px solid #bababa;
+}
+
+.tblCijfers td, .tblCijfers th{
+	padding:3px;
+	padding-right:8px;
+	white-space:nowrap;
+}
+
+.tblCijfers th{
+	 background:#bebebe url('../img/layout/cijfersHeaderGroep.gif') repeat;
+	height:100%;
+	/*background:#bebebe url('../img/layout/cijfersHeader.gif') repeat-x;
+	height:20px;*/
+	color:#2158d3;
+	font-style:italic;
+	font-size:11px;
+	border:1px solid #bababa;
+}
+
+.tblCijferHeadNames{
+	
+}
+
+.tblCijferSpacer{
+	width:auto!important;
+	border-left:1px solid #bababa;
+	background:#dcdcdc;
+}
+
+.tblCijferHeadEnd{
+	font-weight:bold;
+	padding-left:10px!important;
+	width: 50px;
+}
+
+.tblCijferEnd{
+	font-weight:bold;
+	border-bottom:1px dashed #cfcfcf;
+	border-left:1px solid #ffffff;
+	text-align:center;
+	vertical-align:middle;
+	background:#f2f2f2;
+	/*padding-left:10px!important;*/
+	padding: 0px 0px 0px 5px !important;
+	border-right:1px solid #bababa;	
+}
+
+.tblCijferNames{
+	background:#f2f2f2;
+	border-bottom:1px dashed #cfcfcf;
+	border-left:1px solid #bababa;
+	border-right:2px solid #bababa;
+}
+
+.tblCijferResults{
+	border-bottom:1px dashed #cfcfcf;
+	border-left:1px solid #dfdfdf;
+	text-align:center;
+	vertical-align:middle;
+/*  td-tjes hebben een inner div element welke de stijl van het cijfer bepaalt, hier dus geen padding */
+	padding: 0px !important;
+}
+
+tr:hover .tblCijferResults{
+	background:#f9fa7d;
+}
+tr:hover .tblCijferNames{
+	background:#e2e2e2;
+}
+tr:hover .tblCijferSpacer{
+	background:#e2e2e2;
+}
+tr:hover .tblCijferEnd{
+	background:#595959;
+	color:#ffffff;
+}	
+
+
+/**
+ * Extra info van een toets (type + weging).
+ */
+.headToetsInfo
+{
+	font-style: normal;
+	font-weight: bold;
+	color:#666666;
+}	
+
+.tblCijferHeadToets
+{
+	padding-top: 5px !important;
+	vertical-align: top;
+	overflow: hidden;
+	width:50px;
+}
+
+
+.heeftHerkansingHeader
+{
+	/** background: url('../img/grades/herkicon.gif') no-repeat top right !important; */
+}
+
+.herkansingHeader
+{
+	
+}
+
+.grade
+{
+	
+	height: 18px;
+	min-width: 50px;
+	max-width: 115px;
+	overflow: hidden;
+	padding: 2px;
+	padding-right:8px;
+}
+
+#editor.grade
+{
+	height: 16px;
+	width: 50px;	
+}
+
+.overschreven
+{
+	font-style: italic; 
+	text-decoration: underline;	
+}
+
+.gradeSamengesteld
+{
+	background: url('../img/grades/grade_samengesteld.gif') no-repeat top right;
+	background-color: #FFFFC1;
+}
+
+.disabled .gradeSamengesteld
+{
+ background: #FFFFC1 url('../img/grades/grade_disabled_samengesteld.gif') ! important;		
+}
+
+.gradeDeeltoets
+{
+	background:transparent url('../img/grades/grade_deeltoets.gif') no-repeat top right;
+}
+
+.gradeHerkansing
+{
+		
+}
+
+.gradeHeeftHerkansing
+{	
+	font-style: italic;
+}
+.uitNoise
+{
+	background-color: #bbbbff;
+}
+
+.disabled
+{
+	background: #ffffff url('../img/grades/grade_disabled.gif') ! important;		
+}
+
+.bevroren
+{
+	background: #ffffff url('../img/grades/grade_bevroren.gif') ! important;	
+}
+	
+.dropdown
+{
+	background:transparent url('../img/grades/grade_dropdown.gif') no-repeat top right;
+	padding: 0px !important;
+	text-align: center;
+	border: none;
+}
+
+.toetsgemiddelde
+{
+	border-top: 1px solid #bababa;
+	background: #d0d0d0;
+	font-weight: bold;	
+}
+
+.inlevercheckbox
+{	
+	margin-left: 10px;
+	margin-right: 10px;
+}
+
+/**
+ * Uitklapbare header (deeltoets, herkansing). Dmv een achtergrond de border-top verlagen.
+ */
+th.uitklapbaar
+{
+	background: url('../img/layout/cijfersHeaderUitgeklapt.gif') repeat !important;
+	border-top: 0px;
+	border-left: 0px;
+	border-right: 0px;
+}
+
+.lijnlinks
+{
+	border-left: 5px solid #bcbcbc !important;	
+}
+
+.lijnrechts
+{
+	border-right: 1px solid #bcbcbc !important;	
+}
+
+input.editor
+{
+	width: 100%;
+}
+/*.grade
+{
+	width: 16px;
+	height: 16px;
+	overflow: hidden;
+}
+
+.grey_disabled
+{
+	background: #ffffff	url('../img/grades/grade_disabled.gif')!important;
+}
+
+.checked
+{
+	background: url('../img/icons/check.gif') no-repeat scroll center center;
+}
+
+.dropdown
+{
+	background:transparent no-repeat top right;
+	width: 44px;
+	height: 20px;
+	text-align:center;
+}	
+
+.pvbv
+{
+	border: 2px solid;
+	border-color: #00ff00;
+}
+
+.pvbo
+{
+	border: 2px solid;
+	border-color: red;
+}
+
+.pvbg
+{
+	border: 2px solid;
+	border-color: black;
+}*/

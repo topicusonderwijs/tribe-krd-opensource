@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nl.topicus.cobra</groupId>
+		<artifactId>cobra</artifactId>
+		<version>0.3-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>nl.topicus.cobra</groupId>
+	<artifactId>cobra-quartz</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Cobra Quartz</name>
+	<inceptionYear>2009</inceptionYear>
+	<description>
+		Bevat code voor het gebruik van Quartz.
+	</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>nl.topicus.cobra</groupId>
+			<artifactId>cobra-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-context-support</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>opensymphony</groupId>
+			<artifactId>quartz</artifactId>
+		</dependency>
+	</dependencies>
+</project>

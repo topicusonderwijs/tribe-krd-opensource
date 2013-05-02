@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="no"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:component-scan base-package="nl.topicus.eduarte" />
+
+	<import resource="classpath*:/nl/topicus/eduarte/spring.xml" />
+	<import resource="classpath*:/nl/topicus/eduarte/**/spring-module.xml" />
+	<import resource="classpath*:/nl/topicus/eduarte/**/spring-module-init.xml" />
+
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" />
+		<property name="jdbcUrl"
+			value="jdbc:oracle:thin:@${hibernate.connection.url}" />
+		<property name="user" value="${hibernate.connection.username}" />
+		<property name="password" value="${hibernate.connection.password}" />
+		<property name="minPoolSize" value="15" />
+		<property name="maxPoolSize" value="200" />
+		<property name="maxStatements" value="100" />
+		<property name="checkoutTimeout" value="3000" />
+		<property name="idleConnectionTestPeriod" value="60" />
+	</bean>
+	
+	<bean id="sessionProvider" class="nl.topicus.cobra.hibernate.providers.StandaloneHibernateSessionProvider">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="wicketApplication" class="nl.topicus.cobra.app.Deployable$Production">
+	</bean>
+</beans>

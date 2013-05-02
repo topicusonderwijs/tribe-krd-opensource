@@ -1,0 +1,21 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<pre wicket:id="stacktrace"></pre>
+
+	<form id="bugForm" action="http://bugs.topicus.nl/bug_report_page_krd.php" method="post">
+		<fieldset>
+			<input type="hidden" name="project_id" wicket:id="project_id" />
+			<input type="hidden" name="summary" wicket:id="summary" />
+			<input type="hidden" name="description" wicket:id="description" />
+			<input type="hidden" name="product_version" wicket:id="product_version" />
+			<input type="hidden" name="severity" wicket:id="severity" />
+			<input type="hidden" name="custom_field_43" wicket:id="custom_field_43" />
+			<input type="hidden" name="additional_info" wicket:id="additional_info" />
+		</fieldset>
+	</form>
+</wicket:extend>
+</body>
+</html>

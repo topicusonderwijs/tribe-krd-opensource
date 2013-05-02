@@ -1,0 +1,112 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+            <table class="tblData nopadding">
+            	<tbody>
+	                <tr>
+	                    <td>
+	                        Status
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="intakegesprekStatus" class="unit_240">
+	                    	</select>
+	                    </td>
+	                    <td>
+	                    </td>
+	                    <td>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Datum vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="datumIntakegesprekVanaf" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                        Datum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="datumIntakegesprekTotEnMet" type="text" class="inpText unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Intaker
+	                    </td>
+	                    <td>
+	                        <div wicket:id="intaker" class="inpText unit_240"></div>
+	                    </td>
+	                    <td>
+	                        Intaker (lijst)
+	                    </td>
+	                    <td>
+	                        <div wicket:id="intakerList" class="unit_240"></div>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Gewenste opleiding
+	                    </td>
+	                    <td>
+	                        <div wicket:id="gewensteOpleiding" class="inpText unit_240"></div>
+	                    </td>
+	                    <td>
+	                        Gewenste locatie
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="gewensteLocatie" class="unit_240">
+	                    	</select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Gewenste opleiding (lijst)
+	                    </td>
+	                    <td>
+	                    	<div wicket:id="gewensteOpleidingList" class="unit_240">
+	                    	</div>
+	                    </td>
+	                    <td>
+	                        Gewenste locatie (lijst)
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="gewensteLocatieList" class="unit_240" size="5">
+	                    	</select>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Gewenste begindatum vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="gewensteBegindatumVanaf" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                        Gewenste begindatum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="gewensteBegindatumTotEnMet" type="text" class="inpText unit_240"/>
+	                    </td>
+	                </tr>
+	                <tr>
+	                    <td>
+	                        Gewenste einddatum vanaf
+	                    </td>
+	                    <td>
+	                        <input wicket:id="gewensteEinddatumVanaf" type="text" class="inpText unit_240"/>
+	                    </td>
+	                    <td>
+	                        Gewenste einddatum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="gewensteEinddatumTotEnMet" type="text" class="inpText unit_240"/>
+	                    </td>
+	                </tr>
+                </tbody>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

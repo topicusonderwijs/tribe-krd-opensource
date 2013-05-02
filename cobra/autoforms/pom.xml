@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>nl.topicus.cobra</groupId>
+		<artifactId>cobra</artifactId>
+		<version>0.3-SNAPSHOT</version>
+		<relativePath>../pom.xml</relativePath>
+	</parent>
+
+	<groupId>nl.topicus.cobra</groupId>
+	<artifactId>cobra-autoforms</artifactId>
+	<packaging>jar</packaging>
+
+	<name>Cobra Autoforms</name>
+	<inceptionYear>2009</inceptionYear>
+	<description>
+		Bevat code om automatisch op basis van entiteiten een form met componenten te genereren.
+	</description>
+
+	<dependencies>
+		<dependency>
+			<groupId>nl.topicus.cobra</groupId>
+			<artifactId>cobra-commons</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.0-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.wicket</groupId>
+			<artifactId>wicket</artifactId>
+		</dependency>
+	</dependencies>
+</project>

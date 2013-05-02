@@ -1,0 +1,134 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Uitgebreid zoeken</h3>
+	<form wicket:id="form">
+		<fieldset>
+			<div class="laySearchbar">
+				<span>Peildatum</span>
+				<input type="text" value="" wicket:id="peildatum" />
+				<span>Gearchiveerd</span>
+				<select wicket:id="gearchiveerd">
+					<option></option>
+				</select>
+			</div>
+			<div class="clear laySeparator10"></div>
+			<div>
+	            <table class="tblData nopadding">
+	            	<tbody>
+		                <tr>
+		                    <td class="tblTag">
+		                        Code
+		                    </td>
+		                    <td>
+		                        <input wicket:id="code" type="text" class="inpText unit_240"/>
+		                    </td>
+		                    <td class="tblTag">
+		                        Titel
+		                    </td>
+		                    <td>
+		                        <input wicket:id="titel" type="text" class="inpText unit_240"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="tblTag">
+		                        Zoekterm
+		                    </td>
+		                    <td>
+		                        <input wicket:id="zoekterm" type="text" class="inpText unit_240"/>
+		                    </td>
+		                    <td class="tblTag">
+		                        Taxonomiecode
+		                    </td>
+		                    <td>
+		                        <input wicket:id="taxonomiecode" type="text" class="inpText unit_240"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="tblTag">
+		                        Taxonomie
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="taxonomie" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                    <td class="tblTag">
+		                        Taxonomie-elementtype
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="taxonomieElementType" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="tblTag">
+		                        Status
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="status" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                    <td class="tblTag">
+		                        Soort onderwijsproduct
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="soortOnderwijsproduct" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                </tr>
+		         		<tr>
+		                    <td class="tblTag">
+		                        Bij Intake
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="bijIntake" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                    <td class="tblTag"></td>
+		                    <td>
+		                    </td>
+		                </tr>
+		            </tbody>
+		        </table>
+		        <table class="tblData nopadding" wicket:id="creditsContainer">
+	            	<tbody>
+		                <tr>
+		                    <td class="tblTag">
+		                        Credits
+		                    </td>
+		                    <td>
+		                        <input wicket:id="credits" type="text" class="inpText unit_120"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="tblTag">
+		                        Min. credits
+		                    </td>
+		                    <td>
+		                        <input wicket:id="mincredits" type="text" class="inpText unit_120"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td class="tblTag">
+		                        Max. credits
+		                    </td>
+		                    <td>
+		                        <input wicket:id="maxcredits" type="text" class="inpText unit_120"/>
+		                    </td>
+		                </tr>
+		            </tbody>
+		        </table>
+		    </div>
+		    <input type="submit" class="outsideScreen" tabindex="-1"/>
+	    </fieldset>
+	</form>
+</wicket:extend>
+</body>
+</html>

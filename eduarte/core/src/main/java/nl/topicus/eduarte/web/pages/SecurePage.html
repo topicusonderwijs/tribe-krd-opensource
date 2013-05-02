@@ -1,0 +1,76 @@
+<!DOCTYPE html
+PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns:wicket>
+<head>
+	<title wicket:id="pageTitle">EduArte</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<link wicket:id="favicon" rel="shortcut icon" href="assets/img/icons/favicon.ico"/>
+	<link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
+	<meta name="viewport" content="width=1024" />
+	<!--[if lt IE 8]>
+		<link href="assets/css/ie_only.css" rel="stylesheet" type="text/css"/>
+	<![endif]-->
+	<!--[if IE 7]>
+		<link href="assets/css/ie7_only.css" rel="stylesheet" type="text/css"/>
+	<![endif]-->
+	<!--[if IE]>
+		<link href="assets/css/ie_7en8.css" rel="stylesheet" type="text/css"/>
+	<![endif]-->
+	
+	<script type="text/javascript" src="assets/js/printer.js"></script>
+	
+	<link href="assets/css/style-max1024.css" rel="stylesheet" type="text/css" media="screen and (max-width:1025px)"/>
+	<link href="assets/css/style-min1280.css" rel="stylesheet" type="text/css" media="screen and (min-width:1200px)"/>
+	
+	<script type="text/javascript">  
+		function initServerTime() {/* Statusbalk Marker */}  
+		/* Create cookie dat de server vertelt hoe hoog het venster is. */  
+		document.cookie="displayheight=" + screen.height;
+		document.cookie="displaywidth=" + screen.width;
+	</script>
+	<!--  <link href="assets/css/testomgeving.css" rel="stylesheet" type="text/css"/>-->
+</head>
+<body onload="initServerTime();"> 
+<div class="container" wicket:id="centerContainer">
+	<!-- Header bevat de navigatie en titels van 115px hoog -->
+	<div wicket:id="layHeader" class="layHeader subtract-from-contbox">
+		<div wicket:id="mainmenu"></div>
+		<div class="layTitlebar">
+			<h2 wicket:id="title" class="layTitlebarTitle">KRD</h2>
+			<div class="ajaxIndicator" wicket:id="ajaxIndicator"></div>
+			<span wicket:id="navigationStack"></span>
+		</div>
+		
+		<div class="layMenubar">
+			<div wicket:id="menu"></div>
+		</div>
+		<div class="layExtraHeader" wicket:id="layExtraHeader"></div>
+	</div>
+	
+	<!-- Left bevat alle content, is uitgevuld over de hoogte en breedte -->
+	
+	<div class="content">
+		<div wicket:id="layLeft" class="layLeft" id="layLeft">
+			<div class="widget-feedback subtract-from-contbox" wicket:id="feedback" title="Klik om deze balk te sluiten..."></div>
+			<div class="contBox" wicket:id="content" id="contBox">
+				<wicket:child />
+			</div>
+			<div class="layDetails subtract-from-contbox" wicket:id="layDetails"></div> 
+			<div class="layFooter subtract-from-contbox" wicket:id="bottom">
+				<div class="widget-button right"><a href=#><span>Voorbeeldknop</span></a></div>
+			</div>	
+			<div wicket:id="screensaver"></div>
+		</div>
+		<!-- Side is een extra balk aan de rechterkant, is uitgevuld over de hoogte en heeft een vaste breedte -->
+		<div class="laySide" wicket:id="laySide"></div>
+	</div>
+	<div wicket:id="placeholder">Placeholder voor eventuele panels die door subclasses toegevoegd moeten worden</div>
+
+	<wicket:container wicket:id="infoButton" />
+	<div class="clear"></div>
+	
+	<div wicket:id="modalWindowContainer"></div>
+</div>
+</body>
+</html>

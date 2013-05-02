@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="no"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<import resource="classpath*:/nl/topicus/cobra/spring.xml" />
+
+	<bean id="placeholderConfigurer"
+		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="ignoreUnresolvablePlaceholders" value="true" />
+		<property name="systemPropertiesModeName" value="SYSTEM_PROPERTIES_MODE_OVERRIDE" />
+		<property name="ignoreResourceNotFound" value="false" />
+		<property name="locations">
+			<list>
+				<value>classpath*:/hibernate.properties</value>
+				<value>classpath*:/vasco.properties</value>
+			</list>
+		</property>
+		<property name="properties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+			</props>
+		</property>
+	</bean>
+
+	<!-- wordt alleen gebruikt indien er geen JNDI datasource beschikbaar is -->
+	<bean id="devDataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="${hibernate.connection.driver_class}" />
+		<property name="jdbcUrl" value="${hibernate.connection.url}" />
+		<property name="user" value="${hibernate.connection.username}" />
+		<property name="password" value="${hibernate.connection.password}" />
+		<property name="minPoolSize" value="15" />
+		<property name="maxPoolSize" value="200" />
+		<property name="maxStatements" value="100" />
+		<property name="checkoutTimeout" value="3000" />
+		<property name="idleConnectionTestPeriod" value="60" />
+	</bean>
+
+	<bean id="dataSource" class="org.springframework.jndi.JndiObjectFactoryBean">
+		<property name="jndiName" value="java:comp/env/jdbc/EduArte" />
+		<property name="defaultObject" ref="devDataSource" />
+	</bean>
+
+	<!-- hibernate session factory -->
+	<bean id="sessionFactory" class="nl.topicus.cobra.app.CobraAnnotationSessionFactoryBean">
+		<property name="dataSource" ref="dataSource" />
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</prop>
+				<!-- 2nd level caching -->
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider</prop>
+				<prop key="hibernate.cache.region_prefix">hibernate-</prop>
+				<prop key="hibernate.generate_statistics">false</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.cache.use_structured_entries">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="sessionProvider"
+		class="nl.topicus.cobra.hibernate.providers.GeneralPurposeHibernateSessionProvider">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="eduArteScheduler" class="nl.topicus.eduarte.app.EduArteScheduler">
+		<property name="scheduler" ref="quartzSchedulerFactory" />
+	</bean>
+
+	<bean id="dataAccessRegistry" class="nl.topicus.cobra.dao.DataAccessRegistry"></bean>
+</beans>

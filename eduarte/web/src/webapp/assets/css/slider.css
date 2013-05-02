@@ -1,0 +1,23 @@
+/* Stylesheet voor Slider - wanneer scherm minder breed dan 1280 is.
+
+*/
+
+.slider{
+	width: 17px;
+	height: 22px;
+	right: 0px;
+	top: 55px;
+	bottom: 0px;
+	cursor: pointer;
+	position: fixed;
+	z-index: 400;
+	background-image: url(../../assets/img/icons/dropout.png);
+}
+
+.slider_terug{
+	min-height: 800px;
+	width: 16px;
+	float: right;
+	cursor: pointer;
+	z-index: 400;
+}

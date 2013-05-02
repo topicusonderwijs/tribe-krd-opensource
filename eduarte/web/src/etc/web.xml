@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2e" xmlns:xsi=" http://www.w3.org/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+	version="2.4">
+	<display-name>EduArte</display-name>
+	<context-param>
+		<param-name>contextConfigLocation</param-name>
+		<param-value>classpath:nl/topicus/eduarte/spring-web.xml</param-value>
+	</context-param>
+	<context-param>
+		<param-name>configuration</param-name>
+		<param-value>deployment</param-value>
+	</context-param>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<servlet>
+		<servlet-name>CXFServlet</servlet-name>
+		<display-name></display-name>
+		<servlet-class>nl.topicus.eduarte.webservices.cxf.CXFServlet
+		</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CXFServlet</servlet-name>
+		<url-pattern>/services/api/*</url-pattern>
+	</servlet-mapping>
+	<servlet>
+		<servlet-name>AventusServlet</servlet-name>
+		<display-name></display-name>
+		<servlet-class>nl.topicus.eduarte.webservices.AventusUpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AventusServlet</servlet-name>
+		<url-pattern>/update/aventus</url-pattern>
+	</servlet-mapping>
+	<filter>
+		<filter-name>eduarte</filter-name>
+		<filter-class>org.apache.wicket.protocol.http.WicketFilter</filter-class>
+		<init-param>
+        	<param-name>applicationFactoryClassName</param-name>
+        	<param-value>org.apache.wicket.spring.SpringWebApplicationFactory</param-value>
+    	</init-param>
+		<init-param>
+			<param-name>applicationClassName</param-name>
+			<param-value>nl.topicus.eduarte.app.EduArteApp</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>eduarte</filter-name>
+		<url-pattern>/app/*</url-pattern>
+	</filter-mapping>
+	<resource-env-ref>
+		<description>Mail Service</description>
+		<resource-env-ref-name>mail/EduArte</resource-env-ref-name>
+		<resource-env-ref-type>
+			javax.mail.Session
+		</resource-env-ref-type>
+	</resource-env-ref>
+	<resource-env-ref>
+		<description>DB Connection Pool</description>
+		<resource-env-ref-name>jdbc/EduArte</resource-env-ref-name>
+		<resource-env-ref-type>
+			javax.sql.DataSource
+		</resource-env-ref-type>
+	</resource-env-ref>
+</web-app>

@@ -1,0 +1,55 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<div class="contBox">
+		<form wicket:id="form">
+			<div class="contHalf left">
+				<h3 class="caption">Account</h3>
+			  	<table class="tblData tblInputs">
+					<tbody>
+						<tr>
+				  			<td class="tblTag">
+								Gebruikersnaam
+				  			</td>
+				  			<td>
+				  				<input type="text" class="inpText unit_320" wicket:id="gebruikersnaam" />
+				  			</td>
+				  		</tr>
+				  		<tr>
+							<td class="tblTag">
+								<div>Oude</div> 
+								<div>wachtwoord</div>
+							</td>
+							<td>
+								<div>&nbsp;</div>
+								<input class="inpText unit_320" type="password" wicket:id="old.wachtwoord" />
+							</td>
+						</tr>
+						<tr>
+				  			<td class="tblTag">
+								Nieuwe wachtwoord
+				  			</td>
+				  			<td>
+				  				<div>&nbsp;</div>
+				  				<input type="password" class="inpText unit_320" wicket:id="wachtwoord" />
+				  			</td>
+				  		</tr>
+						<tr>
+				  			<td class="tblTag">
+								Herhaal wachtwoord
+				  			</td>
+				  			<td>
+				  				<div>&nbsp;</div>
+				  				<input type="password" class="inpText unit_320" wicket:id="wachtwoord2" />
+				  			</td>
+				  		</tr>
+					</tbody>
+				</table>
+			</div>
+		</form>
+	</div>
+</wicket:extend>
+</body>
+</html>

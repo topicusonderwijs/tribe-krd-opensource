@@ -1,0 +1,92 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<div class="contBox">		
+		<form wicket:id="form">
+		<div>
+			<h3 class="caption">Instellingen</h3>
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">
+							Vanaf datum
+						</td>
+						<td><input class="inpText unit_80" value="" wicket:id="beginDatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							T/m datum
+						</td>
+						<td><input class="inpText unit_80" value="" wicket:id="eindDatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Vanaf lesuur
+						</td>
+						<td><select wicket:id="vanafLesuur" class="unit_40 inpSelect">
+								<option>Lesuur...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							T/m lesuur
+						</td>
+						<td><select wicket:id="totLesuur" class="unit_40 inpSelect">
+								<option>Lesuur...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Soort
+						</td>
+						<td><select wicket:id="absentieOfPresentie" class="unit_200 inpSelect">
+								<option>Absentie...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Weergave
+						</td>
+						<td><select wicket:id="waarnemingWeergave" class="unit_200 inpSelect">
+								<option>Geoorloofd/Ongeoorloofd...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							FinancieringsLabel
+						</td>
+						<td><div wicket:id="contract"></div>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Toon lege regels
+						</td>
+						<td><select wicket:id="toonLegeRegels" class="unit_60 inpSelect">
+								<option>Ja...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Toon totalen kolommmen
+						</td>
+						<td><select wicket:id="toonTotalenKolommen" class="unit_60 inpSelect">
+								<option>Ja...</option>
+							</select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</div>
+		</form>
+	</div>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<div class="contBox">
+		<form wicket:id="form">
+		<h3 class="caption">Contractgegevens</h3>
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">Onderdeel</td>
+						<td><select class="unit_200" wicket:id="onderdeel"><option></option></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Contactpersoon</td>
+						<td><select class="unit_200" wicket:id="externeOrganisatieContactPersoon"><option></option></select></td>
+					</tr>
+		
+					<tr>				
+						<td class="tblTag">
+							Begindatum
+						</td>
+						<td>
+							<input wicket:id="begindatum" type="text" class="inpText unit_80 left" value="200"/>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Einddatum
+						</td>
+						<td>
+							<input wicket:id="einddatum" type="text" class="inpText unit_80 left" value="200"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>		
+</wicket:extend>
+</body>
+</html>

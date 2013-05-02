@@ -1,0 +1,27 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="personaliaForm">	
+		<h3 class="caption">Persoon als relatie</h3>
+		<div class="contHalf left">
+			<div wicket:id="inputFieldsPersonalia"></div>
+		</div>
+		<div class="contHalf right">
+			<div>
+				<table class="tblData tblInputs">
+					<tr>
+						<td class="tblTag">Adres zelfde als deelnemer</td>
+						<td><input type="checkbox" wicket:id="adressenGelijkDeelnemer" /></td>
+					</tr>
+				</table>
+			</div>
+			<div wicket:id="adresEditTabs"></div>
+			<div wicket:id="contactgegevens"></div>
+			<div wicket:id="vrijVelden"></div>
+		</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

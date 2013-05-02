@@ -1,0 +1,2 @@
+0;V;;;{factuur.datum \@ yyyy};{factuur.factuurnummer};{factuur.omschrijving};{factuur.datum \@ ddMMyyyy};;{factuur.debiteur.debiteurennummer};;;{factuur.totaalbedrag \@ #0.00};;EUR;1;;;;;;;;;;;;;;;;N;;;;;;;;
+{factuur.factuurregels[].regelnummer};V;;;{factuur.datum \@ yyyy};{factuur.factuurnummer};{factuur.factuurregels[].omschrijving};{factuur.factuurregels[].datum \@ ddMMyyyy};{factuur.factuurregels[].grootboekrekening.code};;;;{factuur.factuurregels[].bedrag \@ #0.00};;;;;;;;;;;;;;;;;;;N;;;;;;;;

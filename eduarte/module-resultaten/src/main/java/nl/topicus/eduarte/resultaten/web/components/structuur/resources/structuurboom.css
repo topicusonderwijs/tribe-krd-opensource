@@ -1,0 +1,201 @@
+.toetskoppelpanel {
+	background-color: #f1f3f6;
+	margin: 10px;
+	border: 1px solid #939dac;
+}
+
+.structuren {
+	float: left;
+	width: 160px;
+	background-color: #7888a0;
+	padding: 20px;
+	min-height: 250px;
+	position: relative;
+}
+
+.structuren .help {
+	bottom:12px;
+	left:162px;
+	position:absolute;
+	padding: 1px;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	background-color: white;
+}
+
+.structuren .structurenList {
+	width: 154px;
+	min-height: 244px;
+	background-color: white;
+	-moz-border-radius: 15px;
+	-webkit-border-radius: 15px;
+	padding: 3px;
+	margin-bottom: 20px;
+}
+
+.structuren .structuur {
+	margin: 3px;
+	padding: 7px;
+	overflow: hidden;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+}
+
+.structuren .structuur.selected {
+	background-color: #ff6600;
+}
+
+table.structuurboom {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border-style: none;
+}
+
+table.structuurboom td,table.structuurboom .toetsl1 {
+	padding: 0;
+	background-repeat: no-repeat;
+	width: 110px;
+}
+
+table.structuurboom .samengesteld .toetsl2 {
+	background-image: url('samengesteld.png');
+	background-position: center right;
+	background-repeat: no-repeat;
+	margin-right: -7px;
+}
+
+table.structuurboom .samengesteld.added .toetsl2 {
+	background-image: url('samengesteld_added.png');
+}
+
+table.structuurboom .samengesteld.gekoppeld .toetsl2 {
+	background-image: url('samengesteld_added.png');
+}
+
+table.structuurboom .first .toetsl1 {
+	background-image: url('first.png');
+}
+
+table.structuurboom .first.added .toetsl1 {
+	background-image: url('first_added.png');
+}
+
+table.structuurboom .middle {
+	background-image: url('middle.png');
+	background-repeat: repeat-y;
+}
+
+table.structuurboom .middle.added {
+	background-image: url('middle_added.png');
+}
+
+table.structuurboom .last .toetsl1 {
+	background-image: url('last.png');
+	background-position: bottom left;
+}
+
+table.structuurboom .last.added .toetsl1 {
+	background-image: url('last_added.png');
+}
+
+table.structuurboom .first.last .toetsl1 {
+	background-image: url('firstlast.png');
+}
+
+table.structuurboom .first.last.added .toetsl1 {
+	background-image: url('firstlast_added.png');
+}
+
+table.structuurboom .first {
+	background-image: url('firsttd.png');
+	background-position: center left;
+}
+
+table.structuurboom .first.added {
+	background-image: url('firsttd_added.png');
+}
+
+table.structuurboom .last {
+	background-image: url('lasttd.png');
+	background-position: center left;
+}
+
+table.structuurboom .last.added {
+	background-image: url('lasttd_added.png');
+}
+
+table.structuurboom .first.last {
+	background-image: none;
+}
+
+table.structuurboom .code {
+	padding: 5px 5px 5px 3px;
+	overflow: hidden;
+	background-repeat: no-repeat;
+	background-position:left center;
+	height: 30px;
+	line-height: 30px;
+	margin-left: 10px;
+	font-weight: bold;
+	position: relative;
+}
+table.structuurboom .code input {
+	position: absolute;
+	top: 8px;
+}
+table.structuurboom .code label {
+	margin-left: 23px;
+}
+table.structuurboom .depth-0 .code {
+	background-image: url('resultree_lev1.png');
+}
+table.structuurboom .depth-1 .code {
+	background-image: url('resultree_lev2.png');
+}
+table.structuurboom .depth-2 .code {
+	background-image: url('resultree_lev3.png');
+}
+table.structuurboom .depth-3 .code {
+	background-image: url('resultree_lev4.png');
+}
+table.structuurboom .depth-4 .code {
+	background-image: url('resultree_lev5.png');
+}
+table.structuurboom .depth-5 .code {
+	background-image: url('resultree_lev6.png');
+}
+table.structuurboom .depth-0.added .code,
+table.structuurboom .depth-0.gekoppeld .code {
+	background-image: url('resultree_lev1_added.png');
+}
+table.structuurboom .depth-1.added .code,
+table.structuurboom .depth-1.gekoppeld .code {
+	background-image: url('resultree_lev2_added.png');
+}
+table.structuurboom .depth-2.added .code,
+table.structuurboom .depth-2.gekoppeld .code {
+	background-image: url('resultree_lev3_added.png');
+}
+table.structuurboom .depth-3.added .code,
+table.structuurboom .depth-3.gekoppeld .code {
+	background-image: url('resultree_lev4_added.png');
+}
+table.structuurboom .depth-4.added .code,
+table.structuurboom .depth-4.gekoppeld .code {
+	background-image: url('resultree_lev5_added.png');
+}
+table.structuurboom .depth-5.added .code,
+table.structuurboom .depth-5.gekoppeld .code {
+	background-image: url('resultree_lev6_added.png');
+}
+
+table.structuurboom .depth-0 .code,
+table.structuurboom .depth-1 .code,
+table.structuurboom .depth-2 .code {
+	color: white;
+}
+table.structuurboom .depth-3 .code,
+table.structuurboom .depth-4 .code,
+table.structuurboom .depth-5 .code {
+	color: #627490;
+}

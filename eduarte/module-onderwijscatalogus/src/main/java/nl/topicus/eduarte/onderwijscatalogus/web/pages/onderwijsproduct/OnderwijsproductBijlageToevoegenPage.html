@@ -1,0 +1,53 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Onderwijsproduct</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData">
+				<tbody>
+			  		<tr>
+			  			<td class="tblTag">
+						  	Omschrijving
+			  			</td>
+			  			<td>
+							<input type="text" class="inpText unit_280" wicket:id="omschrijving" />
+			  			</td>
+			  		</tr>
+			  		<tr>
+			  			<td class="tblTag">
+						  	Type bijlage
+			  			</td>
+			  			<td wicket:id="typeBijlage" id="typeBijlage">
+					    	<input type="radio" />
+							<input type="radio" />
+			  			</td>
+			  		</tr>
+			  	</tbody>
+			  		
+			  	<tbody wicket:id="parentContainer">
+			  		<tr wicket:id="bestandContainer">
+			  			<td class="tblTag">
+						  	Bestand
+			  			</td>
+			  			<td>
+							<input type="file" class="inpFile unit_280" wicket:id="bestand" />
+			  			</td>
+			  		</tr>
+			  		<tr wicket:id="linkContainer">
+			  			<td class="tblTag">
+						  	Link
+			  			</td>
+			  			<td>
+							<input type="text" class="inpFile unit_280" wicket:id="link" />
+			  			</td>
+			  		</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>	
+</wicket:extend>
+</body>
+</html>

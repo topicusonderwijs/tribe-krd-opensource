@@ -1,0 +1,2 @@
+Id;Gebruikersnaam;Wachtwoord;Email;Rollen
+KOL;olav;test;olav.loite@topicus.nl;Docent,Mentor,Administratie

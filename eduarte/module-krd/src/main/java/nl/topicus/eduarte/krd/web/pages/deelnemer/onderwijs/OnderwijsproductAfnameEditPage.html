@@ -1,0 +1,53 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Onderwijsproduct afname wijzigen</h3>
+	<form wicket:id="afnameForm">
+		<div class="contHalf left">
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">Onderwijsproduct</td>
+						<td class="tblInput"><span wicket:id="onderwijsproduct.titel"></span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Cohort</td>
+						<td class="tblInput"><select wicket:id="cohort" class="inpSelect">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Begindatum</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="begindatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Einddatum</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="einddatum" /></td>
+					</tr>
+					<tr wicket:id="creditsContainer">
+						<td class="tblTag">Credits</td>
+						<td class="tblInput"><input type="text" wicket:id="credits" /></td>
+					</tr>
+					<tr wicket:id="werkstuktitelContainer">
+						<td class="tblTag">Werkstuktitel</td>
+						<td class="tblInput"><input type="text" class="unit_240" wicket:id="werkstuktitel" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Vrijstelling</td>
+						<td class="tblInput"><select wicket:id="vrijstellingType" class="unit_80"><option>Geen</option></select></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Externe Organisatie</td>
+						<td class="tblInput"><input type="text" wicket:id="externeOrganisatie" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div wicket:id="modalwindow"></div>
+	</form>
+</wicket:extend>
+</body>
+</html>

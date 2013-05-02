@@ -1,0 +1,125 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Opleidingkaart</h3>
+	<div class="contHalf left">
+		<table class="tblData">
+			<tbody>
+				<tr wicket:id="parentContainer">
+					<td class="tblTag">Variant van opleiding</td>
+					<td><a wicket:id="parentLink" href="#"><span wicket:id="parent">ATH-NT</span></a></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Code</td>
+					<td><span wicket:id="code">ATH-NT</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Naam</td>
+					<td><span wicket:id="naam">Atheneum profiel Natuur en Techniek</span></td>
+				</tr>
+				<tr wicket:id="wervingContainer">
+					<td class="tblTag">Wervingsnaam</td>
+					<td><span wicket:id="wervingsnaam">Atheneum profiel Natuur en Techniek</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerweg</td>
+					<td><span wicket:id="leerweg"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Default intensiteit</td>
+					<td><span wicket:id="defaultIntensiteit"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Taxonomiecode</td>
+					<td><span wicket:id="verbintenisgebied.taxonomiecode">1.2.3.4</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Verbintenisgebied</td>
+					<td><span wicket:id="verbintenisgebied.naam">Atheneum profiel Natuur en Techniek</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Niveau</td>
+					<td><span wicket:id="verbintenisgebied.niveauNaam"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Prijsfactor</td>
+					<td><span wicket:id="verbintenisgebied.prijsfactor"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Duur in maanden</td>
+					<td><span wicket:id="duurInMaanden">24</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerjaar van</td>
+					<td><span wicket:id="beginLeerjaar">1</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Leerjaar tot</td>
+					<td><span wicket:id="eindLeerjaar">6</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Begindatum</td>
+					<td><span wicket:id="begindatum">01-01-2000</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Einddatum</td>
+					<td><span wicket:id="einddatum"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Laatste Inschrijving</td>
+					<td><input type="text" class="unit_80" wicket:id="datumLaatsteInschrijving" /></td>
+				</tr>
+				<tr wicket:id="instroomvariantContainer">
+					<td class="tblTag">Instroomvariant</td>
+					<td><span wicket:id="instroomvariant"></span></td>
+				</tr>
+				<tr wicket:id="uitstroomvariantContainer">
+					<td class="tblTag">Uitstroomvariant</td>
+					<td><span wicket:id="uitstroomvariant"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<div wicket:id="aanbod"></div>
+		<div wicket:id="fases"></div>
+	</div>
+	<div class="contHalf right">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Met BRON communiceren (indien mogelijk)</td>
+					<td><span wicket:id="communicerenMetBRONOmschrijving">Ja</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Landelijke productregels negeren</td>
+					<td><span wicket:id="negeerLandelijkeProductregelsOmschrijving">Nee</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Landelijke criteria negeren</td>
+					<td><span wicket:id="negeerLandelijkeCriteriaOmschrijving">Nee</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Kies Kenniscentrum</td>
+					<td><span wicket:id="KiesKennisCenterumOmschrijving">Nee</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Diplomatekst 1</td>
+					<td><span wicket:id="diplomatekst1">Diplomatekst 1</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Diplomatekst 2</td>
+					<td><span wicket:id="diplomatekst2">Diplomatekst 2</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Diplomatekst 3</td>
+					<td><span wicket:id="diplomatekst3">Diplomatekst 3</span></td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div wicket:id="vrijvelden"></div>
+	</div>
+</wicket:extend>
+</body>
+</html>

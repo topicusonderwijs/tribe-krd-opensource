@@ -1,0 +1,229 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+login.css is part of the stylesheet for EduArte. 
+
+
+this css file contains styles specific for the login screen of EduArte.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. login.css exists since revision 0.2 
+
+19-01-2010: Style changed to add scalability to login screen.
+*/
+
+/** LOGIN LAYOUT **/
+
+.loginPage{
+	background-color:#F1F1F1;
+	padding-top:50px;
+
+}
+
+#loginBox{
+	-moz-border-radius:10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	background-color:#F9F9F9;
+	border-bottom:1px solid #DCDCDC;
+	border-left:1px solid #DCDCDC;
+	border-right:1px solid #DCDCDC;
+	color:#999999;
+	margin-left:auto;
+	margin-right:auto;
+	width:643px;
+
+}
+
+#loginBox_top{
+	background:url("../img/login/loginBox_top2.png") no-repeat scroll 0 0 transparent;
+	color:#eb6b0a;
+	height:44px;
+	margin-left:-2px;
+	width:647px;
+
+}
+
+#loginBox_center{
+	background:url("../img/login/loginBox_center2.png") repeat-y scroll 0 0 transparent;
+	color:#999999; 
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:25px;
+	width:577px;
+
+}
+
+.loginBox_centerTop{
+	background:url("../img/login/loginBox_centerTop2.png") no-repeat scroll 0 0 transparent;
+	height:14px;
+	width:577px;
+}
+
+.loginBox_centerBottom{
+	background:url("../img/login/loginBox_centerBottom.png") no-repeat scroll center bottom transparent;
+	height:10px;
+	width:577px;
+}
+
+#loginBox_bottom{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#ffffff;
+	margin-left:auto;
+	margin-right:auto;
+	padding-bottom: 15px;
+}
+
+#loginBox #loginForm .widget-button{
+	width: 77px;		
+}
+
+.loginTitle{
+	font-weight:bold;
+	height:50px;
+	line-height:25px;
+	padding-bottom:20px;
+	padding-left:30px;
+	padding-top:5px;
+	text-align:left;
+}
+
+.loginError{
+	overflow: visible;
+	line-height:15px;
+	margin-top:10px;
+	margin-left: 28px;
+}
+
+.loginFormBox{
+	font-size:80%; 
+	height:auto;
+	padding-left:25px;
+	position:relative;
+	text-align:left;
+}
+
+.loginFormBox td{
+	line-height:20px;
+	padding:3px 30px 3px 3px;
+}
+
+.loginFormBox td label{
+	font-size:90%;
+}
+
+.loginFormBox input{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#4a003d;
+	background:#ffffff!important;
+	border:1px solid #d0e7f2;
+	padding:0px;
+	width:200px;
+}
+
+.loginFormBox select{
+	font-family:Arial, Helvetica, sans-serif;
+	color:#4a003d;
+	background:#ffffff!important;
+	border:1px solid #d0e7f2;
+	padding:0px;
+	width:202px;
+}
+
+.loginFormBox input.submit{
+	width:auto;
+	height:auto;
+	border:none;
+}
+
+.loginFormBox img{
+	cursor:pointer;
+}
+
+input.checkbox{
+	width:auto;
+	border:0px;
+	background:transparent;
+}
+
+.loginFooter{
+	font-size:75%; 
+	padding-right:34px;
+	padding-top:34px;
+	text-align:right;
+}
+.loginPage .widget-button a span, .widget-button > span span {
+	padding: 1px 14px 5px 0 !important
+}
+/**
+ * Foutmelding op loginpagina
+**/
+
+.loginPage .loginError .feedbackPanelERROR{
+	color: #cc0000;	
+}
+
+
+
+/**
+ * The following classes can be used to display a warning in Internet Explorer 6 that EduArte
+ * does not support this version of IE. The styles below use images in DBS style though, so
+ * the design of the warning has not been changed to EduArte layout yet. 
+**/
+#ie6warn {
+        width: 420px;
+}
+#ie6warn .highlight{
+        color: #dd0000;
+        font-weight: bold;
+}
+#ie6warn td {
+        text-align: center;
+        padding: 7px 3px;
+}
+#ie6warn .logolink {
+        display: block;
+        width: 100%;
+        height: 45px;
+        background-repeat: no-repeat;
+        background-position: center center;
+}
+#ie6warn #continueLink {
+        color: blue;
+}
+#ie6warn .browsernames {
+        font-size: 11px;
+}
+#ie6warn .browsernames td {
+        padding-top: 0px;
+}
+#firefoxlink {
+        background-image: url('../img/logos/Firefox-logo.png');
+}
+#ielink {
+        background-image: url('../img/logos/Internet_Explorer_7_Logo.png');
+}
+#safarilink {
+        background-image: url('../img/logos/Apple_Safari.png');
+}
+#operalink {
+        background-image: url('../img/logos/Opera_logo.png');
+}

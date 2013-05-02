@@ -1,0 +1,26 @@
+package nl.topicus.cobra.web.components.datapanel.selection.bottomrow;
+
+import java.util.Iterator;
+
+import nl.topicus.cobra.web.components.Selection;
+import nl.topicus.cobra.web.components.datapanel.CustomDataPanel;
+import nl.topicus.cobra.web.components.datapanel.selection.ISelectionComponent;
+import nl.topicus.cobra.web.components.panels.bottomrow.BottomRowPanel;
+
+public class AllesSelecterenButton<R, S> extends AbstractSelecterenButton<R, S>
+{
+	private static final long serialVersionUID = 1L;
+
+	public AllesSelecterenButton(BottomRowPanel bottomRow, ISelectionComponent<R, S> selectionPanel)
+	{
+		super(bottomRow, selectionPanel, "Alles selecteren");
+	}
+
+	@Override
+	protected void performSelectionAction(CustomDataPanel<S> datapanel, Selection<R, S> selection)
+	{
+		Iterator< ? extends S> it = datapanel.getDataProvider().iterator(0, Integer.MAX_VALUE);
+		while (it.hasNext())
+			selection.add(it.next());
+	}
+}

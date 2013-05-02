@@ -1,0 +1,30 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="laySearchbar">
+		<form wicket:id="form">
+			<fieldset>
+				<span>Vanaf maand</span>
+				<select wicket:id="vanafMaand" class="inpSelect">
+					<option>nu</option>
+				</select>
+				<span>t/m maand</span>
+				<select wicket:id="totMaand" class="inpSelect">
+					<option>dan</option>
+				</select>
+				<span wicket:id="afsprakenContainer">
+					<span>alleen IIVO afspraken</span>
+					<select wicket:id="alleenIIVOAfspraken" class="inpSelect">
+						<option>JA</option>
+					</select>
+				</span>
+				<input class="inpImage" type="image" value="Submit" title="Zoeken" src="assets/img/icons/searchicon.gif" />
+			</fieldset>
+		</form>
+	</div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="laySearchbar">
+		<form wicket:id="form">
+			<span>Peildatum</span>
+			<input class="inpText" value="" wicket:id="peildatum" />			
+			<select wicket:id="deelnemerFilter.inschrijvingFilter.organisatieEenheid" class="unit_200 inpSelect">
+				<option>Organisatie...</option>
+			</select>
+			<br>
+			<input class="inpText unit_40" value="" wicket:id="procentAfwezig" />	
+			<span>% afwezig gedurende de laatste</span>
+			<input class="inpText unit_20" value="" wicket:id="aantalWeken" />
+			<span>weken of</span>
+			<input class="inpText unit_20" value="" wicket:id="dagenAfwezig" />	
+			<span>achtereenvolgende dagen afwezig gedurende de laatste</span>
+			<input class="inpText unit_20" value="" wicket:id="aantalDagen" />
+			<span>dagen, leeftijd tot</span>
+			<input class="inpText unit_20" value="" wicket:id="leeftijdTot" />	
+			<span>jaar</span>
+			<input class="inpImage" type="image" value="Submit" title="Zoeken" src="assets/img/icons/searchicon.gif" />			
+		</form>
+	</div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

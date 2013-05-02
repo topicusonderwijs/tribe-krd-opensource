@@ -1,0 +1,10 @@
+U bent door ${afspraak.auteur.volledigeNaam} uitgenodigd voor de afspraak "${afspraak.titel}" die plaats zal vinden op ${datum} om ${tijd}.
+
+$!afspraak.omschrijving
+
+#if( $afspraak.locatie )
+Locatie: $afspraak.locatie
+#end
+#if( $afspraak.activiteit )
+Activiteit: $afspraak.activiteit
+#end

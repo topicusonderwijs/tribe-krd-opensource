@@ -1,0 +1,43 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<table class="tblData tblInput">
+		<tr>
+			<td class="tblTag">Contract</td>
+			<td><input class="inpText unit_200" type="text" wicket:id="contract" /></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Onderdeel</td>
+			<td><select class="unit_200" wicket:id="onderdeel"><option></option></select></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Contactpersoon</td>
+			<td><select class="unit_200" wicket:id="externeOrganisatieContactPersoon"><option></option></select></td>
+		</tr>				
+		<tr wicket:id="beginEindDatum">
+			<td class="tblTag">Geldig van/tot</td>
+			<td>
+				<span>
+					<input class="inpText unit_80 required" type="text" wicket:id="begindatum" />
+				</span>
+				<span>
+					<input class="inpText unit_80" type="text" wicket:id="einddatum" />
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td class="tblTag">Extern nummer <span wicket:id="description" class="inpDescription ui-icon ui-icon-help"></span></td>
+			<td><input class="inpText unit_200" type="text" wicket:id="externNummer" /></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Datum beschikking</td>
+			<td>
+				<input class="inpText unit_80" type="text" wicket:id="datumBeschikking" />
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+</body>
+</html>

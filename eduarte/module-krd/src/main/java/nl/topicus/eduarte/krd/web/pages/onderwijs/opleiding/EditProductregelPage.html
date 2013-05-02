@@ -1,0 +1,106 @@
+<html xmlns:wicket>
+<head>
+<script type="text/javascript">
+YAHOO.util.Event.onDOMReady(function() {
+	try {
+		var node = document.getElementById('focus');	
+		if(node) {
+			node.focus();
+		}
+	} catch (e) {
+		// TODO: handle exception
+		alert(e);
+	}
+});
+</script>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Productregel</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">Type</td>
+						<td class="tblInput">
+							<select wicket:id="typeProductregel" class="unit_max">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Volgnummer</td>
+						<td class="tblInput">
+							<input type="text" class="unit_80" wicket:id="volgnummer" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Afkorting</td>
+						<td class="tblInput">
+							<input type="text" class="unit_80" wicket:id="afkorting" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Naam</td>
+						<td class="tblInput">
+							<input type="text" class="unit_max" wicket:id="naam" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Soort</td>
+						<td class="tblInput">
+							<select wicket:id="soortProductregel" class="unit_max">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Verplicht</td>
+						<td class="tblInput">
+							<select wicket:id="verplicht" class="unit_80">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Cohort</td>
+						<td class="tblInput">
+							<span wicket:id="cohort.naam">2008/2009</span>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Alle onderwijs&shy;producten toestaan van</td>
+						<td class="tblInput">
+							<select wicket:id="alleOnderwijsproductenToestaanVan" class="unit_max"><option>[geen]</option></select>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contHalf right" wicket:id="onderwijsproducten">
+			<h3 class="caption">Onderwijsproducten</h3>
+			<table class="tblData tblInputs" wicket:id="productenTabel">
+				<tbody>
+					<tr wicket:id="onderwijsproducten">
+						<td class="tblInput">
+							<div wicket:id="ondproduct" class="unit_400 required" ></div>
+						</td>
+						<td class="tblInput">
+							<a wicket:id="delete" href="#" class="deleteItem" title="Toegestaan onderwijsproduct verwijderen"></a>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblInput">
+							<div wicket:id="ondproduct" class="unit_400"></div>
+						</td>
+						<td>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

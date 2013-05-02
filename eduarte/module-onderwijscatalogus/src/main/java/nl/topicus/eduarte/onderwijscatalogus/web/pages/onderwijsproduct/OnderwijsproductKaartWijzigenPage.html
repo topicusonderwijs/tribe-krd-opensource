@@ -1,0 +1,177 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Onderwijsproduct</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Zoekcode - Unieke code van een onderwijsproduct binnen een onderwijscatalogus dat gebruikt kan worden om het product snel op te zoeken."></span>
+							Zoekcode
+						</td>
+						<td class="tblInput"><input type="text" class="unit_100" wicket:id="code" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Titel</td>
+						<td class="tblInput"><input type="text" class="unit_max" wicket:id="titel" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Omschrijving</td>
+						<td class="tblInput"><textarea wicket:id=omschrijving rows="2" cols="50" class="unit_max"></textarea></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Zoektermen</td>
+						<td class="tblInput"><textarea wicket:id=zoektermenAlsString rows="1" cols="50" class="unit_max"></textarea></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Soort product</td>
+						<td class="tblInput"><select wicket:id="soortProduct" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Heeft werkstuktitel</td>
+						<td class="tblInput"><select wicket:id="heeftWerkstuktitel" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Alleen extern</td>
+						<td class="tblInput"><select wicket:id="alleenExtern" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Status</td>
+						<td class="tblInput"><select wicket:id="status" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Begindatum</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="begindatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Einddatum</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="einddatum" /></td>
+					</tr>
+				</tbody>
+			</table>
+			<div wicket:id="aanbod"></div>
+			<div wicket:id="bpvCriteriaOnderwijsproductPanel"></div>
+		</div>
+		<div class="contHalf right">
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr wicket:id="creditsContainer">
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Credits - Het aantal credits (ECTS) dat de student verdient met het behalen van dit onderwijsproduct."></span>
+							Credits
+						</td>
+						<td class="tblInput"><input type="text" class="unit_240" wicket:id="credits" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Omvang - De omvang van het onderwijsproduct in aantal begeleide klokuren."></span>
+							Omvang
+						</td>
+						<td class="tblInput"><input type="text" class="unit_240" wicket:id="omvang" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Belasting - De belasting van het onderwijsproduct. De meeteenheid is door de onderwijsinstelling te bepalen (bijvoorbeeld studielasturen of studiepunten)."></span>
+							Belasting
+						</td>
+						<td class="tblInput"><input type="text" class="unit_240" wicket:id="belasting" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Aggregatieniveau - Het aggregatieniveau van een onderwijsproduct geeft de mate van samenstelling van het onderwijsproduct aan. Hiermee wordt ook aangegeven waar in de hierarchie van de onderwijscatalogus het onderwijsproduct opgenomen mag worden. Een onderwijsinstelling kan zelf kiezen welke aggregatieniveau's onderkend worden."></span>
+							Aggregatieniveau
+						</td>
+						<td class="tblInput"><select wicket:id="aggregatieniveau" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Startonderwijsproduct - Dit veld geeft aan of het onderwijsproduct geschikt is voor deelnemers die net binnengekomen zijn op de onderwijsinstelling."></span>
+							Startonderwijsproduct
+						</td>
+						<td class="tblInput"><select wicket:id="startonderwijsproduct" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Leerstijl</td>
+						<td class="tblInput"><select wicket:id="leerstijl" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Minimum aantal deelnemers</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="minimumAantalDeelnemers" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Maximum aantal deelnemers</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="maximumAantalDeelnemers" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Soort praktijklokaal</td>
+						<td class="tblInput"><select wicket:id="soortPraktijklokaal" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Type toets</td>
+						<td class="tblInput"><select wicket:id="typeToets" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Type locatie</td>
+						<td class="tblInput"><select wicket:id="typeLocatie" class="inpSelect unit_240">
+								<option>...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Kostprijs - Kostprijs van het product op basis van de activiteiten die door de instelling worden verricht en de kosten die worden gemaakt om het onderwijsproduct te kunnen aanbieden."></span>
+							Kostprijs
+						</td>
+						<td class="tblInput"><input type="text" class="unit_80" wicket:id="kostprijs" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<span class="inpDescription ui-icon ui-icon-help" title="Bij Intake - Onderwijsproduct mag ook afgenomen worden bij een verbintenis met status Intake."></span>
+							Bij Intake
+						</td>
+						<td class="tblInput"><select wicket:id="bijIntake" class="inpSelect unit_240">
+								<option>...</option>
+							</select></td>
+					</tr>
+				</tbody>
+			</table>
+			
+			<div wicket:id="vrijVelden"></div>
+		</div>
+		<div class="clear"></div>
+			<div wicket:id="taxToevoegen"></div>
+	</form>
+</wicket:extend>
+</body>
+</html>

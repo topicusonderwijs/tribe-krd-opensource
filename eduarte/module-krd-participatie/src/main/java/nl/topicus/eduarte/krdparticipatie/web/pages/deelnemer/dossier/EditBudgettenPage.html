@@ -1,0 +1,33 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<div class="contBox">
+		<form wicket:id="form">
+		<h3 class="caption">Budget</h3>
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>				
+						<td class="tblTag">
+							Onderwijsproduct
+						</td>
+						<td>
+							<div wicket:id="onderwijsproduct" class="unit_max"></div>	
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							Aantal uur
+						</td>
+						<td>
+							<input wicket:id="aantalUur" type="text" class="inpText unit_80 left" value="200"/>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+			</form>
+	</div>		
+</wicket:extend>
+</body>
+</html>

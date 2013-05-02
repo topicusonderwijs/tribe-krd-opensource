@@ -1,0 +1,39 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div>
+		<form wicket:id="form">
+			<table class="tblData tblInput">
+				<thead>
+					<tr><th colspan="2">Onderwijsproduct Totalen rapportage</th></tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>vanaf datum</td> <td><input class="inpText" value="" wicket:id="beginDatum" /></td>
+				</tr>
+				<tr>
+					<td>t/m datum</td><td> <input class="inpText" value="" wicket:id="eindDatum" /></td>
+				</tr>
+				<tr>
+					<td>activiteiten Tonen</td>
+						<td>			
+								<input type="checkbox" wicket:id="activiteitenTonen" />
+						</td>
+				</tr>
+				<tr>
+					<td>contract</td>
+					<td><div wicket:id="contract"></div></td>
+				</tr>
+				<tr>
+				<td><span>Afspraak types </span></td> <td><span wicket:id="afspraakTypeCategories"></span></td>
+				</tr>
+				</tbody>
+			</table>
+		</form>
+	</div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

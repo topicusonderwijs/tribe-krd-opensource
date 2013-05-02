@@ -1,0 +1,29 @@
+<html xmlns:wicket>
+<body>
+<wicket:panel>
+	<input type="hidden" wicket:id="selectionValue" />
+	<span class="os-label" wicket:id="BeschikbaarLabel">Beschikbaar</span>
+	<span class="os-label" wicket:id="GeselecteerdLabel">Geselecteerd</span>
+	<ul class="os-orderselect os-available" wicket:id="availableList">
+		<li class="hide"></li>
+		<li class="ui-state-default ui-corner-all" wicket:id="availableItems">
+			<div class="os-name" wicket:id="name"></div>
+			<div class="os-down ui-icon-circle-arrow-s ui-icon" title="Verplaats omlaag"></div>
+			<div class="os-up ui-icon-circle-arrow-n ui-icon" title="Verplaats omhoog"></div>
+			<div class="os-add ui-icon-circle-plus ui-icon" title="Voeg aan de lijst toe"></div>
+			<div class="os-remove ui-icon-circle-minus ui-icon" title="Verwijder uit de lijst"></div>
+		</li>
+	</ul>
+	<ul class="os-orderselect os-selection" wicket:id="selectionList">
+		<li class="hide"></li>
+		<li class="ui-state-default ui-corner-all" wicket:id="selectionItems">
+			<div class="os-name" wicket:id="name"></div>
+			<div class="os-down ui-icon-circle-arrow-s ui-icon" title="Verplaats omlaag"></div>
+			<div class="os-up ui-icon-circle-arrow-n ui-icon" title="Verplaats omhoog"></div>
+			<div class="os-add ui-icon-circle-plus ui-icon" title="Voeg aan de lijst toe"></div>
+			<div class="os-remove ui-icon-circle-minus ui-icon" title="Verwijder uit de lijst"></div>
+		</li>
+	</ul>
+</wicket:panel>
+</body>
+</html>

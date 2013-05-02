@@ -1,0 +1,17 @@
+Geachte $!ontvanger.persoon.aanspreeknaam $!ontvanger.naam,
+
+Hierbij attenderen we u op het volgende: "${soort}".
+Het betreft hier deelnemer ${bron.deelnemer.persoon.volledigeNaam} ($bron.deelnemer.registratieNummer).
+Het onderwerp hiervan is ${bron.omschrijving}.
+
+
+Wij hopen u hiermee voldoende geïnformeerd te hebben.
+
+
+Met vriendelijke groet,
+
+
+DBS
+
+
+P.S. Dit bericht is automatisch gegenereerd. U kunt dit niet beantwoorden.

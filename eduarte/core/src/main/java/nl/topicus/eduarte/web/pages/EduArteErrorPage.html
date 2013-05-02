@@ -1,0 +1,63 @@
+<html xmlns:wicket>
+<head>
+<wicket:head>
+	<script type="text/javascript">
+		function mantisMelding()
+		{
+			var url = 'http://bugs.topicus.nl/';
+			var win = window.open('about:blank', 'Mantis');
+			var form = document.getElementById('bugForm');
+			form.target=win.name;
+			form.submit();
+		}
+	</script>
+</wicket:head>
+</head>
+<body>
+<wicket:extend>
+	<div class="contBox">
+		<div class="clear laySeparator10"></div>
+		<table class="tblData">
+			<colgroup span="0"></colgroup>
+			<tbody>
+				<tr>
+					<td class="unit_120 tblTag">Foutmelding</td>
+					<td>
+						Er is een fout opgetreden. Met de knop 'terug' kunt u terug gaan naar de vorige pagina. 
+						Met de knop 'Details' kun u meer informatie verkrijgen over deze fout.</td>
+				</tr>
+			</tbody>
+		</table>
+		<div class="clear laySeparator10"></div>
+		<table class="tblData">
+			<colgroup span="0"></colgroup>
+			<tbody>
+				<tr>
+					<td class="unit_120 tblTag">Versie nummer</td><td wicket:id="versie"></td>
+				</tr>
+				<tr>
+					<td class="unit_120 tblTag">Build nummer</td><td wicket:id="build"></td>
+				</tr>
+				<tr>
+					<td class="unit_120 tblTag">Datum</td><td wicket:id="tijd"></td>
+				</tr>
+				<wicket:enclosure child="zoek">
+				<tr>
+					<td class="unit_120 tblTag">&nbsp;</td><td>Voor onderstaande opties heeft u een <a target="_blank" href="http://bugs.topicus.nl">Mantis</a> account nodig.</td>
+				</tr>
+				<tr>
+					<td class="unit_120 tblTag">Zoek in Mantis</td><td><a href="#" wicket:id="zoek" target="mantis">Zoek of deze fout al in Mantis voorkomt</a></td>
+				</tr>
+				<tr>
+					<td class="unit_120 tblTag">Maak Mantis melding</td><td><a wicket:id="meld" href="javascript:mantisMelding()" >Meld deze fout in Mantis</a></td>
+				</tr>
+				</wicket:enclosure>
+			</tbody>
+		</table>
+		<div class="clear laySeparator10"></div>
+		<div wicket:id="details"></div>
+		<div class="clear laySeparator10"></div>
+	</div>
+</wicket:extend>
+</body>
+</html>

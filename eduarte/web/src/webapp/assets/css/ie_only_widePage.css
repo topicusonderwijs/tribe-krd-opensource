@@ -1,0 +1,6 @@
+
+/* Deze CSS zorgt er voor dat de horizontale schrollbalk getoont kan worden waar nodig in IE*/
+
+.layLeft{
+	overflow-x:auto!important; 
+}

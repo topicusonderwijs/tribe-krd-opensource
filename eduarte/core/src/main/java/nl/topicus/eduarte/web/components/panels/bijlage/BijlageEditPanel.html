@@ -1,0 +1,100 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+<form wicket:id="form">
+	<table class="tblData">
+		<tbody>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Documentcategorie
+	  			</td>
+	  			<td>
+	  				<select wicket:id="categorie" class="unit_max">
+	  					<option></option>
+	  				</select>
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Documenttype
+	  			</td>
+	  			<td>
+	  				<select wicket:id="bijlage.documentType" class="unit_max">
+	  					<option></option>
+	  				</select>
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Omschrijving
+	  			</td>
+	  			<td>
+					<input type="text" class="inpText unit_max" wicket:id="bijlage.omschrijving" />
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Documentnummer
+	  			</td>
+	  			<td>
+					<input type="text" class="inpText unit_max" wicket:id="bijlage.documentnummer" />
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Ontvangstdatum
+	  			</td>
+	  			<td>
+					<input type="text" class="inpText unit_80" wicket:id="bijlage.ontvangstdatum" />
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Geldig tot
+	  			</td>
+	  			<td>
+					<input type="text" class="inpText unit_80" wicket:id="bijlage.geldigTot" />
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Locatie
+	  			</td>
+	  			<td>
+					<input type="text" class="inpText unit_max" wicket:id="bijlage.locatie" />
+	  			</td>
+	  		</tr>
+	  		<tr>
+	  			<td class="tblTag">
+				  	Type bijlage
+	  			</td>
+	  			<td wicket:id="bijlage.typeBijlage" id="typeBijlage">
+			    	<input type="radio" />
+					<input type="radio" />
+	  			</td>
+	  		</tr>
+	  		
+	  		<tr wicket:id="bestandContainer">
+	  			<td class="tblTag">
+				  	Bestand
+	  			</td>
+	  			<td>
+					<input type="file" class="inpFile unit_280" wicket:id="bestand" />
+	  			</td>
+	  		</tr>
+	  		<tr wicket:id="linkContainer">
+	  			<td class="tblTag">
+				  	Link
+	  			</td>
+	  			<td>
+					<input type="text" class="inpFile unit_280" wicket:id="bijlage.link" />
+	  			</td>
+	  		</tr>
+		</tbody>
+	</table>
+</form>
+</wicket:panel>
+</body>
+</html>

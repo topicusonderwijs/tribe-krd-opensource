@@ -1,0 +1,54 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="nieuweVerwerker">
+		<div class="contHalf left">
+		<div wicket:id="autofieldset"></div>
+		<input type="submit" value="Toevoegen" />
+	</div>
+	<div class="contHalf right">
+		<div>
+			<h3 class="caption">Omschrijving</h3>
+			<p>Om vanuit KRD webservices aan te kunnen roepen heeft KRD de
+			adresgegevens van de webservice nodig. Daar de KRD applicatie in
+			verschillende omgevingen draait zijn twee adressen noodzakelijk: &eacute;&eacute;n
+			voor de productieomgeving, en &eacute;&eacute;n voor de overige omgevingen. 
+			Onderstaande gegevens zijn benodigd.
+			</p>
+			<ul class="bullets">
+				<li>Endpoint address: de URL die naar de service die aangeroepen
+				moet worden verwijst</li>
+				<li>Namespace URI: de namespace die de service in de WSDL
+				identificeert</li>
+				<li>Service name: de naam van de service die aangeroepen moet
+				worden</li>
+			</ul>
+			<h4 class="caption">Voorbeeld:</h4>
+			<p>Volgend XML voorbeeld geeft de definitie van een webservice aan:</p>
+			<pre>&lt;wsdl:definitions
+    xmlns:eduarte=&quot;http://eduarte.topicus.nl/eduarte/SynchronisatieService&quot;
+    name=&quot;SynchronisatieService&quot;
+    targetNamespace=&quot;http://eduarte.topicus.nl/eduarte/SynchronisatieService&quot;&gt;
+
+    &lt;!-- ... --&gt;
+    &lt;wsdl:service name=&quot;SynchronisatieService&quot;&gt;
+        &lt;wsdl:port binding=&quot;eduarte:SynchronisatieServiceSOAP&quot; name=&quot;SynchronisatieService_Port&quot;&gt;
+            &lt;soap:address location=&quot;https://www.example.com/endpoint&quot; /&gt;
+        &lt;/wsdl:port&gt;
+    &lt;/wsdl:service&gt;
+&lt;/wsdl:definitions&gt;
+</pre>
+			<p>Voor deze service is de endpoint address gelijk aan <tt>https://www.example.com/endpoint</tt>. De service 
+			name is <tt>SynchronisatieService</tt> en de namespace is <tt>http://eduarte.topicus.nl/eduarte/SynchronisatieService</tt>.</p> 
+		</div>
+	</div>
+	</form>
+	<div class="clear"></div>
+	<form wicket:id="bestaandeVerwerkers">
+	<div wicket:id="verwerkers"></div>
+	</form>
+</wicket:extend>
+</body>
+</html>

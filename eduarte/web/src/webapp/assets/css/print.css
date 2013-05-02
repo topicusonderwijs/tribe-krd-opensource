@@ -1,0 +1,28 @@
+@import url("base.css");
+.contHalf{
+	width:49%;
+	padding:0px 0px 0px 0px;
+	border-right:1px solid #d5d5d5;
+	margin-bottom:20px;
+	overflow:hidden;
+}
+
+/** contBox contains the main content of a layLeft class unit.**/
+.contBox{
+	width:650px;
+	text-align:left;
+	padding:0px;
+	margin:0px 0px;
+}
+
+.afdrukLink{
+	display: none;
+}
+
+.tblData td.tblTag{
+	width:100px;
+	padding-left:0px;
+	vertical-align:top;
+	height:20px;
+	color:#808080;
+}

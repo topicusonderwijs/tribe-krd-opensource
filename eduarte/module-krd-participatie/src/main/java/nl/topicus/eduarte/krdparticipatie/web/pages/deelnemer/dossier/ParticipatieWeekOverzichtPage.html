@@ -1,0 +1,26 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Aanwezigheid - Week <span wicket:id="beginweek">49</span> - <span wicket:id="eindweek">49</span></h3>
+	<div wicket:id="filter"></div>
+	<div class="clear laySeparator"></div>
+	
+		<div wicket:id="weken">
+			<div wicket:id="week"></div>
+		</div>
+	
+	<div class="clear"></div>
+	<table class="tblDatagrid tblAanwezigheid append_20" wicket:id="legenda">
+		<tbody>
+			<tr wicket:id="legendaItem">
+				<td colspan="1" wicket:id="kleur"></td>
+				<td colspan="6"><span wicket:id="omschrijving">Aanwezig</span></td>
+				<td colspan="14"></td>
+			</tr>
+		</tbody>
+	</table>
+</wicket:extend>
+</body>
+</html>

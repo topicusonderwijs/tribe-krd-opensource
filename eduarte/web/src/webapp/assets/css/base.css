@@ -1,0 +1,347 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Version: 0.2
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+This style sheet is meant for use in the EduArte application. 
+
+
+Revisions:
+
+0.1 - 16/10/2007 - First build.
+0.2 - 09/02/2008 - base.css is split into a number of smaller files.
+				 - the base.css from the soundscape project (DBS) is merged into
+				   the stylesheet. This was done with revision 54994 of 
+				   Tue Feb 10 15:49:40 2009 UTC of the base.css from soundscape.
+				   styles concerning color schemes and layout have not been copied
+				   since the layout of DBS currently differs from the layout of EduArte.
+*/
+
+/** Twilight: Importing required sheets **/
+@import url("reset-fonts-grids.css");
+@import url("widgets.css");
+@import url("util.css");
+@import url("fixes.css");
+@import url("modal_additions.css");
+@import url("header.css");
+@import url("layout.css");
+@import url("icons.css");
+@import url("tables.css");
+@import url("presentie.css");
+@import url("login.css");
+@import url("screensaver.css");
+@import url("navbar.css");
+@import url("agenda.css");
+@import url("calendar.css");
+@import url("competenties.css");
+@import url("roosters.css");
+@import url("ui.datepicker.css");
+@import url("slider.css");
+@import url("bpv.css");
+@import url("alluris.css");
+@import url("ui-temp.css");
+
+/** Twilight: Optional CSS tweaks **/
+/*
+http://cssglobe.com/lab/tablecloth/ 
+http://code.google.com/p/blueprintcss/
+*/
+strong {
+	font-weight: bold;
+}
+var {
+	text-decoration: underline;
+}
+
+.warning, .information {
+	background-color:#ffffe2!important;
+	padding: 6px;
+	margin: 10px 20px 10px 10px;
+	font-size: 1.1em;
+	color: #333;
+}
+.warning{
+	border:1px solid #b10000!important;
+}
+.information{
+	border:1px solid #b1b1b1!important;
+}
+input.error,select.error{border-color:#f00!important;}
+.required{
+	background-color:#ffffd0!important;
+}
+
+/**Two kinds of headings, to be used for titles. Caption is larger than subcaption.*/
+.caption{
+	font-size: 1.1em;
+	line-height: 22px;
+	color: #b3b3b3;
+	padding-bottom:2px;
+	margin-bottom:0px;
+	padding-top:2px;
+	margin-top:15px;
+	font-weight:bold;
+	}
+
+.caption a {
+		padding:0px 1px;
+		text-indent:0px;
+	}
+
+.subcaption {
+	font-size:13px;
+	color:#989898;
+	padding-bottom:2px;
+	margin-bottom:0px;
+	padding-top:2px;
+	margin-top:12px;
+	padding-left:11px;
+	font-weight:bold;
+	}
+
+.label {
+	padding-left:5px;
+	padding-right:5px;
+	vertical-align:top;
+	color: #999999;
+	font-weight:bold; 
+}
+
+/**tableCaption has the same styling as subcaption, except for the left-side padding. It's meant to be used as a caption
+ * for tableDatagrid tables**/
+.tableCaption {
+	font-size:13px;
+	color:#808080;
+	padding-bottom:2px;
+	margin-bottom:0px;
+	padding-top:2px;
+	margin-top:12px;
+	font-weight:bold;
+	}
+
+.layDash{border-top:1px dashed #d5d5d5; margin-top:20px;}
+.laySeparator{height:30px;}
+.laySeparator10{height:10px;}
+
+a {
+	/* outline:none; Uitgezet ivm zichtbaarheid bij tabbing */ 
+	text-decoration:none;
+	color: #627490;	
+}
+
+a:hover {
+	text-decoration: underline;
+	}
+
+/** Twilight: Input styles derived from input base **/
+
+input, select, textarea{
+	font-family: Arial, Helvetica, sans-serif;
+	color:#454545;
+	padding:1px;
+	}
+input[type="radio"] {
+	margin: 3px 3px 0px 5px;
+}
+	
+/* IE thinks it knows better and changes the contents of the readonly attribute */
+input[readonly] {background-color:#ECECEC!important;}
+input[disabled]{background-color:#ECECEC!important;}
+select[disabled]{background-color:#ECECEC!important;}
+input[type="password"],
+input[type="text"],
+input[type="file"],
+select,
+textarea {
+	border:1px solid #c5c5c5;
+	background-color: white;
+}
+/**dit is een button met een image erop, een betere naam zou nuttig zijn*/
+.inpImage{vertical-align: text-top;}
+.inpSnelzoek{width:120px;}
+
+.inpAutoComplete {
+	border:1px solid #c5c5c5;
+	background:white url('../img/icons/autoCompleet2.gif') no-repeat left center;
+	padding-left: 14px;
+}
+.inpAutoCompleteFail {
+	border-color:#FF0000!important;
+	background:white url('../img/icons/autoCompleetFail.gif') no-repeat left center;
+}
+.inpAutoComplete:disabled {
+	background-color: #f0f0f0;
+	color: gray;
+}
+.inpDescription {
+	float: right;
+	cursor: pointer;
+}
+
+.searchButton {
+	width: 18px; /* else IE7 thinks it needs 978px */
+	z-index: 0; 
+}
+
+.searchButton img {
+	background-color: white;
+	border: 1px solid #AFDDE9;
+	margin-bottom: -5px;
+}
+
+/** input voor afspraak participanten **/
+.inpGeaccepteerd{background-color: #f0f6c8!important;}
+.inpGeweigerd{background-color: #ffdecb!important;}
+.inpUitgenodigd{background-color: #e2cfff!important;}
+.lblGeaccepteerd{background-color: #f0f6c8!important;}
+.lblGeweigerd{background-color: #ffdecb!important;}
+.lblUitgenodigd{background-color: #e2cfff!important;}
+img.margin2{margin: 0px 2px;}
+
+/** Div met gekozen entiteit **/
+/** Wordt gebruikt in DBS uitgebreid zoeken, voorheen span.selectEntity**/
+div.inpSearchEntity{
+	height: 20px!important;
+	background: none;
+	margin-right: 10px;
+	border:1px solid #c5c5c5;
+}
+
+/** WIDGET OVERRIDES **/
+/** Onderstaande geeft de tabbladen witte achtergrond en laat deze helemaal aansluiten op de onderliggende lijn van de tabbladen. **/
+.widget-tabs{
+	border: none!important;
+	height: 16px!important;
+}
+
+.widget-tabs #current a{ 
+	border-bottom:1px solid #918e8d!important;
+}
+
+/**volgende drie classes alleen in gebruik in samenvoegdocumenten; moet nog naar gekeken worden (TODO)**/
+.spanBijlage{
+		background:url(../img/icons/attach.png) no-repeat left top;
+		padding-left:20px;			
+	}
+
+.spanError{
+		background:url(../img/icons/error.png) no-repeat left top;
+		padding-left:20px;			
+	}
+	
+.spanErrorRight{
+	background:url(../img/icons/error.png) no-repeat right top;
+	padding-left:20px;			
+}
+	
+.spanBijlage a:hover{
+			text-decoration:underline;		
+	}
+		
+/**Classes die de layout rond pasfoto's regelen**/
+
+.imgPasfoto{
+	background: url('../img/layout/fotobox_bottom.png') no-repeat bottom left;
+	padding:0px 0px 8px 0px;
+	display:block;
+	margin:20px 12px;
+	width:116px;
+	}
+
+.imgPasfoto img{
+		background:url('../img/layout/fotobox.png') no-repeat top left;
+		padding:8px 9px 0px 9px;
+		width:98px;
+		height:auto;
+	}
+	
+.tblGridview .imgPasfoto{
+	margin:10px 6px;
+}
+
+/** Autocomplete styles, worden alleen gebruikt in DBS 
+(en staan dus mogelijk ook in het verkeerde kleurenschema)*/
+.wicket-aa {
+	text-align: left;
+	border: 1px solid #454545;
+	background-color: #ffffff;
+	font-size:0.8em;
+}
+  	 
+.wicket-aa ul li {
+	color:#454545;
+	vertical-align:top;
+	text-align: left;
+	border-left: 1px dotted #afdde9;
+	border-bottom: 1px dotted #e6e6e6;
+}
+
+.wicket-aa ul li img.lstCompleteImage {
+	padding-right: 5px;
+}
+	  	 
+.selected{
+	background-color:#afdde9;
+	cursor:default;
+}
+
+.shaded {
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+	-webkit-box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+	-moz-box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+	box-shadow: 5px 5px 5px rgba(0,0,0,0.4);
+	border-right: 1px solid #cccccc;
+	border-bottom: 1px solid #cccccc;
+}
+	
+div.wicket-tree-table select {
+	width: 118px;
+	font-size: 11px;
+	height: 1.6em;
+}
+
+/* Opmaak voor BRON reden van melding textarea */
+.redenvak {
+	width:940px;
+	margin-left:20px;
+	padding-left: 5px;
+	margin-top: 8px;
+	margin-bottom: 5px;
+}
+
+ul.bullets li {list-style: disc inside;}
+
+.help{
+	cursor:help;
+}
+
+span.list {
+	padding-left: 10px;
+	color: #999;
+	margin-top: 5px;
+	clear: both;
+	float: left;
+}
+
+.irislogo {
+	height: 38px;
+	width: 105px;
+	background: url(../img/icons/irisplus_logo.png) no-repeat top left;
+	background-position: 10px 10px;
+	position:absolute;
+	right:5px;
+	top:5px;
+	display: block;
+}

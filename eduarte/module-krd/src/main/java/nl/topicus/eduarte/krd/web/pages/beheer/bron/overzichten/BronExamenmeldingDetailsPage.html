@@ -1,0 +1,66 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="tableCaption">Examenmelding</h3>
+	<div class="contHalf left">
+		<table class="tblData tblInputs">
+			<thead>
+				<tr>
+					<th>Examengegevens</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">Deelnemer</td>
+					<td><a wicket:id="deelnemerLink"><span wicket:id="deelnemer"></span></a></td>				
+				</tr>
+				<tr>
+					<td class="tblTag">ILT-code</td>
+					<td><span wicket:id="examenCode"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Examenjaar</td>
+					<td><span wicket:id="examenJaar"></span></td>	
+				</tr>
+				<tr>
+					<td class="tblTag">Datum uitslag examen</td>
+					<td><span wicket:id="datumUitslagExamen"></span></td>	
+				</tr>
+				<tr>
+					<td class="tblTag">Uitslag examen</td>
+					<td><span wicket:id="uitslagExamen"></span></td>	
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="contHalf right">
+		<table class="tblData tblInputs">
+			<thead>
+				<tr>
+					<th>Werkstuk</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">Werkstuktitel</td>
+					<td><span wicket:id="titelOfThemaWerkstuk"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Werkstukbeoordeling</td>
+					<td><span wicket:id="beoordelingWerkstuk"></span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Cijfer werkstuk</td>
+					<td><span wicket:id="cijferWerkstuk"></span></td>
+				</tr>
+			</tbody>
+		</table>	
+	</div>
+	<div class="clear"></div>
+	<div wicket:id="datapanel"></div>
+</wicket:extend>
+</body>
+</html>
+		

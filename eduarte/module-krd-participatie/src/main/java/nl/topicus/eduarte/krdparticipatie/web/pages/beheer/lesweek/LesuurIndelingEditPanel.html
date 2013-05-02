@@ -1,0 +1,29 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form" class="txtleft">
+	<div>
+		<h3 class="caption">Lesuren</h3>
+	</div>
+	<table class="tblDatagrid" wicket:id="lesuurTable">
+		<thead>
+			<tr>
+		    <th>Lesuur</th>
+		    <th>Begintijd</th>
+		    <th>Eindtijd</th>
+		    </tr>
+		  </thead>
+		  <tbody>
+			  <tr wicket:id="listview">
+			    <td><input wicket:id="lesuur" type="text"/></td>
+			    <td><input wicket:id="beginTijd" type="text"/></td>
+			    <td><input wicket:id="eindTijd" type="text"/></td>
+			  </tr>
+		  </tbody>
+		</table>
+	</form>
+</wicket:extend>
+</body>
+</html>

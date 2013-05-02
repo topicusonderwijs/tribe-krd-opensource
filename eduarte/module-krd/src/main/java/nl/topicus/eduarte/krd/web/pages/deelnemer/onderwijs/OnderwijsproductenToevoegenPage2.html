@@ -1,0 +1,35 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="caption">Onderwijsproducten toevoegen</div>
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th>Code</th>
+					<th>Titel</th>
+					<th>Begindatum</th>
+					<th>Einddatum</th>
+					<th>Cohort</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="afnameList">
+					<td><span wicket:id="onderwijsproduct.code"></span></td>
+					<td><span wicket:id="onderwijsproduct.titel"></span></td>
+					<td><input type="text" wicket:id="begindatum"/></td>
+					<td><input type="text" wicket:id="einddatum"/></td>
+					<td>
+						<select wicket:id="cohort">
+							<option></option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</wicket:extend>
+</body>
+</html>

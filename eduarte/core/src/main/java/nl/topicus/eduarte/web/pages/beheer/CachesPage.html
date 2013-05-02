@@ -1,0 +1,29 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Caches</h3>
+	<table class="tblDatagrid">
+		<thead>
+			<tr>
+				<th>Naam</th>
+				<th>Elementen</th>
+				<th>Grootte</th>
+				<th>Hits</th>
+				<th>Misses</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="cache">
+				<td><span wicket:id="naam">Querycache</span></td>
+				<td><span wicket:id="elementsInMemory">1</span></td>
+				<td><span wicket:id="sizeInMemory">5</span> bytes</td>
+				<td><span wicket:id="hitCount">5</span></td>
+				<td><span wicket:id="missCount">5</span></td>
+			</tr>
+		</tbody>
+	</table>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<html xmlns:wicket>
+<wicket:head>
+</wicket:head>
+<body>
+<wicket:panel>
+	<h3 class="caption" wicket:id="caption">Bijlagen</h3>
+	<table class="tblDatagrid tblInput">
+		<thead>
+			<tr>
+				<th>Omschrijving</th>
+				<th>Bijlage</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="bijlagen">
+				<td wicket:id="omschrijving"></td>
+				<td><a wicket:id="link" href="#" title="Bestand downloaden"><span
+					wicket:id="label" class="block unit_240 hideoverflow"></span></a></td>
+			</tr>
+			<tr wicket:id="geenBijlagen">
+				<td colspan="2">Er zijn geen bijlagen</td>
+			</tr>
+		</tbody>
+	</table>
+</wicket:panel>
+</body>
+</html>

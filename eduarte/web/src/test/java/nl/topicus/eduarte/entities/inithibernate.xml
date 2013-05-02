@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans default-autowire="no"
+	xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+           http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-2.5.xsd
+           http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+
+	<context:component-scan base-package="nl.topicus.eduarte" />
+
+	<bean id="sessionFactory" class="nl.topicus.cobra.app.CobraAnnotationSessionFactoryBean">
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect
+				</prop>
+				<prop key="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory
+				</prop>
+				<!-- 2nd level caching -->
+				<prop key="hibernate.cache.provider_class">net.sf.ehcache.hibernate.EhCacheProvider
+				</prop>
+				<prop key="hibernate.cache.region_prefix">hibernate-</prop>
+				<prop key="hibernate.generate_statistics">false</prop>
+				<prop key="hibernate.current_session_context_class">thread</prop>
+				<prop key="hibernate.cache.use_structured_entries">true</prop>
+				<prop key="hibernate.cache.use_query_cache">true</prop>
+				<prop key="hibernate.cache.use_second_level_cache">true</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="dataAccessRegistry" class="nl.topicus.cobra.dao.DataAccessRegistry"></bean>
+
+	<bean id="sessionProvider"
+		class="nl.topicus.cobra.hibernate.providers.GeneralPurposeHibernateSessionProvider">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<bean id="wicketApplication" class="nl.topicus.cobra.app.Deployable$Production">
+	</bean>
+	<bean id="VascoService" class="nl.topicus.eduarte.tester.MockVascoService" />
+
+	<import resource="classpath*:/nl/topicus/eduarte/**/spring-module.xml" />
+	<import resource="classpath*:/nl/topicus/eduarte/**/spring-module-init.xml" />
+</beans>

@@ -1,0 +1,163 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+            <table class="tblData nopadding">
+            	<tbody>
+	            	<tr>
+	        	        <td>
+	                        Status
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="bpvStatusList" class="unit_240" size="5">
+	                    	</select>
+	                    </td>
+	        	        <td>
+	                        Kenniscentrum
+	                    </td>
+	                    <td>
+	                        <select wicket:id="bpvKenniscentrum" class="unit_240"></select>
+	                    </td>
+	                </tr>
+	  			 	<tr>
+	                    <td>
+	                        Kenniscentrum is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="bpvKenniscentrumLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                    </td>
+	                    <td>
+	                    </td>
+	                </tr>
+	            	<tr>
+	        	        <td>
+	                        BPV Bedrijf
+	                    </td>
+	                    <td>
+	                        <div wicket:id="bpvBedrijf"  class="inpText unit_240"></div>
+	                    </td>
+	        	        <td>
+	                        Contractpartner
+	                    </td>
+	                    <td>
+	                        <div wicket:id="bpvContractpartner" class="inpText unit_240"></div>
+	                    </td>
+	                </tr>
+	                <tr>
+	        	        <td>
+	                        BRON-Status
+	                    </td>
+	                    <td>
+	                    	<select wicket:id="bpvBronStatus" class="unit_240"></select>
+	                    </td>
+	        	        <td>
+	                        Reden Beeindiging
+	                    </td>
+	                    <td>
+	                        <select wicket:id="bpvRedenBeeindiging" class="unit_240"></select>
+	                    </td>
+	                </tr>	                
+	            	<tr>
+	        	        <td>
+	                        Praktijkbegeleider
+	                    </td>
+	                    <td>
+	                        <div wicket:id="praktijkBegeleider"  class="inpText unit_240"></div>
+	                    </td>
+	        	        <td>
+	                        Praktijkopleider
+	                    </td>
+	                    <td>
+	                        <input wicket:id="praktijkopleiderBPVBedrijf" class="unit_227"/>
+	                    </td>
+	                </tr>
+	               	<tr>
+	                    <td>
+	                        Praktijkbegeleider is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="praktijkBegeleiderLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                    <td>
+	                        Praktijkopleider is leeg
+	                    </td>
+	                    <td>
+	                        <select wicket:id="praktijkopleiderBPVBedrijfLeeg" class="unit_240">
+	                            <option>...</option>
+	                            <option>Ja</option>
+	                            <option>Nee</option>
+	                        </select>
+	                    </td>
+	                </tr>
+	                <tr>
+		                <td>
+		                    Datum vanaf
+		                </td>
+		                <td>
+		                    <input wicket:id="bpvBeginDatum" type="text" class="unit_220"/>
+		                </td>
+	                    <td>
+	                        Datum t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="bpvEindDatum" type="text" class="unit_220"/>
+	                    </td>
+		           </tr>
+	                <tr>
+		                <td>
+		                    Omvang vanaf
+		                </td>
+		                <td>
+		                    <input wicket:id="bpvOmvangVanaf" type="text" class="unit_220"/>
+		                </td>
+	                    <td>
+	                        Omvang t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="bpvOmvangTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+		           </tr>
+	                <tr>
+		                <td>
+		                    Uren per week vanaf
+		                </td>
+		                <td>
+		                    <input wicket:id="bpvUrenPerWeekVanaf" type="text" class="unit_220"/>
+		                </td>
+	                    <td>
+	                        Uren per week t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="bpvUrenPerWeekTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+		           </tr>
+	                <tr>
+		                <td>
+		                    Dagen per week vanaf
+		                </td>
+		                <td>
+		                    <input wicket:id="bpvDagenPerWeekVanaf" type="text" class="unit_220"/>
+		                </td>
+	                    <td>
+	                        Dagen per week t/m
+	                    </td>
+	                    <td>
+	                        <input wicket:id="bpvDagenPerWeekTotEnMet" type="text" class="unit_220"/>
+	                    </td>
+		           </tr>
+                </tbody>
+            </table>
+        </wicket:extend>
+    </body>
+</html>

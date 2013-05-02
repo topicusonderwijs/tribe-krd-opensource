@@ -1,0 +1,118 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Onderwijsproductkaart</h3>
+	<div wicket:id="afdrukLinkPanel"></div>
+	<div class="contHalf left">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Code</td>
+					<td><span wicket:id="code">wi</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Titel</td>
+					<td><span wicket:id="titel">wiskunde</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Omschrijving</td>
+					<td><span wicket:id="omschrijving">Leerbedrijf autospuiten</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Zoektermen</td>
+					<td><span wicket:id="zoektermenAlsString">leebedrijf, autospuiten, spuiten, auto, spuiter, autospuiter</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Soort product</td>
+					<td><span wicket:id="soortProduct.naam"">Leerbedrijf</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Heeft werkstuktitel</td>
+					<td><span wicket:id="heeftWerkstuktitelOmschrijving">Ja</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Alleen extern</td>
+					<td><span wicket:id="alleenExternOmschrijving">Ja</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Status</td>
+					<td><span wicket:id="status">Beschikbaar</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Begindatum</td>
+					<td><span wicket:id="begindatum">01-08-2008</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Einddatum</td>
+					<td><span wicket:id="einddatum"></span></td>
+				</tr>
+			</tbody>
+		</table>
+		<div wicket:id="aanbod"></div>
+		<div wicket:id="bpvCriteriaOnderwijsproduct"></div>
+	</div>
+	<div class="contHalf right">
+	<table class="tblData">
+		<tbody>
+			<tr wicket:id="creditsContainer">
+				<td class="tblTag">Credits</td>
+				<td><span wicket:id="credits">30</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Omvang</td>
+				<td><span wicket:id="omvang">30</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Belasting</td>
+				<td><span wicket:id="belasting">60</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Aggregatieniveau</td>
+				<td><span wicket:id="aggregatieniveau">Leertaak</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Startonderwijsproduct</td>
+				<td><span wicket:id="getStartonderwijsproductOmschrijving">Nee</span></td>
+			</tr>
+			<tr>
+
+				<td class="tblTag">Leerstijl</td>
+				<td><span wicket:id="leerstijl.naam">Ondervindend leren</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Minimum aantal deelnemers</td>
+				<td><span wicket:id="minimumAantalDeelnemers">5</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Maximum aantal deelnemers</td>
+				<td><span wicket:id="maximumAantalDeelnemers">20</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Soort praktijklokaal</td>
+				<td><span wicket:id="soortPraktijklokaal.naam">Praktijklokaal autospuiterij</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Type toets</td>
+				<td><span wicket:id="typeToets.naam"></span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Type locatie</td>
+				<td><span wicket:id="typeLocatie.naam">Autospuiterij</span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Kostprijs</td>
+				<td><span wicket:id="kostprijs"></span></td>
+			</tr>
+			<tr>
+				<td class="tblTag">Bij Intake</td>
+				<td><span wicket:id="getBijIntakeOmschrijving"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	<div wicket:id="vrijvelden"></div>
+</div>
+</wicket:extend>
+</body>
+</html>

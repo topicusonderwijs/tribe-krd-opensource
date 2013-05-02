@@ -1,0 +1,26 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div wicket:id="listcontainer">
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th colspan="2">Rapportages</th>
+				</tr>
+			</thead>
+			<tr wicket:id="listview">
+				<td>
+					<a href="#" wicket:id="link" title="Ga naar rapportage"><span wicket:id="samenvatting">100001</span></a>
+				</td>
+				<td class="unit_20">
+					<a href="#" wicket:id="verwijderen" class="deleteItem" title="Rapportage verwijderen"></a>
+				</td>
+			</tr>
+			<wicket:container wicket:id="geen"></wicket:container>
+		</table>
+	</div>
+</wicket:panel>
+</body>
+</html>

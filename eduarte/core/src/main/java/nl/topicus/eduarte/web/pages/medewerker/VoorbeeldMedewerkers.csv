@@ -1,0 +1,5 @@
+Afkorting;Geboortenaam;Voorvoegsels Geboortenaam;Roepnaam;Voorletters;Geslacht;Telefoonnummer;Emailadres;Organisatieenheid;Locatie;Datum in dienst
+testmw1;Medewerker 1;Ter;Roepnaam 1;A;M;0570-662662;testmw1@educus.nl;ROC nOISe;;1-1-2010
+testmw2;Medewerkster 2;Aan de ;Roepnaam 2;B;V;0570-662662;testmw2@educus.nl;AOC nOISe, ROC nOISe;HOOFD,;2-1-2010
+testmw3;Medewerker 3;;Roepnaam 3;C;O;0570-662662;testmw3@educus.nl;A2 Wagenin;HA07;3-1-2010
+testmw4;Medewerker 4;;;;;;;;;4-1-2010

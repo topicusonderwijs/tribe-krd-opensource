@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:eat="http://eduarte.topicus.nl/types/1.0" xmlns:oc="http://eduarte.topicus.nl/onderwijscatalogus/1.0"
+	xmlns:cobra="http://cobra.topicus.nl/jaxb" targetNamespace="http://eduarte.topicus.nl/onderwijscatalogus/1.0"
+	jxb:extensionBindingPrefixes="xjc cobra" jxb:version="2.1"
+	elementFormDefault="qualified">
+
+	<xs:import namespace="http://eduarte.topicus.nl/types/1.0"
+		schemaLocation="basistypes.xsd" />
+
+	<xs:annotation>
+		<xs:appinfo>
+			<jxb:schemaBindings>
+				<jxb:package name="nl.topicus.eduarte.xml.onderwijscatalogus.v10" />
+				<jxb:nameXmlTransform>
+					<jxb:typeName prefix="X" />
+				</jxb:nameXmlTransform>
+			</jxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<xs:simpleType name="typeProductregel">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.productregel.Productregel.TypeProductregel"
+					adapter="nl.topicus.eduarte.xml.adapters.TypeProductregelAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Productregel" />
+			<xs:enumeration value="AfgeleideProductregel" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="onderwijsproductRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.onderwijsproduct.Onderwijsproduct"
+					adapter="nl.topicus.eduarte.xml.adapters.OnderwijsproductAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:simpleType name="taxonomieRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.taxonomie.Taxonomie"
+					adapter="nl.topicus.eduarte.xml.adapters.TaxonomieAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:simpleType name="verbintenisgebiedRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType
+					name="nl.topicus.eduarte.entities.taxonomie.Verbintenisgebied"
+					adapter="nl.topicus.eduarte.xml.adapters.VerbintenisgebiedAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:complexType name="soortProductregelRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<cobra:javaType
+					name="nl.topicus.eduarte.entities.productregel.SoortProductregel"
+					adapter="nl.topicus.eduarte.xml.adapters.SoortProductregelAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="taxonomie" type="oc:taxonomieRef" />
+			<xs:element name="naam" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="criterium">
+		<xs:sequence>
+			<xs:element name="opleiding" type="eat:opleidingRef" />
+			<xs:element name="verbintenisgebied" type="oc:verbintenisgebiedRef" />
+			<xs:element name="cohort" type="eat:cohort" />
+			<xs:element name="volgnummer" type="xs:int" />
+			<xs:element name="naam" type="xs:string" />
+			<xs:element name="melding" type="xs:string" />
+			<xs:element name="formule" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="productregel">
+		<xs:sequence>
+			<xs:element name="typeProductregel" type="oc:typeProductregel" />
+			<xs:element name="afkorting" type="xs:string" />
+			<xs:element name="naam" type="xs:string" />
+			<xs:element name="soortProductregel" type="oc:soortProductregelRef" />
+			<xs:element name="verbintenisgebied" type="oc:verbintenisgebiedRef" />
+			<xs:element name="opleiding" type="eat:opleidingRef" />
+			<xs:element name="volgnummer" type="xs:int" />
+			<xs:element name="verplicht" type="xs:boolean" />
+			<xs:element name="aantalDecimalen" type="xs:int" />
+			<xs:element name="minimaleWaarde" type="xs:decimal"
+				minOccurs="0" />
+			<xs:element name="minimaleWaardeTekst" type="xs:string"
+				minOccurs="0" />
+			<xs:element name="cohort" type="eat:cohort" />
+			<xs:element name="toegestaneOnderwijsproducten" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo>
+						<cobra:inlineList />
+					</xs:appinfo>
+				</xs:annotation>
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="onderwijsproduct" minOccurs="0"
+							maxOccurs="unbounded" type="oc:onderwijsproductRef">
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="opleidingInrichting">
+		<xs:sequence>
+			<xs:element name="opleiding" type="eat:opleidingRef" />
+			<xs:element name="criterium" type="oc:criterium"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<jxb:property name="criteria" />
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="productregel" type="oc:productregel"
+				minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo>
+						<jxb:property name="productregels" />
+					</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="opleidingInrichtingExport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="opleidingInrichting" type="oc:opleidingInrichting"
+					minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:appinfo>
+							<jxb:property name="opleidingInrichtingen" />
+						</xs:appinfo>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,31 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="verbintenisForm">
+    <div class="contHalf left">
+	    <h3 class="caption">Verbintenis</h3>
+		<table class="tblData tblInputs">
+        	<tr>
+        		<td class="tblTag">Maak verbintenis</td>
+          		<td>
+				<select wicket:id="selectVerbintenisStap4" class="unit_max">
+					<option>(Geen intake)</option>
+					<option>Sector techniek, opleiding automonteur</option>
+					<option>Sector economie, opleiding autoverkoper</option>
+				</select>
+          		</td>
+          	</tr>
+		</table>
+		<div wicket:id="verbintenisStap4"></div>
+	</div>
+    <div class="contHalf right">
+        <div wicket:id="vrijVelden"></div>
+	</div>
+    <span wicket:id="blokkadedatumValidator"></span>
+	</form>
+</wicket:extend>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Overzicht samenvoegvelden</h3>
+	<div>
+		Context:
+		<select class="unit_max" wicket:id="context">
+			<option>Verbintenis</option>
+			<option>Examendeelname</option>
+			<option>Groep</option>
+		</select>
+		<br/>
+		<input type="checkbox" wicket:id="flat"/> Platte weergave<br/>
+		<input type="checkbox" wicket:id="showTypes"/> Types weergeven<br/>
+		<input type="checkbox" wicket:id="rememberDone"/> Korte weergave
+	</div>
+	<div class="laySeparator10"></div>
+	<pre wicket:id="mergefields"></pre>
+</wicket:extend>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Groepkaart</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">	
+			<div wicket:id="fieldSet"></div>
+			<div wicket:id="vrijvelden"></div>
+		</div>
+	</form>			
+		
+	<div class="contHalf right">
+		<div wicket:id="panelDocenten">
+			<div wicket:id="datapanelDocenten" class="below_5"></div>
+			<div class="widget-button right below_20"><a href=# wicket:id="docentToevoegen"><span>Docent(en) toevoegen</span></a></div>
+		</div>
+		<div class="clear" wicket:id="panelMentoren">
+			<div wicket:id="datapanelMentoren" class="below_5"></div>
+			<div class="widget-button right"><a href=# wicket:id="mentorToevoegen"><span>Mentor(en) toevoegen</span></a></div>
+		</div>
+	</div>
+	<div class="clear"></div>
+	<div wicket:id="filter"></div>
+	<div wicket:id="panelDeelnemers">
+		<div wicket:id="datapanelDeelnemers" class="below_5"></div>
+		<div wicket:id="editContainer">
+			<div class="widget-button right"><a href="#" wicket:id="deelnemerToevoegen"><span>Deelnemer(s) toevoegen</span></a></div>
+			<div class="left extend_5 line_20">Zet <input type="text" wicket:id="massDatum" class="unit_70" /> als</div> 
+			<div class="left widget-button"><a href="#" wicket:id="massBegin"><span>Begindatum</span></a></div>
+			<div class="left widget-button"><a href="#" wicket:id="massEind"><span>Einddatum</span></a></div>
+			<div class="left line_20"> voor de getoonde deelnemers.</div>
+		</div>
+	</div>
+</wicket:extend>
+</body>
+</html>

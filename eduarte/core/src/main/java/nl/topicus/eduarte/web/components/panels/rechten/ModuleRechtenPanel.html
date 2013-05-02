@@ -1,0 +1,28 @@
+<html xmlns:wicket>
+<wicket:panel>
+	<table class="tblDatagrid">
+		<thead>
+			<tr>
+				<th class="unit_220">Omschrijving</th>
+				<th colspan="2" wicket:id="actionLabel" />
+			</tr>
+			<tr>
+				<td></td>
+				<wicket:container wicket:id="rwLabel"> 
+					<td class="unit_40">lezen</td>
+					<td class="unit_50">schrijven</td>
+				</wicket:container>
+			</tr>
+		</thead>
+		<tbody>
+			<tr wicket:id="principalGroups">
+				<td wicket:id="omschrijving" />
+				<wicket:container wicket:id="actions"> 
+					<td wicket:id="readCheck" />
+					<td wicket:id="writeCheck" />
+				</wicket:container>
+			</tr>
+		</tbody>
+	</table>
+</wicket:panel>
+</html>

@@ -1,0 +1,10 @@
+De afspraak "${afspraak.titel}" die plaats zou vinden op ${datum} om ${tijd} is afgelast.
+
+$!afspraak.omschrijving
+
+#if( $locatie )
+Locatie: $afspraak.locatie
+#end
+#if( $afspraak.activiteit )
+Activiteit: $afspraak.activiteit
+#end

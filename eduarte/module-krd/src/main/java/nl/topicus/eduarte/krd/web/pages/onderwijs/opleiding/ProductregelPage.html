@@ -1,0 +1,46 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Productregel</h3>
+	<div class="contHalf left">
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Type</td>
+					<td><span wicket:id="typeProductregel">Productregel</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Volgnummer</td>
+					<td><span wicket:id="volgnummer">1.2.3.4</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Afkorting</td>
+					<td><span wicket:id="afkorting">ne</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Naam</td>
+					<td><span wicket:id="naam">Nederlands</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Soort</td>
+					<td><span wicket:id="soortProductregel.naam">Gemeenschappelijk</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Verplicht</td>
+					<td><span wicket:id="verplichtOmschrijving">Ja</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Cohort</td>
+					<td><span wicket:id="cohort.naam">2008/2009</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="contHalf right">
+		<div wicket:id="onderwijsproducten"></div>
+	</div>
+</wicket:extend>
+</body>
+</html>

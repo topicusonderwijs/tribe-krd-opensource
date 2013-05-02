@@ -1,0 +1,25 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div wicket:id="adressen">
+		<ul>
+			<li><a wicket:id="woonLink" href="#woonEditPanel">Woonadres</a></li>
+			<li><a wicket:id="postLink" href="#postEditPanel">Postadres</a></li>
+		</ul>
+		<div wicket:id="woonEditPanel">
+		</div>
+		<div wicket:id="postEditPanel">
+		</div>
+	</div>
+	<table class="tblData tblInputs">
+		<tr>
+		<td class="tblTag">
+		<label><input type="checkbox" class="extend_10 movedown_10" wicket:id="postWoonVerschil"/><wicket:container wicket:id="woonBezoekLabel"></wicket:container>- en postadres/factuuradres verschillen</label>
+		</td>
+		</tr>
+	</table>
+</wicket:panel>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="laySearchbar">
+		<form wicket:id="form">
+			<div>
+				<select wicket:id="waarnemingSoort" class="unit_100 inpSelect">
+					<option>Aanwezig...</option>
+				</select>
+				<span>
+					vanaf datum <input class="inpText" value="" wicket:id="beginDatumTijd" />
+				</span>
+				<span>
+					t/m datum <input class="inpText" value="" wicket:id="eindDatumTijd" />
+				</span>				
+				<select wicket:id="afgehandeld" class="unit_100 inpSelect">
+					<option>Ja...</option>
+				</select>
+				<input class="inpImage" type="image" value="Submit" title="Zoeken" src="assets/img/icons/searchicon.gif" />
+			</div>
+		</form>
+	</div>
+	<div class="clear"></div>
+</wicket:panel>
+</body>
+</html>

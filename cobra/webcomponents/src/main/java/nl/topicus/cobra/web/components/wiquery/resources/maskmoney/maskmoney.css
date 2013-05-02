@@ -1,0 +1,10 @@
+input.moneyinputfield, span.moneyinputfield
+{
+	text-align:right;
+	background:url('../theme/images/euro.png') left no-repeat;
+}
+
+span.moneyinputfield
+{
+	padding-left: 22px;
+}

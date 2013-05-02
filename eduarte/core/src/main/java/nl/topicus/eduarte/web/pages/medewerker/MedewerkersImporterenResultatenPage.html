@@ -1,0 +1,28 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form">
+	</form>
+	<div class="clear"></div>
+	<div class="contBox">
+		<h3 class="caption" wicket:id="titel">Medewerkers importeren/valideren</h3>
+		<table class="tblDatagrid">
+			<tr>
+				<th wicket:id="results"></th>
+			</tr>
+		  <tr wicket:id="resultaten">
+		    <td><span wicket:id="label"></span></td>
+		  </tr>
+		</table>
+		<div class="clear laySeparator"></div>
+		<table class="tblDatagrid tblNoHightlight">
+		  <tr>
+		    <td><a wicket:id="file" class="spanBijlage">Download resultaten als txt-bestand</a></td>
+		  </tr>
+		</table>
+	</div>
+</wicket:extend>
+</body>
+</html>

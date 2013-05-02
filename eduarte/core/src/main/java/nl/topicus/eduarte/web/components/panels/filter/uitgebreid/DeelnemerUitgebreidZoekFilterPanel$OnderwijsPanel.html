@@ -1,0 +1,368 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+        	<div>
+	            <table class="tblData nopadding">
+	            	<tbody>
+		                <tr wicket:id="organisatieEenheidLocatie">
+			            </tr>
+		                <tr>
+			                <td>
+			                    Taxonomie
+			                </td>
+			                <td>
+			                    <select wicket:id="taxonomie" class="unit_240">
+			                    </select>
+			                </td>
+		                    <td>
+		                        Taxonomie-elementtype
+		                    </td>
+		                    <td>
+			                    <select wicket:id="taxonomieElementType" class="unit_240">
+			                    </select>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Verbintenisgebied
+			                </td>
+			                <td>
+		                       <div wicket:id="verbintenisgebied"  class="unit_227"></div>
+			                </td> 
+		                    <td>
+		                        Verbintenisgebied ongelijk aan
+		                    </td>
+		                    <td>
+		                       <div wicket:id="verbintenisgebiedOngelijkAan"  class="unit_227"></div>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Opleiding
+			                </td>
+			                <td>
+		                        <div wicket:id="opleiding" class="unit_227"></div>
+			                </td>
+		                    <td>
+		                        Opleiding ongelijk aan
+		                    </td>
+		                    <td>
+		                        <div wicket:id="opleidingOngelijkAan" class="unit_227"></div>
+		                    </td>
+			            </tr>
+		                 <tr>
+			                <td>
+			                    Actief vanaf
+			                </td>
+			                <td>
+			                    <input wicket:id="actiefVanaf" type="text" class="unit_220"/>
+			                </td>
+		                    <td>
+		                        Actief t/m
+		                    </td>
+		                    <td>
+		                        <input wicket:id="actiefTotEnMet" type="text" class="unit_220"/>
+		                    </td>
+			            </tr>
+		                 <tr>
+			                <td>
+			                    Datum inschrijving vanaf
+			                </td>
+			                <td>
+			                    <input wicket:id="datumInschrijvingVanaf" type="text" class="unit_220"/>
+			                </td>
+		                    <td>
+		                        Datum inschrijving t/m
+		                    </td>
+		                    <td>
+		                        <input wicket:id="datumInschrijvingTotEnMet" type="text" class="unit_220"/>
+		                    </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    Datum uitschrijving vanaf
+			                </td>
+			                <td>
+			                    <input wicket:id="datumUitschrijvingVanaf" type="text" class="unit_220"/>
+			                </td>
+		                    <td>
+		                        Datum uitschrijving t/m
+		                    </td>
+		                    <td>
+		                        <input wicket:id="datumUitschrijvingTotEnMet" type="text" class="unit_220"/>
+		                    </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    Reden be&#235;indigen
+			                </td>
+			                <td>
+			                    <select wicket:id="redenUitschrijving" class="unit_240">
+			                    </select>
+			                </td>
+		                    <td>
+		                    	Heeft meerdere verbintenissen
+		                    </td>
+		                    <td>
+			                    <select wicket:id="deelnemerZoekFilter.heeftMeerdereVerbintenissen" class="unit_240">
+			                    </select>
+		                    </td>
+			            </tr>
+			            <tr>
+			                <td>
+			                    Datum gepland einde vanaf
+			                </td>
+			                <td>
+			                    <input wicket:id="datumGeplandEindeVanaf" type="text" class="unit_220"/>
+			                </td>
+		                    <td>
+		                        Datum gepland einde t/m
+		                    </td>
+		                    <td>
+		                        <input wicket:id="datumGeplandEindeTotEnMet" type="text" class="unit_220"/>
+		                    </td>
+			            </tr>
+			            <tr>
+		                    <td>
+		                    	Groepstype
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="groepstype" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+			                <td>
+			                    Groep
+			                </td>
+			                <td>
+		                        <div wicket:id="groep" class="unit_227"></div>
+			                </td>
+			            </tr>
+			            <tr>
+		                    <td>
+		                    	Leerjaar
+		                    </td>
+		                    <td>
+		                    	<input wicket:id="leerjaar" type="text" class="unit_227"/>
+		                    </td>
+					
+		                    
+			                <td>
+			                    Praktijkjaar
+			                </td>
+			                <td>
+		                        <input wicket:id="praktijkjaar" type="text" class="unit_227"/>
+			                </td>
+			            </tr>
+			            <tr>
+		                    <td>
+		                    	Kenmerkcategorie
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="kenmerkCategorie" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+			                <td>
+			                    Kenmerk
+			                </td>
+			                <td>
+		                    	<select wicket:id="kenmerk" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+			                </td>
+			            </tr>
+			            <tr>
+		                    <td>
+		                    	Relevante vooropleiding soort
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="relevanteVooropleidingSoort" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+			                <td>
+			                    Relevante vooropleiding soort leeg
+			                </td>
+			                <td>
+		                    	<select wicket:id="relevanteVooropleidingSoortLeeg" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+			                </td>
+			            </tr>
+			       		<tr>
+		                    <td>
+		                         Contacturen per week
+		                    </td>
+		                    <td>
+		                         <input wicket:id="contacturenPerWeek" type="text" class="unit_227"/>
+		                    </td>
+                    		<td>
+		                    	Afgenomen onderwijsproduct
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="afgenomenOnderwijsproduct" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                </tr>
+				         <tr>
+		                    <td>
+		                         Intensiteit
+		                    </td>
+		                    <td>
+		                        <select wicket:id="intensiteitList" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         Verbintenisstatus
+		                    </td>
+		                    <td>
+		                        <select wicket:id="verbintenisStatusList" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		        		<tr>
+		                    <td>
+		                         Vertrekstatus
+		                    </td>
+		                    <td>
+		                        <select wicket:id="vertrekstatus" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         Cohort
+		                    </td>
+		                    <td>
+		                        <select wicket:id="cohort" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		               	<tr>
+		                    <td>
+		                    	Bekostigd
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="bekostigd" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+		                    <td>
+		    					Externe code
+		                    </td>
+		                    <td>
+		                        <input wicket:id="opleidingscode" type="text"  class="unit_227"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Leerweg
+		                    </td>
+		                    <td>
+		                        <select wicket:id="leerweg" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         Indicatie gehandicapt
+		                    </td>
+		                    <td>
+		                        <select wicket:id="indicatieGehandicapt" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                    	Verbintenisniveau
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="niveau" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         BRON-Status
+		                    </td>
+		                    <td>
+		                        <select wicket:id="bronStatusList" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		                <tr>
+			                <td>
+			                    Organisatie-eenheden (lijst)
+			                </td>
+			                <td>
+			                    <select wicket:id="organisatieEenheidList" class="unit_240" size="5">
+			                    </select>
+			                </td>
+		                    <td>
+		                        Locaties (lijst)
+		                    </td>
+		                    <td>
+			                    <select wicket:id="locatieList" class="unit_240" size="5">
+			                    </select>
+		                    </td>
+			            </tr>
+			           	<tr>
+			                <td>
+			                    Teams (lijst)
+			                </td>
+			                <td>
+			                    <div wicket:id="teamList" class="unit_240">
+			                    </div>
+			                </td>
+		                    <td>
+		                    </td>
+		                    <td>
+		                    </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Opleiding (lijst)
+			                </td>
+			                <td colspan="3">
+			                    <div wicket:id="opleidingList" class="unit_480" ></div>
+			                </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Taxonomie (lijst)
+			                </td>
+			                <td colspan="3">
+			                    <select wicket:id="taxonomieList" class="unit_480" size="5">
+			                    </select>
+			                </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Verbintenisgebied (lijst)
+			                </td>
+			                <td colspan="3">
+			                    <div wicket:id="verbintenisgebiedList" class="unit_480"></div>
+			                </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Reden uitschrijving (lijst)
+			                </td>
+			                <td colspan="3">
+			                    <div wicket:id="redenUitschrijvingList" class="unit_480" ></div>
+			                </td>
+			            </tr>
+		                <tr>
+			                <td>
+			                    Groep (lijst)
+			                </td>
+			                <td colspan="3">
+			                    <div wicket:id="groepList" class="unit_480" ></div>
+			                </td>
+			            </tr>
+			            <tr>
+			            	<td>
+		                    	LWOO
+		                    </td>
+		                    <td>
+		                    	<select wicket:id="indicatieLWOO" class="unit_240">
+		                    		<option></option>
+		                    	</select>
+		                    </td>
+			            </tr>
+		            </tbody>
+	            </table>
+			</div>
+        </wicket:extend>
+    </body>
+</html>

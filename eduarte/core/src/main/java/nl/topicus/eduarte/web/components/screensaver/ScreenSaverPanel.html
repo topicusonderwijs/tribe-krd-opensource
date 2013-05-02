@@ -1,0 +1,32 @@
+<html xmlns:wicket>
+<head>
+<wicket:head>
+	<script type="text/javascript"><!--/*--><![CDATA[/*><!--*/
+		function capLock(e){
+		 kc = e.keyCode?e.keyCode:e.which;
+		 sk = e.shiftKey?e.shiftKey:((kc == 16)?true:false);
+		 if(((kc >= 65 && kc <= 90) && !sk)||((kc >= 97 && kc <= 122) && sk))
+		 {
+		  document.getElementById('caps').style.visibility = 'visible';
+		 }
+		 else
+		 {
+		  document.getElementById('caps').style.visibility = 'hidden';
+		 }
+		}
+	/*-->]]>*/</script>
+</wicket:head>
+</head>
+<body>
+<wicket:extend>
+	<h3 wicket:id="logoutLabel" class="caption">U wordt automatisch
+	uitgelogd over <span wicket:id="logoutOver"></span> minuten</h3>
+	<form wicket:id="form">
+	<div wicket:id="login"></div>
+	<div class="warn invisible" id="caps">
+		LET OP: CAPS-LOCK STAAT AAN
+	</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

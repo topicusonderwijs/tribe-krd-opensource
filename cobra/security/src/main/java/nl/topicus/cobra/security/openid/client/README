@@ -1,0 +1,11 @@
+Om de client-side OpenId login werkend te krijgen moet je wat dingen wijzigen in je applicatie. Dit vooral omdat elke applicatie zijn eigen account 
+objecten heeft en eigen aanpak wat betreft inloggen. Om iig de roundtrip van RP naar OP werkend te krijgen moet je het volgende doen:
+
+1. Initieer een ConsumerManager in je WebApplication zodat je deze in stap 5 kan gebruiken.
+2. Maak een local field met type OpenIdLoginModel zodat je ook deze in stap 5 kan gebruiken.
+3. Laat indien nodig een DAO of DAH oid de interface IOpenIdToUsernameConverter implementeren zodat je deze kan gebruiken in stap 5.
+4. Om de getReturnToUrl() in OpenIdService te kunnen imlementeren is het handig dat je pagina's mount in je WebApplication. 
+5. Maak subclasses van OpenIdEndPage, OpenIdService en OpenIdStartPage.
+
+Maak ergens een link naar de OpenIdStartPage zodat je de roundtrip kunt beginnen.
+Nu kan je wanneer de roundtrip klaar is de gebruiker redirecten voorbij de login pagina mbv de informatie in de OpenIdLoginModel.

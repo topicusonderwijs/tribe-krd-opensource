@@ -1,0 +1,6 @@
+De volgende deelnemers zijn toegevoegd aan de groep ${groep.naam}
+
+#foreach ( $deelnemer in $deelnemers )
+	${deelnemer.persoon.volledigeNaam} (${deelnemer.deelnemernummer})
+
+#end

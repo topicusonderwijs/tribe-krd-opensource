@@ -1,0 +1,26 @@
+.bpvDragDrop{
+	width: 300px;
+	height:32px;
+	margin: 1px;
+	cursor: move;
+	white-space: nowrap; 
+	background-color: #2e83ff;
+	border:1px solid #000000;
+	color: white;
+}
+
+.bpvDragDropLabel{
+	width: 300px;
+	height:32px;
+	margin: 1px;
+	background-color: #6da8d5;
+	border:1px solid #000000;
+	color: white;
+}
+
+.bpvDragDropPanel{
+	width: 250px;
+	height:34px;
+	margin: 0 auto;
+	
+}

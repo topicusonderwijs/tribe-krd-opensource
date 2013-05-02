@@ -1,0 +1,67 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<div wicket:id="verzuim"></div>			
+			<table class="tblData tblInputs">
+				<tr>
+					<td class="tblTag">Toelichting</td>
+					<td class="tblInput">
+						<textarea class="unit_max" rows="3" cols="55" wicket:id="toelichting"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Actie ondernemen</td>
+					<td class="tblInput">
+						<input wicket:id="actieOndernemen" type="checkbox"/>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Toelichting actie gewenst</td>
+					<td class="tblInput">
+						<textarea class="unit_max" rows="3" cols="55" wicket:id="toelichtingActieGewenst"></textarea>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Locatie</td>
+					<td class="tblInput">
+						 <select wicket:id="locatie" class="inpSelect unit_250">
+								<option>...</option>
+							</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Ondernomen actie</td>
+					<td class="tblInput">
+						<textarea class="unit_max" rows="3" cols="55" wicket:id="ondernomenActie"></textarea>
+					</td>
+				</tr>
+				
+			</table>				
+		</div>
+		<div class="contHalf right"> 
+			<table class="tblData tblInputs">
+				<thead>
+					<tr><th>Verzuimdag specificatie</th>
+					<th></th>
+					</tr>
+				</thead>							
+				<tr>
+					<td class="tblTag">Dagen specificeren</td>
+					<td class="tblInput">
+						<div wicket:id="specificatiechoice"></div>	
+					</td>
+				</tr>
+			</table>	
+			<div wicket:id="panelContainer">					
+				<div wicket:id="specificatie"></div>	
+			</div>	
+	 	</div>
+	 	<div class="clear"></div>
+	</form>
+</wicket:extend>
+</body>
+</html>

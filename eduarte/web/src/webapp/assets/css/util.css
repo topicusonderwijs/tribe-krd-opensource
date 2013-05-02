@@ -1,0 +1,184 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+util.css is part of the stylesheet for EduArte.
+
+util.css contains a number of styles that only exist to save you some typing. The classes
+defined in here are shorthands for one specific style each, meaning you can just add a class
+to a certain html tag instead of having to type 'style="something-or-other". Since most tags
+in EduArte end up having one or more classes anyway,this can be the faster method of adding styles.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. util.css exists since revision 0.2 
+*/
+
+/** Twilight: Standard units and floats **/
+
+.unit_10{width:10px!important;}
+.unit_14{width:14px!important;}
+.unit_17{width:17px!important;}
+.unit_20{width:20px!important;}
+.unit_25{width:25px!important;}
+.unit_30{width:30px!important;}
+.unit_40{width:40px!important;}
+.unit_50{width:50px!important;}
+.unit_60{width:60px!important;}
+.unit_70{width:70px!important;}
+.unit_75{width:75px!important;}
+.unit_80{width:80px!important;}
+.unit_90{width:90px!important;}
+.unit_100{width:100px!important;}
+.unit_110{width:110px!important;}
+.unit_120{width:120px!important;}
+.unit_130{width:130px!important;}
+.unit_140{width:140px!important;}
+.unit_150{width:150px!important;}
+.unit_160{width:160px!important;}
+.unit_180{width:180px!important;}
+.unit_190{width:190px!important;}
+.unit_200{width:200px!important;}
+.unit_220{width:220px!important;}
+.unit_227{width:227px!important;}
+.unit_240{width:240px!important;}
+.unit_250{width:250px!important;}
+.unit_270{width:270px!important;}
+.unit_280{width:280px!important;}
+.unit_300{width:300px!important;}
+.unit_320{width:320px!important;}
+.unit_324{width:324px!important;}
+.unit_340{width:340px!important;}
+.unit_350{width:350px!important;}
+.unit_360{width:360px!important;}
+.unit_380{width:380px!important;}
+.unit_400{width:400px!important;}
+.unit_420{width:420px!important;}
+.unit_435{width:435px!important;}
+.unit_440{width:440px!important;}
+.unit_480{width:480px!important;}
+.unit_500{width:500px!important;}
+.unit_520{width:520px!important;}
+.unit_540{width:540px!important;}
+.unit_560{width:560px!important;}
+.unit_640{width:640px!important;}
+.unit_780{width:780px!important;}
+.unit_940{width:940px!important;}
+
+
+
+.unit_max{width:250px!important;}
+select.unit_max{width:254px!important;}
+textarea.unit_max{width:252px!important;}
+.unit_max.inpAutoComplete{width:237px!important;}
+.unit_max.ui-autocomplete-input{width:229px!important;}
+
+.noTopMargin{margin-top: 0px!important;}
+.noBottomMargin{margin-bottom: 0px!important;}
+.noMargin{margin: 0px!important;}
+.noPadding{padding:0!important;}
+.marginCenter{margin:auto auto;}
+
+.moveup_12{margin-top: -12px!important;}
+.moveup_24{margin-top: -24px!important;}
+
+.line_20{
+	height:20px!important;
+	line-height:20px!important;
+}
+.unitHeight_100{height:100px!important;}
+
+.maxHeight_100{max-height:100px!important;}
+.maxHeight_200{max-height:200px!important;}
+
+.maxWidth{width:100%;} 
+.maxWidth_100{max-width:100px!important;}
+.maxWidth_200{max-width:200px!important;}
+.maxWidth_300{max-width:300px!important;}
+.maxWidth_400{max-width:400px!important;}
+
+.indent_20{padding-left:20px!important;}
+.indent_40{padding-left:40px!important;}
+
+.append_0{margin-left:0px!important;}
+.append_5{margin-left:5px!important;}
+.append_10{margin-left:10px!important;}
+.append_15{margin-left:15px!important;}
+.append_20{margin-left:20px!important;}
+.append_30{margin-left:30px!important;}
+.append_40{margin-left:40px!important;}
+
+.extend_5{margin-right:5px!important;}
+.extend_10{margin-right:10px!important;}
+.extend_20{margin-right:20px!important;}
+.extend_30{margin-right:30px!important;}
+.extend_40{margin-right:40px!important;}
+
+.padtop_6{padding-top:6px!important;}
+.padbot_10{padding-bottom:10px!important;}
+
+.movedown_5{margin-top:5px!important;}
+.movedown_10{margin-top:10px!important;}
+
+.below_5 {margin-bottom: 5px;}
+.below_20 {margin-bottom: 20px;}
+
+.left {float:left!important;}
+.right {float:right!important;}
+.floatnone{float:none!important;}
+
+.hide{display:none;}
+.inline{display:inline!important;}
+.invisible{visibility:hidden;}
+.outsideScreen{position:absolute;top:-1000px;};
+.noBackground {background:none;}
+.bgwhite{background:white;}
+.mute {color:#999999!important;}
+.clear{display:block!important;clear:both!important;}
+.hand{cursor:pointer!important;}
+.clickable{cursor:pointer!important;}
+.arrow{cursor:default!important;}
+.clean{margin:0px!important;padding:0px!important;}
+.nowrap{white-space: nowrap;}
+.relative{position: relative;}
+.black{color: black!important;}
+.block{display: block;}
+.noBorder{border: 0px;}
+.whiteRightBorder{border-right: 1px solid #000;}
+
+/** Standard classes for text formatting **/
+.txtleft{text-align:left!important;}
+.txtright{text-align:right!important;}
+.txtcenter{text-align:center!important;}
+.bold{font-weight:bold!important;}
+.italic{font-style:italic!important;}
+.underline{text-decoration: underline!important;}
+.smallfont {font-size: 8pt;}
+
+/** Overflow **/
+.hideoverflow{overflow: hidden!important;}
+.scrolloverflow{overflow: scroll!important;}
+.autooverflowy{overflow-y: auto!important;}
+
+.fontsize_08{font-size: 0.8em!important;}
+.fontsize_09{font-size: 0.9em!important;}
+.fontsize_10{font-size: 1.0em!important;}
+.fontsize_12{font-size: 1.2em!important;}
+.fontsize_14{font-size: 1.4em!important;}
+

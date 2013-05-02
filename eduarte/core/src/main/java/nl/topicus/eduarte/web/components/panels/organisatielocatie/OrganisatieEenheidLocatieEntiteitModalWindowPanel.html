@@ -1,0 +1,30 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<table class="tblData tblInput">
+		<div wicket:id="organisatieEenheidLocatie"></div>
+		<tr wicket:id="beginEindDatum">
+			<td class="tblTag">Geldig van/tot</td>
+			<td>
+				<span>
+					<input class="unit_80" type="text" wicket:id="begindatum" />
+				</span>
+				<span>
+					<input class="unit_80" type="text" wicket:id="einddatum" />
+				</span>
+			</td>
+		</tr>
+		<tr wicket:id="teamContainer">
+			<td class="tblTag">Team</td>
+			<td>
+				<select wicket:id="team" class="unit_max">
+					<option></option>
+				</select>
+			</td>
+		</tr>
+	</table>
+</wicket:extend>
+</body>
+</html>

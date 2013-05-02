@@ -1,0 +1,119 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption" wicket:id="caption">Deelnemerkaart</h3>
+	<div class="contThird left">
+		<span class="imgPasfoto"><img wicket:id="foto" src="assets/img/foto.jpg"/></span>
+	</div>		
+	
+	<div class="contThird middleLeft" >
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Nummer</td>
+					<td><span wicket:id="deelnemernummer">651413</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Achternaam</td>
+					<td><span wicket:id="persoon.voorvoegselAchternaam">Hooghiemstra</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Roepnaam</td>
+					<td><span wicket:id="persoon.roepnaam">Anne</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Geboortedatum</td>
+					<td><span wicket:id="persoon.geboortedatum">16-10-1989</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Geslacht</td>
+					<td><span wicket:id="persoon.geslacht">Vrouw</span></td>
+				</tr>
+				<span wicket:id="straatHuisnummerFormatted">
+				<tr>
+					<td class="tblTag">Adres</td>
+					<td><span wicket:id="persoon.eerstePersoonAdresOpPeildatum.adres.straatHuisnummerFormatted">Brinkpoortstraat 11</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Plaats</td>
+					<td><span wicket:id="persoon.eerstePersoonAdresOpPeildatum.adres.postcodePlaatsFormatted">7411HR Deventer</span></td>
+				</tr>
+				</span>
+				<span wicket:id="telefoonnummerFormatted">
+				<tr>
+					<td class="tblTag">Telefoonnummer</td>
+					<td><span wicket:id="persoon.eersteTelefoon.formattedContactgegeven">0123-456789</span></td>
+				</tr>
+				</span>
+			</tbody>
+		</table>			
+	</div>
+
+	<div class="contThird middleRight">
+		<table class="tblData">
+			<tbody>
+				<wicket:container wicket:id="inschrijvingContainer">
+					<tr>
+						<td class="tblTag">Opleiding</td>
+						<td><span wicket:id="opleiding.naam">BOL Managementsecretaresse</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag" wicket:id="externeCodeLabel">Crebo/Elementcode</td>
+						<td><span wicket:id="externeCode">3018</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Plaatsingsgroep</td>
+						<td><span wicket:id="plaatsingOpPeildatum.groep">2A</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">LWOO indicatie</td>
+						<td><span wicket:id="Lwoo">2A</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">School van herkomst</td>
+						<td><span wicket:id="relevanteVooropleidingVooropleiding.externeOrganisatie.naam">2A</span></td>
+					</tr>
+					<wicket:container wicket:id="registratieDatumContainer">
+						<tr>
+							<td class="tblTag">Registratie datum</td>
+							<td class="tblInput"><span wicket:id="registratieDatum">31-07-2008</span></td>
+						</tr>
+					</wicket:container>
+					<tr>
+						<td class="tblTag">Begindatum</td>
+						<td><span wicket:id="begindatum">01-08-2006</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Geplande einddatum</td>
+						<td><span wicket:id="geplandeEinddatum">31-07-2008</span></td>
+					</tr>
+					<wicket:container wicket:id="einddatumContainer">
+						<tr>
+							<td class="tblTag">Einddatum</td>
+							<td class="tblInput"><span wicket:id="einddatum">31-07-2008</span></td>
+						</tr>
+						<tr>
+							<td class="tblTag">Reden uitschrijving</td>
+							<td class="tblInput"><span wicket:id="redenUitschrijving"></span></td>
+						</tr>
+					</wicket:container>
+				</wicket:container>
+				<wicket:container wicket:id="mboContainer">
+					<tr>
+						<td class="tblTag">Einde leerplicht</td>
+						<td><span wicket:id="datumEindeLeerplicht">31-07-2007</span></td>
+					</tr>
+					<tr wicket:id="kwalificatieplicht">
+						<td class="tblTag">Einde kwalificatieplicht</td>
+						<td><span wicket:id="datumEindeKwalificatieplicht">31-07-2012</span></td>
+					</tr>
+				</wicket:container>
+			</tbody>
+		</table>
+	</div>
+	<div class="clear" wicket:id="detailPanel"></div>	
+</wicket:extend>
+</body>
+</html>

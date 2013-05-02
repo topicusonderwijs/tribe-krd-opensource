@@ -1,0 +1,48 @@
+#
+# GENERIEKE HIBERNATE INSTELLINGEN
+#
+
+hibernate.show_sql=true
+
+#
+# SQL SERVER SETTINGS:
+#
+
+#hibernate.connection.url=jdbc:sqlserver:
+#hibernate.connection.driver_class=com.microsoft.sqlserver.jdbc.SQLServerDriver
+#hibernate.connection.username=
+#hibernate.connection.password=
+#hibernate.default_schema=dbo
+
+
+#
+# ORACLE SETTINGS:
+#
+
+hibernate.connection.url=jdbc:oracle:thin:@mrfreeze:1522:eduarte
+hibernate.connection.driver_class=oracle.jdbc.driver.OracleDriver
+hibernate.connection.username=eduarte
+hibernate.connection.password=eduarte
+hibernate.default_schema=eduarte
+
+
+#
+# POSTGRESQL SETTINGS:
+#
+
+#hibernate.connection.url=jdbc:postgresql:
+#hibernate.connection.driver_class=org.postgresql.Driver
+#hibernate.connection.username=
+#hibernate.connection.password=
+#hibernate.default_schema=
+
+
+#
+# MYSQL SETTINGS:
+#
+
+#hibernate.connection.url=jdbc:mysql:
+#hibernate.connection.driver_class=com.mysql.jdbc.Driver
+#hibernate.connection.username=
+#hibernate.connection.password=
+#hibernate.default_schema=

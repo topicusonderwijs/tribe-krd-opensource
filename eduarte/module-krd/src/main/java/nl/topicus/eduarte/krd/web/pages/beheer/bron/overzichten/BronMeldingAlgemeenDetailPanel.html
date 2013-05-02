@@ -1,0 +1,37 @@
+<html xmlns:wicket>
+<wicket:panel>
+<table class="tblData tblInputs">
+	<thead>
+		<tr>
+			<th wicket:id="caption"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td class="tblTag">Gebruiker</td>
+			<td><input class="inpText unit_240" readonly="readonly" wicket:id="gebruiker"/></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Datum mutatie</td>
+			<td><input class="inpText unit_240" readonly="readonly" wicket:id="datumMutatie"/></td>
+		</tr>
+		<tr>
+			<td class="tblTag">Status</td>
+			<td><input class="inpText unit_240" readonly="readonly" wicket:id="status"/></td>
+		</tr>		
+		<tr>
+			<td class="tblTag">Accountantsmutatie</td>
+			<td><input class="" type="checkbox" readonly="readonly" wicket:id="accountantsmutatie"/></td>
+		</tr>		
+		<tr>
+			<td class="tblTag">Geblokkeerd</td>
+			<td><input class="inpText unit_240" readonly="readonly" wicket:id="geblokkeerd"/></td>
+		</tr>		
+		<tr wicket:id="redenGeblokkeerdContainer">
+			<td class="tblTag">Reden geblokkeerd</td>
+			<td><textarea rows="4" cols="20" class="inpText unit_240" readonly="readonly" wicket:id="redenGeblokkeerd"></textarea></td>
+		</tr>
+	</tbody>
+</table>
+</wicket:panel>
+</html>

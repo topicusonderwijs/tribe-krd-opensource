@@ -1,0 +1,28 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="plaatsingForm">	
+			<h3 class="caption">Plaatsing</h3> 
+			<table class="tblData tblInputs">
+				<tr>
+					<td class="tblTag">Verbintenis</td>
+					<td wicket:id="verbintenis">Verbintenis Naam</td>
+				</tr>
+				<tr wicket:id="leerjaarRow">
+					<td class="tblTag">Leerjaar</td>
+					<td><select wicket:id="leerjaar"></select></td>
+				</tr>
+				<tr wicket:id="jarenPraktijkonderwijsRow">
+					<td class="tblTag">Praktijkjaar</td>
+					<td><select wicket:id="jarenPraktijkonderwijs"></select></td>
+				</tr>				
+			</table>
+			<div wicket:id="inputFields"></div>
+			
+			<div wicket:id="vrijVelden"></div>
+	</form>
+</wicket:extend>
+</body>
+</html>

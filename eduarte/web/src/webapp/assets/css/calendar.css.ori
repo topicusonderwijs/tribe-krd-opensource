@@ -1,0 +1,599 @@
+.layHeader.withCalendar {
+	height: 139px;
+	background-color: white;
+}
+
+.layLeft.withCalendar {
+	position: relative;
+	border: 3px solid red;
+}
+
+.agenda {
+	width: 1000px;
+	height: 1260px;
+	z-index: 0;
+	position: relative;
+	top: 73px;
+}
+
+.layExtraHeader {
+	/*position: relative;*/
+	top: 5px;
+	left: 21px;
+	height: 100px;
+	width: 900px;
+	border: 2px solid green;
+}
+
+.layExtraHeader .calheader-left,
+.layExtraHeader .calheader-right {
+	background-color: #8aabe4;
+	height: 66px;
+	/*top: 115px;*/
+	left: 0px;
+	position: absolute;
+	border-bottom: 1px solid #ddd;
+}
+
+.layExtraHeader .calheader-left {
+	width: 50px;
+	left: 0px;
+}
+
+.layExtraHeader .calheader-right {
+	/*width: 110px;*/
+	width: 75px;
+	left: 890px;
+}
+
+.days {
+	position: relative;
+	left: 50px;
+}
+
+.layExtraHeader .day {
+	height: 66px;
+	/*top: 115px;*/
+	border-bottom: none;
+}
+
+.agenda .days .day {
+	height: 960px;
+	/*top: 0px;*/
+}
+
+.days .day {
+	border: 1px solid #ddd;
+	position: absolute;
+	text-align: center;
+}
+
+.days .day.today {
+	background-color: #e2e0f2;
+}
+
+.days .day .header {
+	color: white;
+	background-color: #8aabe4;
+	height: 25px;
+}
+
+.days .day.today .header {
+	background-color: #6894cd;
+}
+
+.days .day .day-cal {
+	position: absolute;
+	height: 40px;
+	top: 25px;
+	left: 0px;
+	border-bottom: 1px solid #ddd;
+	background-color: #8aabe4;
+}
+
+.hours {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding-bottom: 2px;
+	background-color: #8aabe4;
+}
+
+.hours .hour {
+	display: block;
+	position: relative;
+	height: 40px;
+}
+
+.hour .header {
+	height: 40px;
+	width: 45px;
+	font-size: 20px;
+	color: white;
+	padding-right: 5px;
+	text-align: right;
+	display: block;
+}
+
+.hour .min30 {
+	position: absolute;
+	top: 20px;
+	left: 50px;
+	width: 840px;
+	border-top: 1px solid #ddd;
+	display: block;
+}
+
+.hour .min60 {
+	position: absolute;
+	top: 0px;
+	left: 35px;
+	width: 855px;
+	border-top: 1px solid #bbb;
+	display: block;
+}
+
+.schedule .current-time {
+	position: absolute;
+	left: 00px;
+	height: 2px;
+	width: 840px;
+	z-index: 100;
+	background-color: red;
+}
+
+.grating {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 20px;
+}
+
+.grating .lesson {
+	width: 890px;
+}
+
+.grating .number {
+	border-top: 1px solid white;
+	border-right: 1px solid white;
+	height: 100%;
+	width: 19px;
+	color: black;
+	text-align: center;
+}
+
+.grating .lesson .number {
+	background-color: #6894cd;
+}
+
+.grating .break .number {
+	background-color: #68aacd;
+}
+
+.grating .overlay {
+	float: right;
+	height: 100%;
+	width: 840px;
+	opacity: 0.2;
+	filter: alpha(opacity = 20);
+	background-color: green;
+}
+
+.grating .handle {
+	height: 75px;
+	background-image: url('../img/agenda/lesuren.png');
+}
+
+.schedule {
+	position: absolute;
+	z-index: 1;
+	top: 0px;
+	left: 50px;
+	width: 840px;
+	height: 960px;
+}
+
+.schedule .schedule-drag-canvas {
+	top: 0px;
+	left: 0px;
+	width: 840px;
+	height: 960px;
+	position: absolute;
+	-moz-user-select: none;
+	z-index: 1;
+	background-image: url('../img/agenda/transparent.png');
+}
+
+.schedule .schedule-drag-display {
+	display: none;
+	position: absolute;
+	background-color: #9999ff;
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+	border: 2px solid blue;
+	z-index: 900;
+}
+
+.schedule .item {
+	position: absolute;
+	font-size: 11px;
+	z-index: 2;
+}
+
+.schedule .item.invited {
+	opacity: 0.5;
+	filter: alpha(opacity = 50);
+}
+.schedule .item.someone-notaccepted .content {
+	background-image: url('../img/agenda/notaccepted.png');
+}
+.schedule .item.someone-declined .content {
+	background-image: url('../img/agenda/declined.png');
+}
+
+/* fix for IE, does not inherit white-space properly */
+.schedule .item .title td {
+	white-space: nowrap;
+}
+.schedule .item .title,
+.day-cal .item .content {
+	color: white;
+	font-weight: bold;
+	padding: 0px 2px;
+	white-space: nowrap;
+}
+
+.schedule .item .title {
+	margin: -3px -3px 0px -3px;
+	width: 1000px;
+}
+
+.schedule .item .title .presentie-on,
+.schedule .item .title .presentie-off,
+.schedule .item .title .no-presentie {
+	width: 17px;
+	height: 17px;
+	display: block;
+}
+
+.schedule .item .title .presentie-on {
+	background-image: url('../img/agenda/presentiereg_on.png');
+}
+
+.schedule .item .title .presentie-off {
+	background-image: url('../img/agenda/presentiereg_off.png');
+}
+
+.schedule .item .title .herhalingAanwezig {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../img/agenda/herhaling.png');
+}
+
+.schedule .item .title .bijlageAanwezig {
+	background-position: center;
+	background-repeat: no-repeat;
+	background-image: url('../img/agenda/bijlage.png');
+}
+
+
+.item .content {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	bottom: 3px;
+	right: 3px;
+	overflow: hidden;
+	z-index: 3;
+	padding: 3px;
+}
+
+.item .shade {
+	position: absolute;
+	top: 3px;
+	left: 3px;
+	bottom: 0px;
+	right: 0px;
+	background-color: #999;
+	z-index: 2;
+}
+
+.item:hover .content {
+	border: 3px solid #33f;
+	margin: -3px;
+}
+
+.item:hover {
+	z-index: 200;
+}
+
+.day-cal .item {
+	position: relative;
+	height: 18px;
+	overflow: hidden;
+	font-size: 11px;
+}
+
+.agenda .sidebar {
+	position: absolute;
+	width: 110px;
+	top: 0px;
+	left: 890px;
+	height: 962px;
+	background-color: #8aabe4;
+	z-index: 1;
+}
+.agenda .sidebar .narrow,
+.agenda .sidebar .wide {
+	position: fixed;
+	padding-top: 10px;
+}
+.agenda .sidebar .component {
+	margin: 0px 5px 10px 5px;
+}
+.agenda .sidebar .narrow .component {
+	width: 98px;
+}
+.agenda .sidebar .wide .component {
+	margin-left: 25px;
+	margin-right: 10px;
+}
+.agenda .sidebar .narrow .narrow-handle {
+	position: absolute;
+	cursor:pointer;
+	left: 0px;
+	top: 10px;
+	margin-left: -15px;
+	margin-top: -1px;
+	height: 90px;
+	width: 15px;
+	background-image: url('../img/agenda/btn_sidebaruit.png');
+	z-index: 2001;
+}
+.agenda .sidebar .wide .wide-handle {
+	position: absolute;
+	cursor:pointer;
+	left: 0px;
+	top: 10px;
+	margin-top: -1px;
+	height: 90px;
+	width: 15px;
+	background-image: url('../img/agenda/btn_sidebarin.png');
+	z-index: 1;
+}
+.agenda .sidebar .wide {
+	display: none;
+	width: 300px;
+	height: 100%;
+	margin-left: -190px;
+	background-color: #8aabe4;
+	opacity: 0.95;
+	filter: alpha(opacity = 95);
+	z-index: 200;
+}
+.layFooter {
+	z-index: 1000;
+}
+.agenda .component {
+	border: 1px inset blue;
+	background-color: white;
+	font-size: 12px;
+}
+.agenda .component .c-caption {
+	background-color: #dee1fc;
+	padding: 2px 5px;
+	border-bottom: 1px solid #bcc0da;
+}
+.agenda .component .c-caption.no-padding {
+	padding: 2px 0px;
+}
+.agenda .component .c-content {
+	padding: 5px;
+}
+
+.agenda .c-caption .button .next {
+	background-image: url('../img/agenda/btn_arrowright0.png');
+}
+.agenda .c-caption .button .prev {
+	background-image: url('../img/agenda/btn_arrowleft0.png');
+}
+.agenda .c-caption .button .prev-prev {
+	background-image: url('../img/agenda/btn_2arrowsleft0.png');
+}
+.agenda .c-caption .button .next-next {
+	background-image: url('../img/agenda/btn_2arrowsright0.png');
+}
+
+.agenda .c-caption .button .next:hover {
+	background-image: url('../img/agenda/btn_arrowright2.png');
+}
+.agenda .c-caption .button .prev:hover {
+	background-image: url('../img/agenda/btn_arrowleft2.png');
+}
+.agenda .c-caption .button .prev-prev:hover {
+	background-image: url('../img/agenda/btn_2arrowsleft2.png');
+}
+.agenda .c-caption .button .next-next:hover {
+	background-image: url('../img/agenda/btn_2arrowsright2.png');
+}
+
+.agenda .c-caption .button .next:active {
+	background-image: url('../img/agenda/btn_arrowright1.png');
+}
+.agenda .c-caption .button .prev:active {
+	background-image: url('../img/agenda/btn_arrowleft1.png');
+}
+.agenda .c-caption .button .prev-prev:active {
+	background-image: url('../img/agenda/btn_2arrowsleft1.png');
+}
+.agenda .c-caption .button .next-next:active {
+	background-image: url('../img/agenda/btn_2arrowsright1.png');
+}
+
+.agenda .c-caption table {
+	width: 100%;
+}
+.agenda .wide .c-caption .button {
+	width: 20px;
+	padding: 0px 2px;
+}
+.agenda .narrow .c-caption .button {
+	width: 18px;
+	padding: 0px;
+}
+.agenda .wide .calendar-navbar .month {
+	width: 68px;
+	padding: 0px 5px;
+	text-align: right;
+}
+.agenda .wide .calendar-navbar .year {
+	width: 53px;
+	padding: 0px 5px;
+	text-align: left;
+}
+.agenda .narrow .calendar-navbar .month {
+	width: 31px;
+	text-align: center;
+}
+.agenda .narrow .calendar-navbar .year {
+	width: 31px;
+	text-align: center;
+}
+.agenda .wide .c-caption a.button {
+	width: 20px;
+}
+.agenda .c-caption a.button {
+	display: block;
+	height: 12px;
+	background-position: center center; 
+	background-repeat: no-repeat;
+}
+.agenda table.calendar {
+	width: 100%;
+}
+.agenda table.calendar td {
+	text-align: center;
+	padding: 3px;
+}
+.agenda table.calendar th {
+	text-align: center;
+	font-weight: bold;
+	border-bottom: 1px solid black;
+}
+.agenda table.calendar th.weekend {
+	background-color: #accdff;
+}
+.agenda table.calendar td.weekend {
+	background-color: #ceefff;
+}
+.agenda table.calendar .week-number {
+	color: #aaa;
+	font-weight: bold;
+	width: 30px;
+}
+.agenda table.calendar td.today {
+	color: red;
+}
+.agenda table.calendar td.selected {
+	background-color: #dbdbe3;
+}
+.agenda table.calendar td.other-month {
+	color: #bbb;
+}
+.agenda table.calendar tr:hover td.working,
+.agenda table.calendar.weekend-hover tr:hover td.weekend {
+	background-color: #fff6d5;
+}
+
+.days-5.days .day,
+.days-5 .days .day,
+.days-5 .days .day .day-cal,
+.days-5 .days .day .header {
+	width: 166px;
+}
+
+.days-5 .d-1 {
+	left: 0px;
+}
+.days-5 .d-2 {
+	left: 168px;
+}
+.days-5 .d-3 {
+	left: 336px;
+}
+.days-5 .d-4 {
+	left: 504px;
+}
+.days-5 .d-5 {
+	left: 672px;
+}
+
+.days-7 .day,
+.days-7 .day .day-cal,
+.days-7 .day .header {
+	width: 118px;
+}
+
+.days-7 .d-1 {
+	left: 0px;
+}
+.days-7 .d-2 {
+	left: 120px;
+}
+.days-7 .d-3 {
+	left: 240px;
+}
+.days-7 .d-4 {
+	left: 360px;
+}
+.days-7 .d-5 {
+	left: 480px;
+}
+.days-7 .d-6 {
+	left: 600px;
+}
+.days-7 .d-7 {
+	left: 720px;
+}
+
+table.tblAvail {
+	border-right: 1px solid #bbb;
+}
+
+table.tblAvail th.tblAvailRow,
+table.tblAvail td.tblAvailRow {
+	width: 720px;
+	padding: 0px;
+}
+table.tblAvail .tblAvailRow div.availHour {
+	text-align: center;
+	width: 30px;
+	float: left;
+	height: 20px;
+	background-image: url('../img/agenda/availheader.png');
+}
+table.tblAvail td.tblAvailRow {
+	background-image: url('../img/agenda/availbackground.png');
+}
+table.tblAvail .tblAvailRow div.occupied,
+table.tblAvail .tblAvailRow div.multiItem {
+		background-color: #bbb;
+}
+table.tblAvail .tblAvailRow div.availDisabled {
+		background-color: #ddd;
+}
+table.tblAvail .tblAvailRow div.occupiedApp {
+	background-color: #f37;
+}
+table.tblAvail .tblAvailRow div.availApp {
+	background-color: #3f7;
+}
+table.tblAvail .tblAvailRow div {
+	height: 21px;
+	float: left;
+}
+table.tblAvail .tblAvailRow div.occupiedApp,
+table.tblAvail .tblAvailRow div.availApp,
+	table.tblAvail .tblAvailRow div.availItem {
+	background-image: url('../img/agenda/availmask.png');
+}

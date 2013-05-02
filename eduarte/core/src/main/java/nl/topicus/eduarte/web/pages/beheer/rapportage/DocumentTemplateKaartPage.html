@@ -1,0 +1,41 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<div class="contHalf left">
+		<h3 class="caption">Samenvoegdocument</h3>
+		<div wicket:id="inputFields"></div>
+	</div>
+	<div class="contHalf right">
+		<h3 class="caption">Autorisatie</h3>
+		<table class="tblData">
+			<tbody>
+		  		<tr>
+					<td class="tblTag">Autorisatie beperken</td>
+					<td wicket:id="beperkAutorisatie"></td>
+				</tr>
+			</tbody>
+		</table>	
+		<div wicket:id="rollen"></div>
+	</div>
+	<div class="clear">
+		<h3 class="caption">Gebruikte velden</h3>
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th>Naam</th>
+					<th>Type</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr wicket:id="fields">
+					<td><span wicket:id="name">deelnemer.persoon.achternaam</span></td>
+					<td><span wicket:id="type">String</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>		
+</wicket:extend>
+</body>
+</html>

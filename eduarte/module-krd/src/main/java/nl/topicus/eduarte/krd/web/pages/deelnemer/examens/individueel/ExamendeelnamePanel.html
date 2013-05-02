@@ -1,0 +1,90 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="contHalf left">
+		<h3 class="caption">Examendeelname</h3>
+		<table class="tblData">
+			<tbody>
+				<tr>
+					<td class="tblTag">Opleiding</td>
+					<td><span wicket:id="verbintenis.opleiding.naam">Automonteur</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Status</td>
+					<td><span wicket:id="examenstatus.naam">Geslaagd</span></td>
+				</tr>
+				<wicket:container wicket:id="read">
+					<tr>
+						<td class="tblTag">Datum uitslag</td>
+						<td><span wicket:id="datumUitslag"></span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Examenjaar</td>
+						<td><span wicket:id="examenjaar">2009</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Bekostigd diploma</td>
+						<td><span wicket:id="bekostigdOmschrijving"></span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Examennummer</td>
+						<td><span wicket:id="examennummerMetPrefix">100</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Tijdvak</td>
+						<td><span wicket:id="tijdvak">1</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Naar BRON</td>
+						<td><span wicket:id="meenemenInVolgendeBronBatchOmsch">1</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">BRON status</td>
+						<td><span wicket:id="bronStatus"></span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">BRON datum</td>
+						<td><span wicket:id="bronDatum"></span></td>
+					</tr>
+				</wicket:container>
+				<wicket:container wicket:id="write">
+					<tr>
+						<td class="tblTag">Datum uitslag</td>
+						<td><input type="text" class="unit_80" wicket:id="datumUitslag" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Examenjaar</td>
+						<td><input type="text" class="unit_80" wicket:id="examenjaar" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Bekostigd</td>
+						<td>
+							<select wicket:id="bekostigd" class="unit_80">
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Examennummer</td>
+						<td>
+							<input type="text" class="unit_40" wicket:id="examennummerPrefix" />
+							<input type="text" wicket:id="examennummer" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Tijdvak</td>
+						<td><input type="text" class="unit_40" wicket:id="tijdvak" /></td>
+					</tr>
+				</wicket:container>
+			</tbody>
+		</table>
+	</div>
+	<div class="contHalf right">
+		<div wicket:id="statusovergangen"></div>
+	</div>
+	<div class="clear"></div>
+	<div wicket:id="productregels"></div>
+</wicket:panel>
+</body>
+</html>

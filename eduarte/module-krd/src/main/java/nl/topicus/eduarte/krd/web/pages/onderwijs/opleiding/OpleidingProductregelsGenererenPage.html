@@ -1,0 +1,113 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Productregels genereren</h3>
+	<form wicket:id="aantalForm">
+		<div class="contHalf left">
+			<table class="tblData">
+				<tbody>
+					<tr>
+						<td class="tblTag">Cohort</td>
+						<td><span wicket:id="cohort"></span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Genereren op basis van</td>
+						<td>
+							<select class="unit_max required" wicket:id="deelgebied">
+								<option>Zelf aangeven</option>
+								<option>Kerntaak</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Onderwijsproducten</td>
+						<td>
+							<select class="unit_max required" wicket:id="onderwijsproductenGenereren">
+								<option>Direct aanmaken</option>
+								<option>Erbij zoeken</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Aantal productregels</td>
+						<td>
+							<input type="text" class="unit_40" wicket:id="aantal" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag"><span class="inpDescription ui-icon ui-icon-help" title="Taxonomiecode filter - Voegt een extra filter toe zodat niet alle productregels aangemaakt worden. Voorbeeld: '01*' wordt automatisch omgezet naar '4.5500_01*'"></span>Taxonomiecode filter</td>
+						
+						<td>
+							<input type="text" class="unit_40" wicket:id="taxonomiecodeFilter" />
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contHalf right">
+			<table class="tblData">
+				<tbody>
+					<tr>
+						<td class="tblTag">Soort productregel</td>
+						<td>
+							<select class="unit_max" wicket:id="soortProductregel">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Aggregatieniveau</td>
+						<td>
+							<select class="unit_max" wicket:id="aggregatieniveau">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Soort onderwijsproduct</td>
+						<td>
+							<select class="unit_max" wicket:id="soortOnderwijsproduct">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag"></td>
+						<td>
+							<div class="widget-button right"><a href=# wicket:id="genereren"><span>Productregels genereren</span></a></div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+	<form wicket:id="form">
+		<div class="clear"></div>
+		<h3 class="caption">Productregels</h3>
+		<table class="tblDatagrid">
+			<thead>
+				<tr>
+					<th>Vlgnr</th>
+					<th>Afkorting</th>
+					<th>Naam</th>
+					<th>Onderwijsproduct</th>
+				</tr>
+			</thead>
+			<tbody wicket:id="productregels">
+				<tr wicket:id="productregel">
+					<td><input type="text" class="unit_40 required" wicket:id="volgnummer" /></td>
+					<td><input type="text" class="unit_60 required" wicket:id="code" /></td>
+					<td><input type="text" class="unit_280 required" wicket:id="naam" /></td>
+					<td><span wicket:id="onderwijsproductCode"></span></td>
+				</tr>
+				<tr wicket:id="geenElementen">
+					<td colspan="3">Geen gegevens gevonden</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+</wicket:extend>
+</body>
+</html>

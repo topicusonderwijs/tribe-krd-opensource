@@ -1,0 +1,27 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Groepkaart</h3>
+	<div class="contHalf left">	
+		<div wicket:id="algemeen"></div>
+		<div wicket:id="vrijvelden"></div>
+	</div>
+	<div class="contHalf right autooverflowy maxHeight_200">
+		<div wicket:id="panelDocenten">
+			<div wicket:id="datapanelDocenten"></div>
+		</div>
+		<div wicket:id="panelMentoren">
+			<div wicket:id="datapanelMentoren"></div>
+		</div>
+	</div>
+	
+	<div class="clear"></div>
+	<div wicket:id="panelDeelnemers">
+		<div wicket:id="filter"></div>
+		<div wicket:id="datapanelDeelnemers"></div>
+	</div>
+</wicket:extend>
+</body>
+</html>

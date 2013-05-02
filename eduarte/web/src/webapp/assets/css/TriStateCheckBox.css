@@ -1,0 +1,27 @@
+.tristate{
+	display:block;
+	overflow:hidden;
+	background:#ffffff url('../img/layout/checks.png') no-repeat;
+	height:14px!important;
+	width:14px;
+	cursor:pointer;
+}
+.tristate_disabled{
+	background:#ffffff url('../img/layout/checks_disabled.png') no-repeat;
+	cursor:default;
+}
+.inherited{
+	background-position: 0px -14px;
+}
+
+.checked{
+	background-position: 0px -28px;
+}
+
+.tristate input{
+	display:none;	
+}
+
+/*
+*TODO disabled style
+*/

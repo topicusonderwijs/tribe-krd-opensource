@@ -1,0 +1,30 @@
+﻿<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Collectief aanmaken</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData tblInputs">
+				<thead>
+					<tr>
+						<th colspan="2">Voer de gegevens in voor de nieuw aan te maken plaatsing of verbintenis</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tblTag unit_120">Nieuw aanmaken</td>
+						<td><span wicket:id="soort"></span></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<div class="contHalf right">
+			<div wicket:id="nieuwePlaatsing"></div>
+			<div wicket:id="nieuweVerbintenis"></div>
+		</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

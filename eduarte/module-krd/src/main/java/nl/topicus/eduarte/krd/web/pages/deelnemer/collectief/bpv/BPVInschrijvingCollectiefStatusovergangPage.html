@@ -1,0 +1,40 @@
+﻿<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Status BPV inschrijving collectief wijzigen</h3>
+	<div class="contHalf left">
+		<form wicket:id="form">
+		<table class="tblData tblInputs">
+			<thead>
+				<tr>
+					<th colspan="2">Selecteer begin- en eindstatus</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">Beginstatus</td>
+					<td>
+						<select wicket:id="beginstatus">
+							<option>123</option>
+						</select>
+					</td>
+				</tr>
+				<tr>
+					<td class="tblTag">Eindstatus</td>
+					<td>
+						<select wicket:id="eindstatus">
+							<option>456</option>
+						</select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		</form>
+	</div>
+	<div class="contHalf right">
+	</div>
+</wicket:extend>
+</body>
+</html>

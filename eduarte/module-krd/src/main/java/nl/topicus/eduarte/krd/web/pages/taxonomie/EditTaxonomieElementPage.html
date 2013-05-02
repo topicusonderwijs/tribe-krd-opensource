@@ -1,0 +1,56 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Algemeen</h3>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<table class="tblData">
+				<tbody>
+					<tr>
+						<td class="tblTag">Afkorting</td>
+						<td><input type="text" class="unit_80" wicket:id="afkorting" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Naam</td>
+						<td><input type="text" class="unit_320" wicket:id="naam" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Taxonomiecode</td>
+						<td>
+							<span wicket:id="parentTaxonomiecodeMetScheidingsteken"></span>
+							<input type="text" class="unit_40" wicket:id="code" />
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Externe code</td>
+						<td><input type="text" class="unit_100" wicket:id="externeCode" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Taxonomie</td>
+						<td><span wicket:id="taxonomie.naam">Voortgezet onderwijs</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Type</td>
+						<td><span wicket:id="taxonomieElementType.naam">Elementcode</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Landelijk</td>
+						<td><span wicket:id="taxonomie.landelijkOmschrijving">Ja</span></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Begindatum</td>
+						<td><input type="text" class="unit_80" wicket:id="begindatum" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Einddatum</td>
+						<td><input type="text" class="unit_80" wicket:id="einddatum" /></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

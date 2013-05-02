@@ -1,0 +1,59 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="sleutelgegevensForm">	
+		<h3 class="caption">Deelnemer sleutelgegevens</h3>
+		<div class="contHalf left">
+			<table class="tblData tblInputs append_0">
+				<thead>
+					<tr>
+						<th>WAARSCHUWING:</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tblTag">
+							<img src="assets/img/icons/warning.gif" alt="Waarschuwing"/>
+							Deze pagina is bedoeld om problemen op te lossen 
+							in de communicatie met BRON, die te maken hebben 
+							met de identificatie van deze leerling. 
+							Gebruik deze pagina ALLEEN als u kennis heeft 
+							genomen van de mogelijke gevolgen van onderstaande 
+							acties. Door ondoordacht gebruik kunt u 
+							de BRON-uitwisseling ernstig verstoren. 
+							Neem bij twijfel altijd contact op met de helpdesk 
+							van de IB-groep. 
+						</td>
+					</tr>
+				</tbody>
+				</table>
+				 
+				<table class="tblData tblInputs append_0">
+				<thead>
+					<tr>
+						<th>BRON-melding</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td class="tblTag">
+							Creëer BRON-meldingen:
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">
+							<div wicket:id="negeerSleutelWijzigingenBron"></div>							
+						</td>
+					</tr>
+				</tbody>
+				</table>
+		</div>
+		<div class="contHalf right">
+			<div wicket:id="sleutelgegevens"></div>
+		</div>
+	</form>
+</wicket:extend>
+</body>
+</html>

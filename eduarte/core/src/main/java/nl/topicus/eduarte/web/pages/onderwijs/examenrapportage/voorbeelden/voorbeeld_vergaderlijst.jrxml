@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="vergaderlijst examenuitslag" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<subDataset name="cijfers">
+		<field name="keuze" class="nl.topicus.eduarte.entities.onderwijsproduct.OnderwijsproductAfnameContext"/>
+		<field name="seResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="ceResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="eindresultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="cseResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+		<field name="cpeResultaat" class="nl.topicus.eduarte.entities.resultaatstructuur.Resultaat"/>
+	</subDataset>
+	<parameter name="DATE" class="java.util.Date"/>
+	<parameter name="datum" class="java.util.Date"/>
+	<parameter name="AUTHOR" class="java.lang.String"/>
+	<parameter name="huidigemedewerker" class="nl.topicus.eduarte.entities.personen.Medewerker"/>
+	<parameter name="huidigeorganisatie" class="nl.topicus.eduarte.entities.organisatie.Instelling"/>
+	<parameter name="huidigaccount" class="nl.topicus.eduarte.entities.security.authentication.Account"/>
+	<field name="examendeelname" class="nl.topicus.eduarte.entities.examen.Examendeelname"/>
+	<group name="deelnemers">
+		<groupExpression><![CDATA[$F{examendeelname}]]></groupExpression>
+		<groupHeader>
+			<band height="71">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="62" y="0" width="215" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{examendeelname}.getVerbintenis().getDeelnemer().getPersoon().getVolledigeNaam()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="0" width="63" height="24"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Naam:
+OV-nummer:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="278" y="0" width="277" height="24"/>
+					<textElement>
+						<font fontName="Arial" size="9" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA["Uitslag examen: "+$F{examendeelname}.getExamenstatus().getNaam()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="29" width="207" height="24"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Vakken]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="207" y="29" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[SE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="455" y="29" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[CE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="505" y="29" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Eind]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="356" y="29" width="99" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[CSPE]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="505" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cijfer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="455" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cijfer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="405" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cijfer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="356" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Score]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="306" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cijfer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="257" y="29" width="99" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[CSE]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="52" width="555" height="13"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="cijfers">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{examendeelname}.getVerbintenis().getSchoolexamen_CentraalExamen_EindresultatenCijferlijst())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="13">
+							<textField isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="207" height="12"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{keuze}.getOnderwijsproductAfname().getOnderwijsproduct().getTitel()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="207" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{seResultaat}.getFormattedDisplayCijfer()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="257" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{cseResultaat}.getScore()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="306" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{cseResultaat}.getFormattedDisplayCijfer()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="356" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{cpeResultaat}.getScore()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="405" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{cpeResultaat}.getFormattedDisplayCijfer()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="455" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{ceResultaat}.getFormattedDisplayCijfer()]]></textFieldExpression>
+							</textField>
+							<textField isBlankWhenNull="true">
+								<reportElement x="505" y="0" width="50" height="12"/>
+								<textElement textAlignment="Center">
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{eindresultaat}.getFormattedDisplayCijfer()]]></textFieldExpression>
+							</textField>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<staticText>
+					<reportElement x="207" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Cijfer]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="257" y="40" width="50" height="12"/>
+					<textElement textAlignment="Center">
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Score]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="62" y="12" width="215" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{examendeelname}.getVerbintenis().getDeelnemer().getOnderwijsnummer()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="22" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="0" width="555" height="20"/>
+				<textElement>
+					<font fontName="Arial" size="14" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Vergaderlijst examenuitslag 1ste tijdvak basis beroepsgerichte leerweg]]></text>
+			</staticText>
+			<line>
+				<reportElement x="0" y="21" width="555" height="1"/>
+			</line>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="0" width="98" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pagina "+$V{PAGE_NUMBER}+"  van"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="0" width="144" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AUTHOR}+" ("+$P{huidigeorganisatie}.getNaam()+")"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-yyyy HH.mm">
+				<reportElement x="0" y="0" width="136" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{datum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

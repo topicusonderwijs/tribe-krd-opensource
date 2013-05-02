@@ -1,0 +1,67 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<h3 class="caption">
+		<span class="left" wicket:id="title">Deelnemers - 1 tot 20 (van 3592)</span>
+		<span class="tblButtons">
+			<a href="#" title="Groeperen" wicket:id="groeperen" class="btnGroeperen"><img src="assets/img/icons/groepeer.gif" alt="Groeperen"/></a>
+			<a href="#" title="Kolommen kiezen" wicket:id="settings" class="btnKolommen"><img src="assets/img/icons/customize.gif" alt="Kolommen"/></a>
+			<a href="#" title="Exporteren naar Excel" wicket:id="export" class="btnExport"><img src="assets/img/icons/excel.gif" alt="Excel"/></a>
+			<a href="#" title="Afdrukken" wicket:id="print" class="btnAfdrukken"><img src="assets/img/icons/printPDF.png" alt="Print" /></a>
+			<wicket:container wicket:id="extraButtons"></wicket:container>
+		</span>
+		<span class="clear"></span>
+	</h3>
+	<table class="tblDatagrid" wicket:id="table">
+		<wicket:enclosure child="headerbars">
+			<thead>
+				<tr wicket:id="headerbars">
+					<wicket:container wicket:id="toolbar" />
+				</tr>
+			</thead>
+		</wicket:enclosure>
+		<wicket:enclosure child="footerbars">
+			<tfoot>
+				<tr wicket:id="footerbars">
+					<wicket:container wicket:id="toolbar" />
+				</tr>
+			</tfoot>
+		</wicket:enclosure>
+		<wicket:enclosure child="navigatorContainer">
+			<tfoot>
+				<tr>
+					<td class="navigator" wicket:id="navigatorContainer" colspan="1">
+						<span wicket:id="navigator"> [Page navigator]</span>
+					</td>
+				</tr>
+			</tfoot>
+		</wicket:enclosure>
+		<tbody>
+			<wicket:container wicket:id="geenGegevensGevonden">
+				<tr class="tblNoHightlight">
+					<td colspan="1" wicket:id="geenGegevensMsg">Er zijn geen gegevens gevonden</td>
+				</tr>
+			</wicket:container>
+
+			<wicket:container wicket:id="data">
+				<tr wicket:id="groepHeaderRow" class="groupHeader">
+					<td colspan="1" wicket:id="columnHeaderCaption"></td>
+					<wicket:container wicket:id="colsHeader">
+						<td wicket:id="columnHeader"><span wicket:id="contentHeader"></span></td>
+					</wicket:container>				
+				</tr>
+				<tr wicket:id="row">
+					<wicket:container wicket:id="cols">
+						<td wicket:id="column"><span wicket:id="content"></span></td>
+					</wicket:container>
+				</tr>
+			</wicket:container>
+		</tbody>
+	</table>
+	<div wicket:id="selecteerGroeperingModalWindow"></div>
+	<div wicket:id="selecteerKolommenModalWindow"></div>
+</wicket:panel>
+</body>
+</html>

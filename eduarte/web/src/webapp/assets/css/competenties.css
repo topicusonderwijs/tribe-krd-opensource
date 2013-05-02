@@ -1,0 +1,200 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+competenties.css is part of the stylesheet for EduArte. 
+
+
+competenties.css bevat stijlen die betrekking hebben op competenties.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. competenties.css exists since revision 0.2 
+*/
+
+.competentieEditor {
+	position: relative;
+	z-index: 100;
+	display: none;
+	font-size: 80%;
+}
+	
+.tblCompetenties{
+	margin-top:10px;
+	min-width:98%;
+	border-collapse:collapse;
+	float:left;
+	margin-right:10px;
+	font-size:0.8em;
+	border-bottom:2px solid #bababa;
+}
+
+.tblCompetenties .data {
+	width: 20px;
+}
+
+.tblCompetenties td, .tblCompetenties th {
+	-moz-user-select: none;
+}
+
+	td.greyDisabled	{
+		background: #ffffff url('../img/grades/grade_disabled.gif');
+	}
+
+	td.compRequired {
+		background-color: #ffffd0;
+	}
+	td.compDualValue{
+		font-size:70%;
+	}
+	td.compBasisNiveau {
+		color: grey;
+	}
+	td.compBeoordeling {
+	}
+	td.highlighted, tr.highlighted td.tblCompetentieResults, td.compSelected {
+		background-color:#c3d3ff!important;
+	}
+	tr.hover td.tblTaakName, tr.hover td.tblKerntaakName {
+		background:#e2e2e2;
+	}
+	td.hover.tblCompetentieNames, tr.hover td.tblCompetentieNames {
+		background:#e2e2e2;
+	}
+	.tblCompetenties th.hover {
+		background:#aeaeae;
+	}
+	td.hover, tr.hover td {
+		background:#e8e8ff;
+	}
+	td.hover.greyDisabled, tr.hover td.greyDisabled {
+		background:#e8e8ff url('../img/grades/grades_disabled_hover.gif');
+	}
+	td.hover.compRequired, tr.hover td.compRequired {
+		background:#e5ffe3;
+	}
+	
+	
+	.tblCompetenties td, .tblCompetenties th {
+		padding:3px;
+		white-space:nowrap;
+	}
+	
+	.tblCompetenties th {
+		background:#bebebe url('../img/layout/cijfersHeader.gif') repeat-x;
+		color:#2158d3;
+		font-style:italic;
+		font-size:11px;
+		border:1px solid #bababa;
+		height:20px;
+	}
+	
+	.tblCompetentieHeadNames {
+		text-align:center;
+	}
+	
+	.tblKerntaakName {
+		font-weight:bold;
+		background:#f2f2f2;
+		border-bottom:1px dashed #cfcfcf;
+		border-left:1px solid #bababa;
+		border-right:2px solid #bababa;
+	}
+
+	.tblTaakName {
+		background:#f2f2f2;
+		border-bottom:1px dashed #cfcfcf;
+		border-left:1px solid #bababa;
+		border-right:2px solid #bababa;
+	}
+
+	.tblCompetentieNames {
+		background:#f2f2f2;
+		text-align:center;
+		border-bottom:1px dashed #cfcfcf;
+		border-left:1px solid #bababa;
+		border-right:2px solid #bababa;
+	}
+	
+	.tblCompetentieResults {
+		border-bottom:1px dashed #cfcfcf;
+		border-left:1px solid #dfdfdf;
+		text-align:center;
+		vertical-align:middle;
+	}
+	td.hover.compLocked, tr.hover td.compLocked {
+	background-image: url(../img/competentie/lock.png);
+	background-repeat: no-repeat;
+}
+
+td.compLockedMini {
+	background-image: url(../img/competentie/minilock.png);
+	background-repeat: no-repeat;
+}
+
+td.hover.compLockedMini, tr.hover td.compLockedMini {
+	background-image: url(../img/competentie/minilock.png);
+	background-repeat: no-repeat;
+}
+
+td.compHasMax {
+	background-image: url(../img/competentie/hasmax.png);
+	background-repeat: no-repeat;
+}
+
+td.hover.compHasMax, tr.hover td.compHasMax {
+	background-image: url(../img/competentie/hasmax.png);
+	background-repeat: no-repeat;
+}
+
+td.compIndividueel {
+	background-image: url(../img/competentie/individueel.png);
+	background-repeat: no-repeat;
+}
+
+td.hover.compIndividueel, tr.hover td.compIndividueel {
+	background-image: url(../img/competentie/individueel.png);
+	background-repeat: no-repeat;
+}
+
+td.compIndividueel.compHasMax {
+	background-image: url(../img/competentie/max_individueel.png);
+	background-repeat: no-repeat;
+}
+
+td.hover.compIndividueel.compHasMax, tr.hover td.compIndividueel.compHasMax {
+	background-image: url(../img/competentie/max_individueel.png);
+	background-repeat: no-repeat;
+}
+
+td.compVoldoende {
+	background-color: #BCD35F;
+}
+
+td.hover.compVoldoende, tr.hover td.data.compVoldoende {
+	background: #AEC05C none repeat scroll 0 0;
+}
+
+td.compOnvoldoende {
+	background-color: #FF8080;
+}
+
+td.hover.compOnvoldoende, tr.hover td.data.compOnvoldoende {
+	background: #C57575 none repeat scroll 0 0;
+}

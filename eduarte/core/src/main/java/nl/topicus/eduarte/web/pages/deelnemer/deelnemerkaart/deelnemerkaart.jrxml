@@ -1,0 +1,1114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="deelnemerkaart" pageWidth="595" pageHeight="842" whenNoDataType="AllSectionsNoDetail" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20">
+	<style name="Crosstab Data Text" isDefault="false" hAlign="Center"/>
+	<subDataset name="verbintenissen">
+		<field name="opleiding" class="nl.topicus.eduarte.entities.opleiding.Opleiding"/>
+		<field name="plaatsingOpPeildatum" class="nl.topicus.eduarte.entities.inschrijving.Plaatsing"/>
+		<field name="organisatieEenheid" class="nl.topicus.eduarte.entities.organisatie.OrganisatieEenheid"/>
+		<field name="locatie" class="nl.topicus.eduarte.entities.organisatie.Locatie"/>
+		<field name="geldigVanTotBeschrijving" class="java.lang.String"/>
+		<field name="diplomaBehaaldOmschrijving" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="datasetVrijVelden">
+		<field name="vrijVeld" class="nl.topicus.eduarte.entities.vrijevelden.VrijVeld"/>
+		<field name="omschrijving" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="datasetGroepsdeelnames">
+		<field name="groep" class="nl.topicus.eduarte.entities.groep.Groep"/>
+		<field name="geldigVanTotBeschrijving" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="datasetOnderwijsproducten">
+		<field name="onderwijsproduct" class="nl.topicus.eduarte.entities.onderwijsproduct.Onderwijsproduct"/>
+		<field name="geldigVanTotBeschrijving" class="java.lang.String"/>
+		<field name="werkstuktitel" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="datasetBPV">
+		<field name="bpvBedrijf" class="nl.topicus.eduarte.entities.organisatie.ExterneOrganisatie"/>
+		<field name="praktijkopleiderBPVBedrijf" class="nl.topicus.eduarte.entities.personen.ExterneOrganisatieContactPersoon"/>
+		<field name="praktijkbegeleider" class="nl.topicus.eduarte.entities.personen.Medewerker"/>
+		<field name="totaleOmvang" class="java.lang.Integer"/>
+		<field name="geldigVanTotBeschrijving" class="java.lang.String"/>
+	</subDataset>
+	<subDataset name="datasetResultaten">
+		<field name="toets" class="java.lang.String"/>
+		<field name="onderwijsproduct" class="nl.topicus.eduarte.entities.onderwijsproduct.Onderwijsproduct"/>
+		<field name="cijfer" class="java.lang.String"/>
+	</subDataset>
+	<parameter name="DATE" class="java.util.Date"/>
+	<parameter name="datum" class="java.util.Date"/>
+	<parameter name="AUTHOR" class="java.lang.String"/>
+	<parameter name="huidigemedewerker" class="nl.topicus.eduarte.entities.personen.Medewerker"/>
+	<parameter name="huidigeorganisatie" class="nl.topicus.eduarte.entities.organisatie.Instelling"/>
+	<parameter name="huidigaccount" class="nl.topicus.eduarte.entities.security.authentication.Account"/>
+	<field name="verbintenis" class="nl.topicus.eduarte.entities.inschrijving.Verbintenis"/>
+	<group name="verbintenis" isStartNewPage="true">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="299" splitType="Stretch">
+				<staticText>
+					<reportElement x="0" y="18" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Deelnemerdossier]]></text>
+				</staticText>
+				<textField>
+					<reportElement x="0" y="0" width="555" height="18"/>
+					<textElement>
+						<font fontName="Arial" size="14" isBold="true"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getVolledigeNaam()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="0" y="51" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Personalia]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="280" y="51" width="100" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Woon/postadres]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="20" y="66" width="100" height="220"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Nummer
+BSN
+Aanspreekachternaam
+Voorvoegsel(s)
+Voorna(a)m(en)
+Voorletter(s)
+Roepnaam
+Geslacht
+Geboortedatum
+Geboorteland
+Geboren te
+Onderwijsnummer
+Datum in Nederland
+1e Nationaliteit
+2e Nationaliteit
+Allochtoon
+Inburgeraar
+LGF
+Telefoonnummer
+Debiteurennummer
+Bankrekeningnummer]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="66" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[new Integer($F{verbintenis}.getDeelnemer().getDeelnemernummer()).toString()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="76" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getBsn()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="87" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getAchternaam()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="97" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getVoorvoegsel()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="108" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getVoornamen()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="118" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getVoorletters()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="128" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getRoepnaam()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="138" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getGeslacht().toString()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="149" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getGeboortedatumOfficieel()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="169" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getGeboorteplaats()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="159" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getGeboorteland().getNaam()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="180" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{verbintenis}.getDeelnemer().getOnderwijsnummer()]]></textFieldExpression>
+				</textField>
+				<textField pattern="dd-MM-yyyy" isBlankWhenNull="true">
+					<reportElement x="120" y="190" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.util.Date"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getDatumInNederland()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="201" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getNationaliteit1().getNaam()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="211" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getNationaliteit2().getNaam()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="221" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getAllochtoonOmschrijving()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="231" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getNieuwkomerOmschrijving()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="242" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getLgfOmschrijving()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="264" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.Long"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getDebiteurennummer()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="275" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getBankrekeningnummer()]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement x="300" y="67" width="100" height="55"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Straat/huisnummer
+Postcode/plaats
+Land
+Geldig van/tot
+Geheim adres]]></text>
+				</staticText>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="67" width="155" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getFysiekAdres().getAdres().getStraatHuisnummerFormatted()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="77" width="155" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getFysiekAdres().getAdres().getPostcodePlaatsFormatted()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="88" width="155" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getFysiekAdres().getAdres().getLandnaamFormatted()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="98" width="155" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getFysiekAdres().getGeldigVanTotBeschrijving()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="400" y="109" width="155" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getFysiekAdres().getAdres().getGeheimOmschrijving()]]></textFieldExpression>
+				</textField>
+				<textField isBlankWhenNull="true">
+					<reportElement x="120" y="253" width="154" height="12"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<textFieldExpression class="java.lang.String"><![CDATA[$F{verbintenis}.getDeelnemer().getPersoon().getEersteTelefoon().getFormattedContactgegeven()]]></textFieldExpression>
+				</textField>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="verbintenissen">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="70">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getDeelnemer().getActieveVerbintenissenOpPeildatumOfInDeToekomst().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Actieve verbintenissen]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="verbintenissen">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getDeelnemer().getActieveVerbintenissenOpPeildatumOfInDeToekomst())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="76" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{opleiding}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="76" y="0" width="60" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{plaatsingOpPeildatum}.getGroep().getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="136" y="0" width="50" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{plaatsingOpPeildatum}.getLeerjaar().toString()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="186" y="0" width="98" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{organisatieEenheid}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="284" y="0" width="79" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{locatie}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="363" y="0" width="76" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{diplomaBehaaldOmschrijving}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="439" y="0" width="116" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{geldigVanTotBeschrijving}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="76" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Opleiding]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="76" y="18" width="60" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Stamgroep]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="136" y="18" width="50" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Leerjaar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="186" y="18" width="98" height="23"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Organisatie-
+eenheid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="284" y="18" width="79" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Locatie]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="363" y="18" width="76" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Diploma behaald]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Begindatum]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="497" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Einddatum]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="555" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="vrijVeldenVerbintenis">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getVrijVelden().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[ Vrije velden verbintenis]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="datasetVrijVelden">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getVrijVelden())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="172" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{vrijVeld}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="172" y="0" width="383" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{omschrijving}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="172" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Naam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="18" width="383" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Waarde]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="555" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="vrijVeldenDeelnemer">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getDeelnemer().getPersoon().getVrijVelden().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="555" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[ Vrije velden deelnemer]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="datasetVrijVelden">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getDeelnemer().getPersoon().getVrijVelden())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="172" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{vrijVeld}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="172" y="0" width="383" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{omschrijving}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="172" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Naam]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="18" width="383" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Waarde]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="555" height="1"/>
+				</line>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="groepsdeelnames">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="69">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getDeelnemer().getGroepsdeelnames().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Groepsdeelnames]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="43" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="datasetGroepsdeelnames">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getDeelnemer().getGroepsdeelnames())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="59" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="59" y="0" width="51" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getGroepstype().toString()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="110" y="0" width="62" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getGroepDocentenAfkortingenOpPeildatum()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="172" y="0" width="62" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getGroepMentorenAfkortingenOpPeildatum()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="234" y="0" width="40" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.Integer"><![CDATA[$F{groep}.getLeerjaar()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="372" y="0" width="67" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getLocatie().getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="439" y="0" width="116" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{geldigVanTotBeschrijving}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="274" y="0" width="98" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{groep}.getOrganisatieEenheid().getNaam()]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="59" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Groep]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="18" width="51" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Groepstype]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="110" y="18" width="62" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Docenten]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="18" width="62" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Mentoren]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="234" y="18" width="40" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Leerjaar]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="274" y="18" width="98" height="23"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Organisatie-
+eenheid]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Begindatum]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="497" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Einddatum]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="41" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="372" y="18" width="67" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Locatie]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="onderwijsproducten">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="61">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getDeelnemer().getOnderwijsproductAfnames().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Onderwijsproducten]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="32" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="datasetOnderwijsproducten">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getDeelnemer().getOnderwijsproductAfnames())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="59" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{onderwijsproduct}.getCode()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="59" y="0" width="127" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{onderwijsproduct}.getTitel()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="340" y="0" width="99" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{werkstuktitel}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="439" y="0" width="116" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{geldigVanTotBeschrijving}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="186" y="0" width="154" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{werkstuktitel}]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="59" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Code]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="59" y="18" width="127" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Titel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="186" y="18" width="154" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Werkstuktitel]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Begindatum]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="497" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Einddatum]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="31" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="340" y="18" width="99" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Productregel]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="bpvs">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="61">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getDeelnemer().getActieveBPVInschrijvingenOpPeildatumOfInDeToekomst().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Actieve BPV's]]></text>
+				</staticText>
+				<componentElement>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="32" width="555" height="16"/>
+					<jr:list xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd">
+						<datasetRun subDataset="datasetBPV">
+							<dataSourceExpression><![CDATA[new net.sf.jasperreports.engine.data.JRBeanCollectionDataSource($F{verbintenis}.getDeelnemer().getActieveBPVInschrijvingenOpPeildatumOfInDeToekomst())]]></dataSourceExpression>
+						</datasetRun>
+						<jr:listContents height="16">
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="0" y="0" width="172" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{bpvBedrijf}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="372" y="0" width="67" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{totaleOmvang}.toString()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="439" y="0" width="116" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{geldigVanTotBeschrijving}]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="172" y="0" width="102" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{praktijkopleiderBPVBedrijf}.getNaam()]]></textFieldExpression>
+							</textField>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement x="274" y="0" width="98" height="15"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$F{praktijkbegeleider}.getPersoon().getVolledigeNaam()]]></textFieldExpression>
+							</textField>
+							<line>
+								<reportElement positionType="Float" x="0" y="15" width="555" height="1" forecolor="#CCCCCC"/>
+							</line>
+						</jr:listContents>
+					</jr:list>
+				</componentElement>
+				<line>
+					<reportElement x="0" y="16" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="0" y="18" width="172" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[BPV-bedrijf]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="172" y="18" width="102" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Praktijkopleider]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="439" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Begindatum]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="497" y="18" width="58" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Einddatum]]></text>
+				</staticText>
+				<line>
+					<reportElement x="0" y="31" width="555" height="1"/>
+				</line>
+				<staticText>
+					<reportElement x="372" y="18" width="67" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Totale omvang]]></text>
+				</staticText>
+				<staticText>
+					<reportElement x="274" y="18" width="98" height="13"/>
+					<textElement>
+						<font fontName="Arial" size="9"/>
+					</textElement>
+					<text><![CDATA[Praktijkbegeleider]]></text>
+				</staticText>
+			</band>
+		</groupHeader>
+	</group>
+	<group name="resultaten">
+		<groupExpression><![CDATA[$F{verbintenis}]]></groupExpression>
+		<groupHeader>
+			<band height="182">
+				<printWhenExpression><![CDATA[new Boolean($F{verbintenis}.getRapportage().getCijfers().getToetsen().size() > 0)]]></printWhenExpression>
+				<staticText>
+					<reportElement x="0" y="0" width="120" height="15"/>
+					<textElement>
+						<font fontName="Arial" size="12"/>
+					</textElement>
+					<text><![CDATA[Resultaten]]></text>
+				</staticText>
+				<crosstab>
+					<reportElement stretchType="RelativeToTallestObject" x="0" y="18" width="555" height="57"/>
+					<crosstabDataset>
+						<dataset>
+							<datasetRun subDataset="datasetResultaten">
+								<dataSourceExpression><![CDATA[$F{verbintenis}.getRapportage().getCijfers()]]></dataSourceExpression>
+							</datasetRun>
+						</dataset>
+					</crosstabDataset>
+					<rowGroup name="onderwijsproduct" width="129">
+						<bucket>
+							<bucketExpression class="nl.topicus.eduarte.entities.onderwijsproduct.Onderwijsproduct"><![CDATA[$F{onderwijsproduct}]]></bucketExpression>
+						</bucket>
+						<crosstabRowHeader>
+							<cellContents mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="Crosstab Data Text" stretchType="RelativeToTallestObject" x="0" y="0" width="129" height="13"/>
+									<textElement textAlignment="Left">
+										<font fontName="Arial" isBold="true"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{onderwijsproduct}.getCode()+" "+$V{onderwijsproduct}.getTitel()]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabRowHeader>
+						<crosstabTotalRowHeader>
+							<cellContents/>
+						</crosstabTotalRowHeader>
+					</rowGroup>
+					<columnGroup name="toets" height="15">
+						<bucket>
+							<bucketExpression class="java.lang.String"><![CDATA[$F{toets}]]></bucketExpression>
+						</bucket>
+						<crosstabColumnHeader>
+							<cellContents mode="Opaque">
+								<box>
+									<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+								</box>
+								<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+									<reportElement style="Crosstab Data Text" stretchType="RelativeToTallestObject" x="0" y="0" width="50" height="13"/>
+									<textElement textAlignment="Left">
+										<font fontName="Arial" size="9" isBold="true"/>
+									</textElement>
+									<textFieldExpression class="java.lang.String"><![CDATA[$V{toets}]]></textFieldExpression>
+								</textField>
+							</cellContents>
+						</crosstabColumnHeader>
+						<crosstabTotalColumnHeader>
+							<cellContents/>
+						</crosstabTotalColumnHeader>
+					</columnGroup>
+					<measure name="cijferMeasure" class="java.lang.String">
+						<measureExpression><![CDATA[$F{cijfer}]]></measureExpression>
+					</measure>
+					<crosstabCell width="50" height="13">
+						<cellContents>
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="13"/>
+								<textElement>
+									<font fontName="Arial" size="9"/>
+								</textElement>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijferMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="50" height="15" rowTotalGroup="onderwijsproduct">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijferMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="50" height="15" columnTotalGroup="toets">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijferMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+					<crosstabCell width="50" height="15" rowTotalGroup="onderwijsproduct" columnTotalGroup="toets">
+						<cellContents mode="Opaque">
+							<box>
+								<pen lineWidth="0.5" lineStyle="Solid" lineColor="#000000"/>
+							</box>
+							<textField>
+								<reportElement style="Crosstab Data Text" x="0" y="0" width="50" height="25"/>
+								<textElement/>
+								<textFieldExpression class="java.lang.String"><![CDATA[$V{cijferMeasure}]]></textFieldExpression>
+							</textField>
+						</cellContents>
+					</crosstabCell>
+				</crosstab>
+			</band>
+		</groupHeader>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="420" y="0" width="98" height="12"/>
+				<textElement textAlignment="Right">
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA["Pagina "+$V{PAGE_NUMBER}+"  van"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="515" y="0" width="40" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="218" y="0" width="144" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.lang.String"><![CDATA[$P{AUTHOR}+" ("+$P{huidigeorganisatie}.getNaam()+")"]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MM-yyyy HH.mm">
+				<reportElement x="0" y="0" width="136" height="12"/>
+				<textElement>
+					<font fontName="Arial" size="9"/>
+				</textElement>
+				<textFieldExpression class="java.util.Date"><![CDATA[$P{datum}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>

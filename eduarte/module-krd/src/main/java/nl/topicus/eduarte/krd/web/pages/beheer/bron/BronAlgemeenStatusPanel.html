@@ -1,0 +1,42 @@
+<html xmlns:wicket>
+<wicket:panel>
+    <h3 class="caption">Algemeen</h3>
+    <table class="tblDatagrid">
+        <thead>
+            <tr>
+                <th>
+                    Omschrijving
+                </th>
+                <th>
+                    BO
+                </th>
+                <th>
+                    ED
+                </th>
+                <th>
+                    VAVO
+                </th>
+                <th>
+                    VO
+                </th>
+                <th>
+                    Handelingen
+                </th>
+            </tr>
+        </thead>
+     	<tbody>
+			<tr wicket:id="statussen">
+				<td class="tblTag"><span wicket:id="omschrijving"></span></td>
+				<td><span wicket:id="aantalBO"></span></td>
+				<td><span wicket:id="aantalED"></span></td>
+				<td><span wicket:id="aantalVAVO"></span></td>
+				<td><span wicket:id="aantalVO"></span></td>
+				<td><a href="#" wicket:id="link"><span wicket:id="linkLabel"></span></a></td>
+			</tr>
+		</tbody>
+	</table>
+    <div wicket:id="modalWindowRegulier" ></div>
+    <div wicket:id="modalWindowAccountant" ></div>
+    <div wicket:id="modalWindowTerugkoppeling"></div>
+</wicket:panel>
+</html>

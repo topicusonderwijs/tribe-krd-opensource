@@ -1,0 +1,92 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+fixes.css is part of the stylesheet for EduArte.
+
+fixes.css contains a number of styles that are meant to fix certain unwanted behaviour in
+certain elements. If you add fixes to this css, use comments to describe what the fix is for.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. fixes.css exists since revision 0.2 
+*/
+
+/**
+ * A fix for modal windows.
+ * When the title of a modal window gets very long, it used to get placed over the close button,
+ * making it impossible to close the window. Hence the 'z-index' fix.
+ * Also, when resizing a modal window with a long title text, once the text did not fit onto one
+ * line anymore, it suddenly got centered in the available space. The explicit text-align: left
+ * and margin-right fix this problem.
+ */
+div.wicket-modal div.w_caption {
+	text-align: left;
+	cursor:move!important;
+	color: #627490!important;
+}
+
+div.wicket-modal div.w_caption span.w_captionText {
+	margin-right: 25px;
+}
+div.wicket-modal div.w_caption a.w_close {
+	z-index: 20;
+}
+div.wicket-modal div.w_blue div.w_top, div.wicket-modal div.w_blue div.w_bottom, div.wicket-modal div.w_blue div.w_topLeft, div.wicket-modal div.w_blue div.w_topRight, div.wicket-modal div.w_blue div.w_bottomRight, div.wicket-modal div.w_blue div.w_bottomLeft, div.wicket-modal div.w_blue a.w_close {
+	background-image: url('../img/modal/frame-grey-1-alpha.png') !important;
+}
+div.wicket-modal div.w_blue div.w_left, div.wicket-modal div.w_blue div.w_right {
+	background-image:url('../img/modal/frame-grey-2-alpha.png') !important;
+}
+div.modalLayLeft h3.caption {
+	margin-left: 10px;
+	}
+.modalLayFooter {
+	background: none!important;
+	height: 36px!important;
+	}
+div.wicket-modal div.w_caption {
+	background-color: #f1f1f1!important;
+}
+div.wicket-modal div.w_content_2 {
+	background-color: #f1f1f1!important;
+}
+div.wicket-modal div.w_content_3 {
+	border:1px solid #627490!important;
+}
+/* End of modal window fix. */
+
+/* zorgt dat een label uitlijnt met een radio choice in een andere td */
+.tblTagFix {
+	padding-left: 2px !important;
+	padding-top: 4px !important;
+}
+
+/* zorg dat de ajax debug niet in de weg staat (staat hij nu standaard niet meer) */
+#wicketDebugLink {
+}
+
+#validationFilterReport {
+	overflow: auto !important;
+	position: absolute !important;
+	left: 0pt !important;
+	right: 0pt !important;
+	top: 0pt !important;
+	bottom: 0pt !important;
+}

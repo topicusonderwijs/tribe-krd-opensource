@@ -1,0 +1,40 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<form wicket:id="form">
+	
+	<table>
+		<tr>
+			<td>			
+				<select wicket:id="input"></select>
+			</td>
+			<td>
+				<div class="widget-button">
+					<a href=# wicket:id="objectToevoegen">
+						<span wicket:id="objectToevoegenLabel">Object toevoegen</span>
+					</a>
+				</div>
+			</td>		
+		</tr>
+		<tr>
+		<td>&nbsp;  <!--dummy td--></td>
+		</tr>
+		<tr>
+			<td>
+				<div class="widget-button">
+					<a href=# wicket:id="copyLink">
+						<span wicket:id="copyLinkLabel">Copy</span>
+					</a>
+				</div>
+			</td>
+		</tr>
+	</table>
+	</form>
+	
+	<div wicket:id="dagindelingDatapanel"></div>
+	<div wicket:id="modelWindow"></div>
+</wicket:panel>
+</body>
+</html>

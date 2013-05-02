@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
+<log4j:configuration>
+	<appender name="STDOUT"
+		class="nl.topicus.cobra.logging.log4j.ContextAwareDatedFileAppender">
+		<param name="Directory" value="${catalina.base}/logs/" />
+		<param name="Prefix" value="eduarte-" />
+		<param name="Suffix" value=".log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%p] [%t] %C{1} | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="DEBUG" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<appender name="REQUESTS"
+		class="nl.topicus.cobra.logging.log4j.ContextAwareDatedFileAppender">
+		<param name="Directory" value="${catalina.base}/logs/" />
+		<param name="Prefix" value="requests-" />
+		<param name="Suffix" value=".log" />
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern" value="[%d{ISO8601}] [%t] %C{1} | %m%n" />
+		</layout>
+		<filter class="org.apache.log4j.varia.LevelRangeFilter">
+			<param name="LevelMin" value="INFO" />
+			<param name="LevelMax" value="FATAL" />
+		</filter>
+	</appender>
+
+	<logger name="org.apache">
+		<level value="WARN" />
+	</logger>
+
+	<logger name="org.apache.axis">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.apache.axis2">
+		<level value="ERROR" />
+	</logger>
+
+	<logger name="org.apache.wicket">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.apache.wicket.resource.PropertiesFactory">
+		<level value="WARN" />
+	</logger>
+
+	<logger name="sun">
+		<level value="NONE" />
+	</logger>
+
+	<logger name="org.hibernate">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="net.sf.ehcache">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="com.mchange.v2">
+		<level value="WARN" />
+	</logger>
+
+	<logger name="org.quartz">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="nl.topicus">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.apache.wicket.protocol.http.RequestLogger">
+		<level value="INFO" />
+		<appender-ref ref="REQUESTS" />
+	</logger>
+
+	<!--
+		TODO: verhogen naar WARN/ERROR wanneer blijkt dat INFO niets boeiends
+		laat zien
+	-->
+	<logger name="org.springframework">
+		<level value="INFO" />
+	</logger>
+
+	<!--                              -->
+	<!-- setup log4j's root logger    -->
+	<!--                              -->
+	<root>
+		<level value="ALL" />
+		<appender-ref ref="STDOUT" />
+	</root>
+</log4j:configuration>

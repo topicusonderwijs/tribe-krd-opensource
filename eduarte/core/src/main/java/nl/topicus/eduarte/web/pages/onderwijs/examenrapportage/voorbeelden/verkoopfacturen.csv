@@ -1,0 +1,2 @@
+0;{factuur.factuurcode};{factuur.debiteur.debiteurennummer};;;;;;;;;;{factuur.kostenplaats.code};;N;N;;;;;;;;;;;;;;;;;;;;;;;;;;V;;F;J;;;
+{factuur.factuurregels[].regelnummer};{factuur.factuurcode};;;;;;;;;;;;;;;;;;;;;;;;;;;;{factuur.factuurregels[].factuurregelOmschrijving.code};;{factuur.factuurregels[].omschrijving};1;0;;0;{factuur.factuurregels[].bedrag \@ #0.00};;{factuur.factuurregels[].kostendrager.code};{factuur.factuurregels[].omschrijving};{factuur.factuurregels[].grootboekrekening.code};;;;;;{factuur.factuurregels[].kostenplaats.code};

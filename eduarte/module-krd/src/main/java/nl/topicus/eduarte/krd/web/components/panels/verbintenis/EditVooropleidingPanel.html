@@ -1,0 +1,117 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>	
+	<div class="contHalf left">
+			<br />
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr id="soortOrganisatieRow" wicket:id="soortOrganisatieRow">
+						<td class="tblTag unit_200">School van vooropleiding</td>
+						<td class="tblInput">
+							<span wicket:id="soortOrganisatie"></span>
+						</td>
+					</tr>
+					<tr id="externeOrganisatieRow" wicket:id="externeOrganisatieRow">
+						<td class="tblTag unit_200">Onderwijsinstelling</td>
+						<td class="tblInput">		
+							<div wicket:id="externeOrganisatie" class="unit_180"></div>
+						</td>
+					</tr>
+					<tr id="naamRow" wicket:id="naamRow">
+						<td class="tblTag unit_200">Naam onderwijsinstelling</td>
+						<td class="tblInput"><input wicket:id="naam" class="inpText unit_180" type="text"/></td>
+					</tr>
+					<tr id="plaatsRow" wicket:id="plaatsRow">
+						<td class="tblTag unit_200">Plaats</td>
+						<td class="tblInput"><input wicket:id="plaats" class="inpText unit_180" type="text"/></td>
+					</tr>
+					<tr id="land" wicket:id="landRow">
+						<td class="tblTag unit_200">Land</td>
+						<td class="tblInput"><input class="inpText unit_180 inpReadOnly" type="text" wicket:id="land" /></td>
+					</tr>
+					 
+					<tr wicket:id="soortVooropleidingRow">
+						<td class="tblTag unit_200">Soort vooropleiding</td>
+						<td class="tblInput">
+							<select class="unit_175" wicket:id="soortVooropleiding">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="tblTag unit_200">Diploma behaald</td>
+						<td class="tblInput">
+							<select class="unit_80" wicket:id="diplomaBehaald"></select>
+						</td>
+					</tr>
+					
+					<tr>
+						<td class="tblTag unit_200">Categorie vooropleiding</td>
+						<td class="tblInput" wicket:id="categorieVooropleiding"></td>
+					</tr>
+					
+					<tr wicket:id="schooladviesRow">
+						<td class="tblTag unit_200">Advies school van herkomst</td>
+						<td class="tblInput">
+							<select class="unit_180" wicket:id="schooladvies">
+								<option></option>
+							</select>
+						</td>
+					</tr>
+					
+					<tr wicket:id="citoscoreRow">
+						<td class="tblTag unit_200">Cito-toets resultaat</td>
+						<td class="tblInput"><input class="inpText unit_180" type="text" wicket:id="citoscore" /></td>
+					</tr>
+					
+					<tr wicket:id="begindatumRow">
+						<td class="tblTag unit_200">Begindatum</td>
+						<td class="tblInput">
+							<input class="inpText unit_80" type="text" wicket:id="begindatum" />
+						</td>
+					</tr>
+					
+					<tr wicket:id="einddatumRow">
+						<td class="tblTag unit_200">Einddatum</td>
+						<td class="tblInput">
+							<input class="inpText unit_80" type="text" wicket:id="einddatum" />
+						</td>
+					</tr>
+					
+					<tr wicket:id="jarenZelfInvullenRow">
+						<td class="tblTag unit_200">Aantal jaren handmatig aanpassen</td>
+						<td class="tblInput">
+							<input class="checkbox" type="checkbox" wicket:id="aantalJarenZelfInvullen" />
+						</td>
+					</tr>
+					
+					<tr wicket:id="jarenOnderwijsRow">
+						<td class="tblTag unit_200">Aantal jaren onderwijs</td>
+						<td class="tblInput">
+							<input class="inpText unit_80" type="text" wicket:id="aantalJarenOnderwijs" />
+						</td>
+					</tr>
+									
+				</tbody>
+			</table>
+		</div>
+		<div class="contHalf right">
+			<div wicket:id="vakresultaateditpanel"></div>
+			<div wicket:id="verificatie" class='layBorder'>
+				<div wicket:id="verificatieFieldset"></div>
+				<div class="widget-button right">
+					<a wicket:id="vooropleidingVerificatieAfmelden"><span wicket:id="verificatieAfmelden"></span></a>
+				</div>
+				<div class="widget-button right">
+					<a wicket:id="vooropleidingVerificatieUitvoeren"><span wicket:id="verificatieUitvoeren"></span></a>
+				</div>
+			</div>
+			<div wicket:id="vrijVelden"></div>
+		</div>
+		<div wicket:id="verificatieModalWindow"></div>
+</wicket:panel>
+</body>
+</html>

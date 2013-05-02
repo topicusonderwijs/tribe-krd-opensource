@@ -1,0 +1,42 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<h3 class="caption">Medewerkerkaart</h3>
+	<div class="contThird left">
+		<span class="imgPasfoto"><img wicket:id="foto" src="assets/img/foto.jpg"/></span>
+	</div>		
+	<div class="contThird middleLeft">
+		<div wicket:id="fieldSetPersonalia"></div>
+	</div>
+
+	<div class="contThird middleRight">
+		<div wicket:id="panelEmptyAccount" class="tblTag">
+			<table class="tblData tblInputs">
+				<thead>
+					<tr><th colspan="2">Account</th></tr>
+				</thead>
+				<tbody>
+					<tr>
+					<td>&nbsp;&nbsp;</td>
+					<td class="tblInput">Medewerker heeft geen account gekoppeld.</td></tr>
+				</tbody>
+			</table>
+		</div>
+		<div wicket:id="panelAccount"></div>
+		
+		<div wicket:id="fieldSetAanstelling"></div>
+		
+		<div wicket:id="panelOrganisatieMedewerker" class="append_15">
+			<div wicket:id="datapanelOrganisatieMedewerker"></div>
+		</div>
+	</div>
+	
+	<div class="extend_10">
+		<div wicket:id="dataPanelRollen"></div>
+	</div>
+	
+</wicket:extend>
+</body>
+</html>

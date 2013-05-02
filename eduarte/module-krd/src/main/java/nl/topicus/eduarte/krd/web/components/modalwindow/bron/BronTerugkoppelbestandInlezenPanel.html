@@ -1,0 +1,47 @@
+<html xmlns:wicket>
+<wicket:panel>
+	<wicket:extend>
+		<form wicket:id="form">
+		
+		<table class="tblData">
+			<tr>
+				<td class="tblTag">Aanleverpunt:</td>
+				<td><select wicket:id="aanleverpunt"></select></td>
+			</tr>
+		</table>
+		<table class="tblDatagrid" wicket:id="nummers">
+			<thead>
+				<tr>
+					<th>Sector</th>
+					<th>Verwacht bestandsnummer</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">Beroepsonderwijs</td>
+					<td><span wicket:id="bo">221</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Educatie</td>
+					<td><span wicket:id="ed">912</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">VAVO</td>
+					<td><span wicket:id="vavo">321</span></td>
+				</tr>
+				<tr>
+					<td class="tblTag">Voorgezet onderwijs</td>
+					<td class="tblTag"><span wicket:id="vo">123</span></td>
+				</tr>
+			</tbody>
+		</table>
+		<table class="tblData">
+			<tr>
+				<td class="tblTag">In te lezen bestand:</td>
+				<td><input wicket:id="file" type="file" /></td>
+			</tr>
+		</table>
+		</form>
+	</wicket:extend>
+</wicket:panel>
+</html>

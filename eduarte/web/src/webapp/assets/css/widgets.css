@@ -1,0 +1,541 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Version: 0.1
+
+The widgets style currently contains the following widgets:
+
+* CSS buttons (widget-button)
+* Suckerfish menu (widget-menu)
+* Feedbackpanel (widget-feedback)
+* Sliding panels (widget-sliders)
+
+NEEDS WORK:
+
+* Tab menu (widget-tabs) 
+
+TO DO:
+
+* Fancy side sliding menu
+
+NOTE: Some widgets require the widget.js to be included.
+
+Custom properties should always be overwritten in base.css (if needed with !important) , never in this file!
+example: 
+  width:200px!important;
+
+Revisions:
+
+0.1 - 17/10/2007 - First build.
+0.2 - 23/10/2007 - Added widget-slidemenu, tab-menu
+
+*/ /** Twilight: CSS Buttons **/ /**
+USAGE: 	
+	<div class="widget-button">
+		<a href="LOCATION">
+			<span>NAME</span>
+		</a>
+	</div>
+	
+	add btn_active to div style for the currently active button
+**/
+
+.widget-button a{
+	background-color: #7888a0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+	height: 25px;
+	margin: 5px;
+}
+
+.widget-button a,.widget-button>span {
+	float: left;
+	margin: 0 10px 0 0;
+	padding: 0 5px 3px;
+	text-decoration: none;
+	outline: none;
+	height: 21px;
+}
+
+.widget-button a span,.widget-button>span span {
+	height: 13px;
+	float: left;
+	display: block;
+	white-space: nowrap;
+	cursor: hand;
+	left: 6px;
+	color: #fff;
+	font-size: 1.1em;
+	padding: 4px 10px 5px 0 !important;
+}
+
+.widget-button a span {
+	color: #FFFFFF;
+}
+
+.widget-button>span span {
+	color: #fff;
+}
+
+.widget-button a:hover,.widget-button a:active,.widget-button a:focus {
+	text-decoration: none;
+}
+
+.widget-button a:hover, .widget-button a:active
+	{
+	color: #627490;
+	background-color: #e2e6ec;
+}
+
+.widget-button a:hover > span{
+	color: #627490;
+}
+
+.widget-button a:hover,.widget-button a:active,.widget-button a:focus
+	{
+	color: #627490;
+}
+
+/** Inactive buttons **/
+
+.widget-button>span{
+	background-color: #dededb;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/** overig **/
+
+.btn_active a {
+	background: url('../img/widgets/std_button0.gif') no-repeat 0 -84px
+		!important;
+}
+
+.btn_active a span {
+	color: #454545;
+	background: url('../img/widgets/std_button1.gif') no-repeat right -84px
+		!important;
+}
+
+.widget-button img {
+	border: none;
+	margin-right: 8px !important;
+	margin-top: 1px !important;
+}
+
+/** Twilight: Suckerfish menu **/ /**
+USAGE: 	
+	<ul class="widget-menu">
+		<li class="wmActive"><a href="#">Afmelden</a></li>
+		<li class="wmDisabled"><a href="#">Bewerken</a>
+			<ul>
+				<li><a href="#">Optie 01</a></li>
+				<li><a href="#">Optie 02</a></li>
+			</ul>
+		</li>
+	</ul>
+**/
+.widget-menu,.widget-menu ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.widget-menu *:hover {
+	text-decoration: none;
+}
+
+.widget-menu li {
+	float: left;
+	margin-left: 4px;
+	margin-right: 3px;
+	text-align: left;
+}
+
+.widget-menu .menuLink {
+	display: block;
+	height: 24px;
+	width: 100%;
+	margin: 0 10px 0 0;
+	padding: 0 0 0 5px;
+	color: #627490;
+}
+
+.widget-menu .wmActive.widget-menu-dropdown  li .menuLink {
+	color: 	#627490;
+}
+
+.home .widget-menu .wmActive .menuLink{
+	color: #9c2ac8;
+}
+
+.deelnemer .widget-menu .wmActive .menuLink {
+	color: #3eb9f0;
+}
+
+.groep .widget-menu .wmActive .menuLink {
+	color: #e7972a;
+}
+
+.medewerker .widget-menu .wmActive .menuLink {
+	color: #e440e6;
+}
+
+.onderwijs .widget-menu .wmActive .menuLink {
+	color: #719c37;
+}
+
+.relatie .widget-menu .wmActive .menuLink {
+	color: #388def; 
+}
+
+.financieel .widget-menu .wmActive .menuLink {
+	color: #e7622a;
+}
+
+.beheer .widget-menu .wmActive .menuLink {
+	color: #827aff;
+}
+
+.widget-menu>ul>li>.menuLink {
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+.widget-menu>ul>li:hover>.menuLink, .wmActive>.menuLink {
+	background-color: #f9f9f9;
+}
+
+.widget-menu .menuLink.disabled {
+	color: #bbb;
+}
+
+.widget-menu .menuLink span {
+	margin-left: 6px;
+	line-height: 24px;
+	font-size: 1em;
+}
+
+.wmDisabled .menuLink {
+	cursor: default;
+	color: #999999;
+}
+
+.widget-menu li ul {
+	left: -999em;
+	position: absolute;
+	width: 18em;
+	z-index: 99999;
+	background-color: #f9f9f9;
+	-moz-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+	-webkit-box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.4);
+}
+
+.widget-menu .widget-menu-dropdown>.menuLink {
+	background-image: url('../img/icons/dropdown.gif');
+	background-position: 95% 7px;
+	background-repeat: no-repeat;
+}
+
+.widget-menu .widget-menu-dropdown:hover>.menuLink {
+	background-color: #f9f9f9;
+	-moz-border-radius-bottomleft: 0;
+	-moz-border-radius-bottomright: 0;
+	-webkit-border-radius-bottomleft: 0;
+	-webkit-border-radius-bottomright: 0;
+	border-radius-bottomleft: 0;
+	border-radius-bottomright: 0;
+}
+
+.widget-menu .menuLink:hover {
+	background-color: #e2e6ec;
+}
+
+.widget-menu li li {
+	width: 100%;
+	margin-left: 0px;
+	overflow: hidden;
+}
+
+.widget-menu li ul li .menuLink {
+	height: 18px;
+	line-height: 1;
+	width: 94%;
+	border: 0px;
+	text-align: left;
+	padding: 3px 5px 8px 5px;
+}
+
+.widget-menu li:hover ul {
+	left: auto;
+}
+
+.widget-menu-separator {
+	font-size: 0px;
+	height: 0px;
+	border-top: 1px solid #c5c5c5;
+	border-bottom: 1px solid #f5f5f5;
+}
+
+/** Twilight: Fancy sliding menu**/ /**
+REQUIRED: widgets.js for slide function
+USAGE: 	
+	TODO
+**/
+.widget-slidemenu {
+	padding: 0px;
+	margin: 0px;
+	border-top: 1px solid #858585;
+	border-bottom: 1px solid #565656;
+	height: 31px;
+	background: #e7e7e7 url('../img/widgets/widget-slidemenu_bg.gif')
+		no-repeat right top;
+}
+
+.widget-slidemenu a {
+	background: #e7e7e7 url('../img/widgets/widget-slidemenu.gif') repeat-x;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	width: 100px;
+	padding: 6px;
+	height: 19px;
+	color: #dedede;
+	border-left: 1px solid #8d8d8d;
+	border-right: 1px solid #6e6e6e;
+	float: left;
+}
+
+.widget-slidemenu span ul {
+	display: none;
+}
+
+.widget-slidemenu span:hover :first-child ul {
+	display: block;
+}
+
+.widget-slidemenu a li {
+	float: left;
+	width: auto;
+}
+
+.widget-slidemenu li a {
+	width: auto;
+}
+
+/** Twilight: Feedbackpanel **/ /**
+OPTIONAL: widgets.js for slide function
+USAGE: 	
+	<div id="feedbackpanel" title="Klik om deze balk te sluiten...">
+		Foutmelding 001<br/>
+		Foutmelding 002
+	</div>
+**/
+.widget-feedback {
+	background: #ffffff;
+	overflow: hidden;
+	clear: left;
+	width: 100%;
+	text-align: left;
+	padding: 0px;
+	border-bottom: 2px solid #37ABC8;
+	border-top: 3px solid #37ABC8;
+	display: none;
+}
+
+.widget-feedback ul {
+	font-weight: bold; */
+	float: left;
+	padding: 10px 10px 10px 15px;
+}
+
+.widget-feedback li.feedbackPanelERROR {
+	color: #FF4B00;
+	margin-left: 25px;
+	list-style-image: url('../img/widgets/feedbackpanelERROR.gif');
+}
+
+.widget-feedback li.feedbackPanelINFO {
+	color: #22D522;
+	margin-left: 25px;
+	list-style-image: url('../img/widgets/feedbackpanelINFO.gif');
+}
+
+.widget-feedback-modal {
+	background: #fef78f url('../img/widgets/feedbackpanel.png') no-repeat
+		bottom right;
+	overflow: hidden;
+	clear: left;
+	width: 100%;
+	text-align: left;
+	padding: 0px;
+	font-size: 0px;
+	margin-top: -2px;
+	display: none;
+}
+
+.widget-feedback-modal ul {
+	font-size: 11px;
+	float: left;
+	padding: 5px 10px 10px 20px;
+}
+
+.widget-feedback-modal li.feedbackPanelERROR {
+	color: #be0000;
+	margin-left: 10px;
+	list-style-image: url('../img/widgets/feedbackpanelERROR.gif');
+}
+
+/** Twilight: Tabmenu**/ /**
+@TODO: CSS needs cleaning up!
+USAGE: 	
+	<div class="widget-tabs">
+		<ul>
+			<li>
+				<a>
+					<span>TAB 1</span>
+				</a>
+			</li>
+			<li>
+				<a>
+					<span>TAB 2</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+	(optional)
+	<something class="widget-panel">
+		The something will have a border making a square with the widget-tabs header.
+	</something>
+**/
+.widget-tabs {
+	background: #FFFFFF;
+	font-size: 0.8em;
+	text-align: center;
+	color: #534e4b;
+	width: 100% -2px;
+	height: 19px;
+	padding: 3px 0px 0px 1px;
+	border-left: 1px solid #918e8d;
+	border-right: 1px solid #918e8d;
+}
+
+.widget-tabs ul {
+	margin: 0;
+	padding: 0px 0px 0;
+	list-style: none;
+}
+
+.widget-tabs li {
+	display: inline;
+}
+
+.widget-tabs a {
+	float: left;
+	margin-left: 6px;
+	padding: 0;
+	text-decoration: none;
+}
+
+.widget-tabs a span {
+	float: left;
+	display: block;
+	color: #37ABC8;
+	border-left: 1px solid #CCCCCC;
+	border-top: 1px solid #CCCCCC;
+	border-right: 1px solid #CCCCCC;
+	-moz-border-radius-topleft: 5px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-radius-topleft: 5px;
+	-webkit-border-radius-topright: 5px;
+	border-radius-topleft: 5px;
+	border-radius-topright: 5px;
+	padding: 2px 15px 3px 6px;
+	white-space: nowrap;
+	cursor: pointer;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+.widget-tabs a span {
+	float: none;
+}
+
+/* End IE5-Mac hack */
+.widget-tabs a:hover span {
+	color: #534e4b;
+}
+
+.widget-tabs .current a {
+	border-width: 0;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.widget-tabs .current a span {
+	padding-bottom: 0px;
+	color: #0088AA;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.widget-tabs a:hover {
+	background-position: 0% -19px;
+}
+
+.widget-tabs a:hover span {
+	background-position: 100% -19px;
+}
+
+.widget-panel {
+	border-style: solid;
+	border-width: 0px 1px 1px 1px;
+	border-width: 1px 1px 1px 1px;
+	border-color: #CCCCCC;
+}
+
+/** Twilight: Sliding panels **/ /**
+REQUIRED: widgets.js for slide function
+USAGE: 	
+	<div id="widget-stretch">	
+		<h3 class="widget-stretchToggle">NAME</h3>
+		<div class="widget-stretcher" style="height:0px;">
+			CONTENT
+		</div>
+		<h3... >
+	</div>
+**/
+.widget-stretchToggle {
+	height: 16px;
+	background: #eeeeee url('../img/widgets/slideBar.png') no-repeat left
+		top;
+	border-right: 1px solid #a6a6a6;
+	margin: 1px 5px 1px 20px;
+	color: #3a3a3a;
+	padding-left: 25px;
+	padding-top: 3px;
+	padding-bottom: 1px;
+	cursor: pointer;
+	font-size: 12px;
+}
+
+.widget-stretcher {
+	margin: 1px 5px 1px 20px;
+	background: #ffffff;
+	padding: 0px 10px;
+	overflow-y: scroll;
+	border: 1px solid #dddddd;
+	border-bottom: 2px solid #dddddd;
+}
+
+/** Twilight: Select with popup **/ /**
+USAGE: 	
+	<div id="widget-popupselect">	
+
+	</div>
+**/
+.widget-popupselect {
+	
+}
+}

@@ -1,0 +1,30 @@
+﻿<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<h3 class="caption">Onderwijsovereenkomsten collectief afdrukken</h3>
+	<form wicket:id="form">
+		<table class="tblData tblInputs">
+			<thead>
+				<tr>
+					<th colspan="2">Selecteer de taxonomie en klik vervolgens op het gewenste samenvoegdocument.</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td class="tblTag">
+						Taxonomie 
+					</td>
+					<td class="tblInput">
+						<select wicket:id="taxonomie"></select>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</form>
+	<div wicket:id="datapanel"></div>
+	<br />
+</wicket:extend>
+</body>
+</html>

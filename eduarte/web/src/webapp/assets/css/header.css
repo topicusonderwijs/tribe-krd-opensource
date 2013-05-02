@@ -1,0 +1,484 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+header.css is part of the stylesheet for EduArte. 
+
+
+header.css itself contains styles for the two menubars used in EduArte, as well as styles for the
+bar in between the two menubars, called the title bar. This title bar contains a description 
+of the current page and if relevant buttons to browse through search results.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. header.css exists since revision 0.2 
+*/ /**
+ * layHeader is the class that encompasses everything in the header of the application,
+ * which means the two menubars and the title bar in between.
+**/
+.layHeader {
+	background-color: transparent;
+	top: 0px;
+	right: 0px;
+	left: 0px;
+	min-width: 990px;
+	max-width: 1280px;
+	overflow: visible;
+	z-index: 10;
+}
+
+/**
+ * layTopbar is the containing class for the upper menu bar. 
+ **/
+.layTopbar {
+	background: #f1f1f1 url("../img/layout/layTopbar.png") repeat-x;
+	background-position: 0px 15px;
+	height: 70px;
+	margin-top: 5px;
+	margin-left: 8px;
+	margin-right: 8px;
+	padding-top: 15px;
+}
+
+/**
+	 * The left side of the upper menu bar. 
+	 * This part contains the menu items and the quick search unit.
+	 **/
+.layTopbarLeft {
+	background: url("../img/layout/layTopbarLeft.png") no-repeat;
+	height: 61px;
+	width: 95%;
+	float: left;
+	overflow: hidden;
+}
+
+/**Classes for the menu items on the upper menu bar**/
+.layTopbuttons {
+	padding: 0px 15px;
+}
+
+.top_button a {
+	border-left: 1px solid #e6e6e6;
+	margin-top: -15px;
+}
+
+.top_button .mainMenuItem {
+	margin-top: 0px;
+	padding: 18.5px 0px;
+	float: left;
+	text-align: center;
+	background-position: center top;
+	background-repeat: no-repeat;
+	width: 85px;
+	
+}
+
+.top_button span.mainMenuItem em span{
+	color: #909eb7!important;
+}
+
+.top_button.top_button_active span.mainMenuItem em span{
+	color: #fff!important;
+}
+
+.top_button .mainMenuItem span {
+	color: #000;
+	font-style: normal;
+	text-decoration: none;
+	text-transform: lowercase;
+	font-size: 1.1em;
+}
+
+.top_button a.mainMenuItem:hover, .top_button a.mainMenuItem:hover span{
+	text-decoration: none;	
+}
+
+.top_button.top_button_active a span
+	{
+	color: #FFF !important;
+}
+
+.top_button .mainMenuItem:hover {
+	background-color: #FFF;
+}
+
+.top_button.icon_home .mainMenuItem span {
+	color: #9c2ac8;
+}
+
+.top_button.icon_home.top_button_active a,.top_button.icon_home.top_button_active span
+	{
+	background: url("../img/layout/menu_home.png") repeat-x;
+}
+
+.top_button.icon_deelnemer .mainMenuItem span {
+	color: #00b0ff;
+}
+
+.top_button.icon_deelnemer.top_button_active a,.top_button.icon_deelnemer.top_button_active span
+	{
+	background: url("../img/layout/menu_deelnemer.png") repeat-x;
+}
+
+.top_button.icon_groep .mainMenuItem span {
+	color: #e7972a;
+}
+
+.top_button.icon_groep.top_button_active a,.top_button.icon_groep.top_button_active span
+	{
+	background: url("../img/layout/menu_groep.png") repeat-x;
+	text-decoration: none;
+}
+
+.top_button.icon_medewerker .mainMenuItem span {
+	color: #e440e6;
+}
+
+.top_button.icon_medewerker.top_button_active a,.top_button.icon_medewerker.top_button_active span
+	{
+	background: url("../img/layout/menu_medewerker.png") repeat-x;
+	text-decoration: none;
+}
+
+.top_button.icon_onderwijs .mainMenuItem span {
+	color: #719c37;
+}
+
+.top_button.icon_onderwijs.top_button_active a,.top_button.icon_onderwijs.top_button_active span
+	{
+	background: url("../img/layout/menu_onderwijs.png") repeat-x;
+	text-decoration: none;
+}
+
+.top_button.icon_contacts .mainMenuItem span {
+	color: #388def;
+}
+
+.top_button.icon_contacts.top_button_active a,.top_button.icon_contacts.top_button_active span
+	{
+	background: url("../img/layout/menu_relatie.png") repeat-x;
+}
+
+.top_button.icon_financieel .mainMenuItem span {
+	color: #e7622a;
+}
+
+.top_button.icon_financieel.top_button_active a,.top_button.icon_financieel.top_button_active span
+	{
+	background: url("../img/layout/menu_financieel.png") repeat-x;
+}
+
+.top_button.icon_beheer .mainMenuItem span {
+	color: #827aff;
+}
+
+.top_button.icon_beheer a.mainMenuItem,.top_button.icon_beheer a.mainMenuItem:hover,.top_button_active.icon_beheer a.mainMenuItem,.top_button_active.icon_beheer span.mainMenuItem,.top_button.icon_beheer span.mainMenuItem
+	{
+	border-right: 1px solid #E6E6E6;
+}
+
+.top_button.icon_beheer.top_button_active a,.top_button.icon_beheer.top_button_active span
+	{
+	background: url("../img/layout/menu_beheer.png") repeat-x;
+}
+
+.top_button.icon_help a.mainMenuItem,.top_button.icon_help a.mainMenuItem:hover,.top_button_active.icon_help a.mainMenuItem,.top_button_active.icon_help span.mainMenuItem,.top_button.icon_help span.mainMenuItem
+	{
+	background: url("../img/icons/help.png") no-repeat;
+	text-indent: -1999px;
+	overflow: hidden;
+	position: relative;
+	margin-left: 20px;
+	margin-top: 15px;
+	border-left: none;
+}
+
+.top_button.icon_help a {
+	padding-top: 10px;
+}
+
+/* Uses widget-button */
+
+.top_button span.mainMenuItem span {
+	color: #bbb;
+}
+
+.top_button_active .mainMenuItem span
+	{
+	color: #fff !important;
+}
+
+.top_button a:hover span,.top_button_active a span {
+	cursor: pointer;
+}
+
+/**Classes for the quick search unit on the upper menu bar**/
+.layTopbarLeft .search {
+	height: 100%;
+	position: relative;
+	top: 0px;
+	font-size: 0.9em;
+}
+
+.layTopbarLeft .search form {
+	position: relative;
+	top: 6px;
+}
+
+.layTopbarLeft .search span {
+	color: #ffffff;
+	font-weight: bold;
+}
+
+/**
+	 * The right side of the upper menu bar. 
+	 * This part contains the unit showing user information and the logoff button.
+	 **/
+.layTopbarRight {
+	width: 5%;
+	float: right;
+	background: url("../img/layout/layTopbarRight.png") no-repeat top right;
+	height: 60px;
+}
+
+.search.right input.unit_80 {
+	border: 1px solid #7888A0;
+	-moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+}
+
+/**Classes for the user information unit, including the logoff button**/
+.layUserBox {
+	height: 50px;
+	width: 100%;
+	text-align: left;
+}
+
+.layUserBox div {
+	padding: 12px 10px;
+	color: #dbdee3;
+	font-size: 0.9em;
+	font-weight: bold;
+	border: 0px solid #ff0000;
+}
+
+.layUserBox div table {
+	margin-left: 20px;
+}
+
+.layUserBox div span {
+	float: left;
+}
+
+.layUserBox div a {
+	color: #ffffff;
+}
+
+.layUserBox div img {
+	vertical-align: text-top;
+}
+
+.layUserBox div a.logoff {
+	margin: -5px -10px;
+	height: 50px;
+	width: 50px;
+	background: url("../img/icons/logoff-right.png") no-repeat;
+	outline: none;
+	position: fixed;
+	right: 12px;
+	top: 6px;
+}
+
+.layUserBox div a.logoff:hover {
+	background: url("../img/icons/logoff-right.png") no-repeat;
+}
+
+.inloggegevens{
+	color:#999999;
+	float:right;
+	font-size:0.9em;
+	height:14px;
+	margin-right:20px;
+	margin-top:-79px;
+}
+
+.signalen{
+	display: none;
+}
+
+.inloggegevens
+.organisatie{
+	float: right;
+}
+
+/**End of the upper menu bar classes**/ /**
+ * layTitlebar is the containing class for the title bar inbetween the menu bars, 
+ * showing page description and optional browse buttons. 
+ **/
+.layTitlebar {
+	background: none;
+	height: 27px;
+	margin-top: 0px;
+	margin-left: 10px;
+	left: 0;
+	width: 1014px;
+	right: 0;
+	float: left;
+}
+
+/**
+	 * the left-hand part of the title bar, containing the description of the current page
+	 */
+.layTitlebarTitle {
+	padding-left: 24px;
+	padding-top: 5px;
+	float: left;
+	overflow: hidden;
+	font-weight: bold;
+	font-size: 1.3em;
+	white-space: nowrap;
+	color: #4A8EA5;
+	font-style: italic; 
+}
+
+/**optional icon for the description**/
+.layTitlebarTitle img {
+	padding: 2px 7px;
+	float: left;
+}
+
+/**contains the description itself**/
+.layTitlebarTitle span {
+	float: left;
+	padding-top: 2px;
+	padding-right: 5px;
+	max-width: 350px;
+	overflow: hidden;
+}
+
+/**optional dropdown menu to choose the context for the page**/
+.layTitlebarTitle select {
+	float: left;
+	border: 1px solid #37ABC8;
+	background: transparent;
+	color: #454545;
+	font-weight: normal;
+	margin-left: 10px;
+	margin-top: 2px;
+	font-size: 0.8em;
+}
+
+.home .layTitlebarTitle {
+	color: #9c2ac8;
+}
+
+.deelnemer .layTitlebarTitle{
+	color: #3eb9f0;
+}
+
+.groep .layTitlebarTitle {
+	color: #e7972a;
+}
+
+.medewerker .layTitlebarTitle {
+	color: #e440e6;
+}
+
+.onderwijs .layTitlebarTitle {
+	color: #719c37;
+}
+
+.relatie .layTitlebarTitle {
+	color: #388def; 
+}
+
+.financieel .layTitlebarTitle {
+	color: #e7622a;
+}
+
+.beheer .layTitlebarTitle {
+	color: #827aff;
+}
+
+/**
+	 * the right-hand part of the title bar, containing buttons to
+	 * browse through search results, if applicable.
+	 **/
+.layTitlebarButtons {
+	float: right;
+	margin-top: 0px;
+	margin-right: 15px;
+}
+
+.layTitlebarButtons .layTitlebarButton {
+	float: left;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	background-color: #E6E6E6;
+	border: 1px solid #D3D3D3;
+	color: #555555;
+	padding: 3px;
+	margin: 2px;
+}
+
+.zoekresultaten_dropdown {
+	background: #F6F6F6 url(../img/widgets/widget-menu-bg.png) no-repeat
+		scroll 0 0;
+	border: 1px solid #B5B5B5;
+	position: absolute;
+	left: 620px;
+	top: 104px;
+	width: 400px;
+	display: none;
+	z-index: 99999;
+}
+
+.zoekresultaten_menu_item {
+	background: transparent url(../img/icons/dropdown.gif) no-repeat scroll
+		2px 6px !important;
+	border-left: 0 none !important;
+	padding: 0 5px !important;
+}
+
+.zoekresultaten_dropdown_menu_item:hover {
+	background: #E7E7E7 url(../img/icons/dropdown.gif) no-repeat scroll 50%
+		5px !important;
+	border-left: 0 none !important;
+	padding: 0 5px !important;
+}
+
+/**End of the title bar classes**/ /**
+ * layMenubar is the containing class for the lower menu bar. 
+ * This menu bar looks like tabs at the top of the actual content.
+ **/
+.layMenubar {
+	width: 1012px;
+	height: 25px;
+	padding-left: 0px;
+	margin-top: 35px;
+	margin-left: 10px;
+	margin-right: 0;
+	padding-top: 1px;
+	z-index: 10;
+	clear: both;
+}
+
+/**End of lower menu bar classes**/

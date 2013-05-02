@@ -1,0 +1,89 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>
+	<form wicket:id="form">
+		<div class="contHalf left">
+			<h3 class="caption">Samenvoegdocument</h3>
+			<table class="tblData tblInputs">
+				<tbody>
+					<tr>
+						<td class="tblTag">Omschrijving</td>
+						<td><input wicket:id="omschrijving" type="text" class="inpText unit_320" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Taxonomie</td>
+						<td>
+							<select wicket:id="taxonomie" class="unit_max required">
+								<option>Taxonomie...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Categorie</td>
+						<td>
+							<select wicket:id="examenDocumentType" class="unit_max required">
+								<option>Type...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Documenttype</td>
+						<td>
+							<select wicket:id="documentType" class="unit_max required">
+								<option>Type...</option>
+							</select>
+						</td>
+					</tr>
+					<tr>
+						<td class="tblTag">Kopie bij context</td>
+						<td><input wicket:id="kopieBijContext" type="checkbox" /></td>
+					</tr>
+					<tr>
+						<td class="tblTag">Sectie per element</td>
+						<td><input wicket:id="sectiePerElement" type="checkbox" /></td>
+					</tr>
+					<tr wicket:id="bestaandBestand">
+			  			<td class="tblTag">Bestand</td>
+			  			<td><a href="#" wicket:id="downloadlink"><img src="assets/img/icons/attach.png" alt="document" /><span class="spanBijlage" wicket:id="label"></span></a></td>
+			  		</tr>
+			  		<tr wicket:id="bestaandBestand2">
+			  			<td class="tblTag">Uitvoerformaat</td>
+			  			<td><span wicket:id="bestandsformaat"></span></td>
+			  		</tr>
+					<tr>
+			  			<td class="tblTag">Selecteer bestand</td>
+			  			<td><input type="file" class="inpFile unit_280" wicket:id="bestand" /></td>
+			  		</tr>
+			  		<tr>
+			  			<td class="tblTag">Ondersteunde bestandstypen</td>
+			  			<td><span wicket:id="types">.rtf</span></td>
+			  		</tr>
+			  		<tr>
+						<td class="tblTag"><span class="inpDescription ui-icon ui-icon-help" title="Forceer type - Selecteer hier een andere waarde wanneer het niet gewenst is om het gegenereerde document in het originele formaat te downloaden"></span>Forceer type</td>
+						<td><select wicket:id="forceerType"><option value="A">A</option></select></td>
+					</tr>
+			  		<tr>
+						<td class="tblTag">Actief</td>
+						<td><input type="checkbox" wicket:id="actief"/></td>
+					</tr>
+				</tbody>
+			</table>	
+		</div>
+		<div class="contHalf right">
+			<h3 class="caption">Autorisatie</h3>
+			<table class="tblData tblInputs">
+				<tbody>
+			  		<tr>
+						<td class="tblTag">Autorisatie beperken</td>
+						<td><input type="checkbox" wicket:id="beperkAutorisatie"/></td>
+					</tr>
+				</tbody>
+			</table>	
+			<div wicket:id="rollen"></div>
+		</div>	
+	</form>
+</wicket:extend>
+</body>
+</html>

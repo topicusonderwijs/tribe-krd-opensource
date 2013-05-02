@@ -1,0 +1,115 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+icons.css is part of the stylesheet for EduArte.
+
+icons.css contains styles to format all kinds of icons in EduArte, which are used
+as an action button. Example: an icon which you can click to see the details of an item.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. icons.css exists since revision 0.2 
+*/
+
+.newItem, .newItem_grey, .deleteItem, .deleteItem_grey, .actionItem, .actionItem_grey, .newLink, .activateItem, .activateItem_grey, .deactivateItem, .deactivateItem_grey, .selectItem{
+	display:block;
+	width:16px;
+	height:16px;
+	margin-right:4px;
+}
+
+.newItem{background:transparent url('../img/icons/newitem.png') no-repeat;}
+.newItem_grey{background:transparent url('../img/icons/newitem_grey.png') no-repeat;}
+.deleteItem{background:transparent url('../img/icons/delete.gif') no-repeat;}
+.deleteItem_grey{background:transparent url('../img/icons/delete_grey.gif') no-repeat;}
+.actionItem{background:transparent url('../img/icons/action.png') no-repeat;}
+.actionItem_grey{background:transparent url('../img/icons/action_grey.png') no-repeat;}
+.newLink{background:transparent url('../img/icons/newlink.PNG') no-repeat;}
+.selectItem{background:transparent url('../img/icons/select.png') no-repeat;}
+.selectItem_grey{background:transparent url('../img/icons/select_grey.png') no-repeat;}
+
+.activateItem{background:transparent url('../img/icons/activatebutton.gif') no-repeat;}
+.activateItem_grey{background:transparent url('../img/icons/activatebutton0.gif') no-repeat;}
+.deactivateItem{background:transparent url('../img/icons/deactivatebutton.gif') no-repeat;}
+.deactivateItem_grey{background:transparent url('../img/icons/deactivatebutton0.gif') no-repeat;}
+
+.deleteItemSlim{
+        display:block;
+        width:18px;
+        height:14px;
+        margin-right:5px;
+        background:transparent url('../img/icons/delete_slim.gif') no-repeat;
+}
+.resendItem{
+        display:block;
+        width:20px;
+        height:18px;
+        background:transparent url('../img/agenda/icon_reminder.gif') no-repeat;
+}
+.lesuurSelect{
+        display:block;
+        width:20px;
+        height:18px;
+        background:transparent url('../img/agenda/icon_roosterafspraak.png') no-repeat;
+}
+.tijdSelect{
+        display:block;
+        width:20px;
+        height:18px;
+        background:transparent url('../img/agenda/icon_timeafspraak.png') no-repeat;
+}
+.checkBoxNoCheck{
+        display:block;
+        width:20px;
+        height:18px;
+        background:transparent url('../img/icons/nocheck.png') no-repeat;
+}
+.afdrukLink{
+        display:block;
+        width:20px;
+        height:18px;
+        margin-right:4px;
+        background:transparent url('../img/icons/printPDF.png') no-repeat;
+}
+.navigeerLinks{
+		display:block;
+        width:20px;
+        height:20px;
+        background:transparent url('../img/icons/navigate_l.png') no-repeat;
+}
+        	
+.navigeerRechts{
+		display:block;
+        width:20px;
+        height:20px;
+        background:transparent url('../img/icons/navigate_r.png') no-repeat;
+}
+.comment{
+		display:block;
+        width:16px;
+        height:16px;
+        background:transparent url('../img/icons/comments.png') no-repeat;
+}
+.cog_go{
+		display:block;
+        width:16px;
+        height:16px;
+        background:transparent url('../img/icons/cog_go.png') no-repeat;
+}

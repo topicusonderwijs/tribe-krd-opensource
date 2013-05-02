@@ -1,0 +1,12 @@
+div.select-wrapper {
+	border-right: 1px solid #C4C8B7;
+	margin: 0 0;
+	position: relative;
+	width: 146px;
+	overflow: hidden;
+}
+.select-wrapper-img {
+	position: absolute;
+	top: 2px;
+	left: 129px;
+}

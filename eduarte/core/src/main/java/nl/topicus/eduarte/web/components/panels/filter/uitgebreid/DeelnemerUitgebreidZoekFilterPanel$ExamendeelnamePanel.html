@@ -1,0 +1,106 @@
+<html xmlns:wicket>
+    <head>
+    </head>
+    <body>
+        <wicket:extend>
+        	<div>
+	            <table class="tblData nopadding">
+	            	<tbody>
+		                <tr>
+		                    <td>
+		                         Examen workflow
+		                    </td>
+		                    <td>
+		                        <select wicket:id="examenWorkflow" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         Examenstatus
+		                    </td>
+		                    <td>
+		                        <select wicket:id="examenstatus" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Datum uitslag vanaf
+		                    </td>
+		                    <td>
+			                    <input wicket:id="datumUitslagVanaf" type="text" class="unit_220"/>
+		                    </td>
+		                    <td>
+		                         Datum uitslag t/m
+		                    </td>
+		                    <td>
+			                    <input wicket:id="datumUitslagTotEnMet" type="text" class="unit_220"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Datum uitslag is leeg
+		                    </td>
+		                    <td>
+		                        <select wicket:id="datumUitslagIsLeeg" class="unit_240"></select>
+		                    </td>
+				            <td>
+		                         Examenjaar
+		                    </td>
+		                    <td>
+		                        <input wicket:id="examenjaar" type="text" class="unit_220"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Examennummer vanaf
+		                    </td>
+		                    <td>
+			                    <input wicket:id="examennummerVanaf" type="text" class="unit_240"/>
+		                    </td>
+		                    <td>
+		                         Examennummer t/m
+		                    </td>
+		                    <td>
+			                    <input wicket:id="examennummerTotEnMet" type="text" class="unit_240"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Examen bekostigd
+		                    </td>
+		                    <td>
+		                        <select wicket:id="examendeelnameBekostigd" class="unit_240"></select>
+		                    </td>
+		                    <td>
+		                         Tijdvak is leeg
+		                    </td>
+		                    <td>
+		                        <select wicket:id="examendeelnameTijdvakIsLeeg" class="unit_240"></select>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Tijdvak vanaf
+		                    </td>
+		                    <td>
+			                    <input wicket:id="examendeelnameTijdvakVanaf" type="text" class="unit_240"/>
+		                    </td>
+		                    <td>
+		                         Tijdvak t/m
+		                    </td>
+		                    <td>
+			                    <input wicket:id="examendeelnameTijdvakTotEnMet" type="text" class="unit_240"/>
+		                    </td>
+		                </tr>
+		                <tr>
+		                    <td>
+		                         Examenstatus
+		                    </td>
+		                    <td colspan="3">
+		                        <select wicket:id="examenstatusList" class="unit_480" size="5"></select>
+		                    </td>
+		                </tr>
+		            </tbody>
+	            </table>
+			</div>
+        </wicket:extend>
+    </body>
+</html>

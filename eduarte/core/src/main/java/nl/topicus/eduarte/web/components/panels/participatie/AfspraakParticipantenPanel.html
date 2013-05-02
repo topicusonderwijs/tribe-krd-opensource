@@ -1,0 +1,24 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:panel>
+	<div class="clear contHalf txtleft">
+		<h3 class="caption">Participanten</h3>
+		<table class="tblDatagrid tblInModal append_10">
+			<tr wicket:id="participanten">
+				<td class="unit_20 txtright">
+					<img wicket:id="image" alt=""></img>
+				</td>
+				<td wicket:id="participant"></td>
+			</tr>
+			<wicket:container wicket:id="geenGegevensGevonden">
+				<tr class="tblNoHightlight">
+					<td colspan="2" wicket:id="geenGegevensMsg">Er zijn geen gegevens gevonden</td>
+				</tr>
+			</wicket:container>
+		</table>
+	</div>
+</wicket:panel>
+</body>
+</html>

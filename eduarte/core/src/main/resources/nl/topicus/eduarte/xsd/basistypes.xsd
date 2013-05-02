@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	xmlns:jxb="http://java.sun.com/xml/ns/jaxb" xmlns:xjc="http://java.sun.com/xml/ns/jaxb/xjc"
+	xmlns:eat="http://eduarte.topicus.nl/types/1.0" xmlns:cobra="http://cobra.topicus.nl/jaxb"
+	targetNamespace="http://eduarte.topicus.nl/types/1.0"
+	jxb:extensionBindingPrefixes="xjc cobra" jxb:version="2.1"
+	elementFormDefault="qualified">
+
+	<xs:annotation>
+		<xs:appinfo>
+			<jxb:schemaBindings>
+				<jxb:package name="nl.topicus.eduarte.xml.types.v10" />
+				<jxb:nameXmlTransform>
+					<jxb:typeName prefix="X" />
+				</jxb:nameXmlTransform>
+			</jxb:schemaBindings>
+		</xs:appinfo>
+	</xs:annotation>
+
+	<xs:simpleType name="cohort">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.landelijk.Cohort"
+					adapter="nl.topicus.eduarte.xml.adapters.CohortAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{4}-[0-9]{4}" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="code">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="10" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="naam">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100" />
+		</xs:restriction>
+	</xs:simpleType>
+
+	<xs:simpleType name="opleidingRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.opleiding.Opleiding"
+					adapter="nl.topicus.eduarte.xml.adapters.OpleidingAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:simpleType name="medewerkerRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.personen.Medewerker"
+					adapter="nl.topicus.eduarte.xml.adapters.MedewerkerAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:simpleType name="deelnemerRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.personen.Deelnemer"
+					adapter="nl.topicus.eduarte.xml.adapters.DeelnemerAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:int" />
+	</xs:simpleType>
+
+	<xs:simpleType name="groepRef">
+		<xs:annotation>
+			<xs:appinfo>
+				<xjc:javaType name="nl.topicus.eduarte.entities.groep.Groep"
+					adapter="nl.topicus.eduarte.xml.adapters.GroepAdapter" />
+			</xs:appinfo>
+		</xs:annotation>
+		<xs:restriction base="xs:string" />
+	</xs:simpleType>
+
+	<xs:complexType name="codeNaamActief">
+		<xs:sequence>
+			<xs:element name="code" type="eat:code" />
+			<xs:element name="naam" type="eat:naam" />
+			<xs:element name="actief" type="xs:boolean" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

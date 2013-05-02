@@ -1,0 +1,48 @@
+<html xmlns:wicket>
+<head>
+</head>
+<body>
+<wicket:extend>	
+	<form wicket:id="form">
+		<div class="caption">Nieuwe BRON-melding aanmaken</div>
+		
+		<table class="tblData tblInputs">
+			<tbody>
+				<tr>
+					<td>
+						<span>WAARSCHUWING: Met deze pagina kunt u handmatig
+						meldingen aanmaken die naar BRON kunnen worden verstuurd. Bij normaal
+						gebruik van het KRD in combinatie met BRON is dit niet nodig;
+						BRON-meldingen worden automatisch aangemaakt tijdens het doorvoeren
+						van mutaties. Mocht het in probleemsituaties toch noodzakelijk zijn
+						handmatig een melding te versturen, dan kunt u hiervoor dit scherm
+						gebruiken.
+						</span>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+		
+		<div wicket:id="gewijzigdeVerbintenisOfPlaatsing">
+			<div wicket:id="datapanel"></div>
+		</div>
+
+		<div wicket:id="soortGegevensContainer">		
+			<div class="caption">Stap 2. Selecteer recordsoort</div>
+			<div wicket:id="soortGegevens"></div>
+		</div>
+	
+		<div wicket:id="soortMutatieContainer">		
+				<div class="caption">Stap 3. Selecteer mutatiesoort</div>
+			<div wicket:id="soortMutatie"></div>
+		</div>
+		
+		<div wicket:id="subselectVakgegevensED"></div>
+		<div wicket:id="subselectBPVGegevensBO"></div>
+		<div wicket:id="subselectBekostigingsperiodeBO"></div>
+		<div wicket:id="subselectNT2ResultaatED"></div>
+	</form>
+	<br />
+</wicket:extend>
+</body>
+</html>

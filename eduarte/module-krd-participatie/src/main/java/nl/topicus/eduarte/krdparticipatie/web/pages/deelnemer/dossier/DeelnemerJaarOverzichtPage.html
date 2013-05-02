@@ -1,0 +1,22 @@
+<html xmlns:wicket>
+<wicket:head>
+<link href="assets/css/waarneming.css" rel="stylesheet" type="text/css" />
+<link href="assets/css/ie_only_widePage.css" rel="stylesheet" type="text/css" />
+</wicket:head>
+<body>
+<wicket:extend>
+	<div wicket:id="filter"></div>
+	<table wicket:id="jaaroverzichtTable" class="tblWaarnemingMatrix">
+		<thead>
+			<tr wicket:id ="dagenHeaderPanel"></tr>
+			<tr wicket:id ="urenHeaderPanel"></tr>
+		</thead>
+		<tbody>
+			<tr wicket:id ="weken"></tr>
+		</tbody>
+	</table>
+	<div class="clear laySeparator10"></div>
+	<div wicket:id="totalen"></div>
+</wicket:extend>
+</body>
+</html>

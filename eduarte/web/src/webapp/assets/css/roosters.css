@@ -1,0 +1,66 @@
+/* Part of the Twilight User Interface Framework
+Copyright (c) 2007, Topicus BV.
+Author: Vincent van den Noort [vincent@topicus.nl], Michel Vos [michel@topicus.nl]
+Refactored and updated to version 0.2 by Marieke Franssen (marieke.franssen@topicus.nl)
+Version: 0.2
+
+== Scope of this stylesheet ==
+roosters.css is part of the stylesheet for EduArte. 
+
+
+roosters.css bevat stijlen die betrekking hebben op het tonen van lesroosters.
+
+Use the following shorthands when adding styles (example: .inpTextbox for a textbox).
+
+inp - input elements
+lay - layout elements (div, span)
+head - headers (h1, h2)
+lbl - labels (span)
+img - images
+cont - content (p, a)
+tbl - table elements (table, th, td)
+
+IE Only overrides should always be preceded by a  @IEFIX  comment
+
+Revisions:
+
+0.1 - 16/10/2007 - First build of the full stylesheet (originally base.css)
+0.2 - 09/02/2008 - base.css is split into a number of smaller files. roosters.css exists since revision 0.2 
+*/
+
+/** Rooster styles */
+.tblRooster{
+	font-size:0.8em;
+	clear:both;
+	min-width:980px;
+	max-width:1280px;
+	margin-left:auto;
+	margin-right:auto;
+	border-collapse:collapse;
+	border:1px solid #404040;
+}
+
+.tblRooster td, .tblRooster th{
+	text-align:center;
+	color:#4c4c4c;
+	padding:3px;
+	border-bottom:1px dotted #404040;
+	border-left:1px solid #404040;
+	border-right:1px solid #404040;
+}
+
+.tblRooster td{
+	text-align:left;
+}
+	
+.tblRooster th{
+	color:#ffffff;
+	background:#a01888;
+	border-bottom:1px solid #404040;
+	width:164px;
+}
+
+.tblRooster th.roosterUur{
+	text-align:left;
+	width:50px;
+}
